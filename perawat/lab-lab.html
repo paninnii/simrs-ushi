@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratorium · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="rawat_jalan-antrian.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                    <details class="side-sec" open>
+            <summary class="side-group"><span>Administrasi Pasien</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="registrasi-pasien.html" class="side-link">Data Pasien</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Pelayanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="rawat_jalan-antrian.html" class="side-link">Rawat Jalan (Poliklinik)</a>
+                            <a href="igd-igd.html" class="side-link">Gawat Darurat (IGD)</a>
+                            <a href="rawat_inap-ranap.html" class="side-link">Rawat Inap &amp; Bed</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Klinis</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="emr-emr.html" class="side-link">Rekam Medis (EMR)</a>
+                            <a href="cpoe-cpoe.html" class="side-link">Order Klinis (CPOE)</a>
+                            <a href="keperawatan-keperawatan.html" class="side-link">Asuhan Keperawatan</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Penunjang</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="lab-lab.html" class="side-link active">Laboratorium</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Logistik</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="inventori-inventori.html" class="side-link">Gudang &amp; Persediaan</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Laboratorium</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bubble">5</span></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                                    <a href="rawat_jalan-antrian.html" class="notif-item"><span>Pasien menunggu pengkajian</span><span class="notif-n">2<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                        <a href="igd-igd.html" class="notif-item"><span>Pasien IGD belum triase</span><span class="notif-n">1<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                        <a href="cpoe-cpoe__jenis-tindakan.html" class="notif-item"><span>Order tindakan belum dikerjakan</span><span class="notif-n">2<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                    <p class="text-xs text-slate-500 mt-2">Klik untuk membuka halaman terkait.</p>            </div>
+        </details>
+        <div class="avatar">DP</div>
+        <div class="identity hidden sm:block"><b>Ns. Dimas Prasetyo, S.Kep.</b><small>Perawat</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Laboratorium</h1>
+            <p>Pantau status order lab. Hasil tampil setelah divalidasi &amp; diterbitkan Sp.PK.</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+                        <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <div class="metrics"><div class="metric metric-amber"><span>Order Baru</span><strong>1</strong></div><div class="metric metric-teal"><span>Spesimen / Diproses</span><strong>1</strong></div><div class="metric metric-purple"><span>Menunggu Validasi</span><strong>1</strong></div><div class="metric metric-green"><span>Diterbitkan (30 hari)</span><strong>5</strong></div><div class="metric metric-red"><span>CITO Aktif</span><strong>1</strong></div></div><div class="card"><div class="card-head"><h3>Daftar Order Laboratorium</h3></div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Pasien</th><th>Pemeriksaan</th><th>Pengirim</th><th>Alur</th><th class="num">Tindakan</th></tr></thead><tbody>
+  <tr><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003 · Perempuan · 6 th</div></td>
+    <td><b>NS1 Antigen Dengue</b> <span class="badge badge-red">CITO</span><div class="muted">Suspek infeksi dengue</div></td>
+    <td>dr. Clarissa Wijaya, Sp.A<div class="muted">Poli Anak · 31 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step now">Order Baru</span><span class="step">Spesimen Diterima</span><span class="step">Diproses</span><span class="step">Menunggu Validasi</span><span class="step">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <span class="muted">Laporan belum final</span>    </td></tr>
+  <tr><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001 · Laki-laki · 58 th</div></td>
+    <td><b>Darah Lengkap (CBC)</b> <div class="muted">Pneumonia, evaluasi leukosit</div><div class="text-xs mt-1">Hasil: Hb 13,4 g/dL; Leukosit 15.800/uL (tinggi); Trombosit 280.000/uL</div></td>
+    <td>dr. Aditya Pranata, Sp.PD<div class="muted">Poli Penyakit Dalam · 27 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step done">Spesimen Diterima</span><span class="step done">Diproses</span><span class="step done">Menunggu Validasi</span><span class="step now">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <a href="lab-lab__laporan-5.html" class="btn btn-secondary btn-sm">Laporan</a>
+          </td></tr>
+  <tr><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002 · Perempuan · 27 th</div></td>
+    <td><b>Darah Lengkap (CBC)</b> <div class="muted">Skrining pra-program hamil</div><div class="text-xs mt-1">Hasil: Hb 12,8 g/dL; Leukosit 7.900/uL; Trombosit 256.000/uL</div></td>
+    <td>dr. Maria Ulfa, Sp.OG<div class="muted">Poli Kandungan · 27 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step done">Spesimen Diterima</span><span class="step done">Diproses</span><span class="step done">Menunggu Validasi</span><span class="step now">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <a href="lab-lab__laporan-7.html" class="btn btn-secondary btn-sm">Laporan</a>
+          </td></tr>
+  <tr><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013 · Perempuan · 36 th</div></td>
+    <td><b>Urinalisis Lengkap</b> <div class="muted">Suspek pielonefritis</div><div class="text-xs mt-1">Hasil: Leukosit urin 25-30/LPB (+3); nitrit (+); bakteri (+)</div></td>
+    <td>dr. Aditya Pranata, Sp.PD<div class="muted">Poli Penyakit Dalam · 29 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step done">Spesimen Diterima</span><span class="step done">Diproses</span><span class="step done">Menunggu Validasi</span><span class="step now">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <a href="lab-lab__laporan-6.html" class="btn btn-secondary btn-sm">Laporan</a>
+          </td></tr>
+  <tr><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009 · Perempuan · 52 th</div></td>
+    <td><b>Kolesterol Total</b> <div class="muted">Evaluasi dislipidemia</div><div class="text-xs mt-1">Hasil: Kolesterol total 238 mg/dL (tinggi)</div></td>
+    <td>dr. Aditya Pranata, Sp.PD<div class="muted">Poli Penyakit Dalam · 30 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step done">Spesimen Diterima</span><span class="step done">Diproses</span><span class="step done">Menunggu Validasi</span><span class="step now">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <a href="lab-lab__laporan-8.html" class="btn btn-secondary btn-sm">Laporan</a>
+          </td></tr>
+  <tr><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003 · Perempuan · 6 th</div></td>
+    <td><b>Darah Lengkap (CBC)</b> <div class="muted">Demam hari ke-3, evaluasi trombosit</div></td>
+    <td>dr. Clarissa Wijaya, Sp.A<div class="muted">Poli Anak · 31 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step now">Spesimen Diterima</span><span class="step">Diproses</span><span class="step">Menunggu Validasi</span><span class="step">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <span class="muted">Laporan belum final</span>    </td></tr>
+  <tr><td><b class="pname">Daffa Pratama</b><div class="muted">RM-2026-000008 · Laki-laki · 14 th</div></td>
+    <td><b>Darah Lengkap (CBC)</b> <div class="muted">Suspek anemia defisiensi besi</div></td>
+    <td>dr. Clarissa Wijaya, Sp.A<div class="muted">Poli Anak · 31 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step done">Spesimen Diterima</span><span class="step done">Diproses</span><span class="step now">Menunggu Validasi</span><span class="step">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <span class="muted">Laporan belum final</span>    </td></tr>
+  <tr><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009 · Perempuan · 52 th</div></td>
+    <td><b>Fungsi Ginjal (Ureum, Kreatinin)</b> <div class="muted">Evaluasi fungsi ginjal pada hipertensi</div><div class="text-xs mt-1">Hasil: Ureum 32 mg/dL; Kreatinin 0,9 mg/dL</div></td>
+    <td>dr. Aditya Pranata, Sp.PD<div class="muted">Poli Penyakit Dalam · 31 Okt 2026 06:48</div></td>
+    <td><div class="stepper"><span class="step done">Order Baru</span><span class="step done">Spesimen Diterima</span><span class="step done">Diproses</span><span class="step done">Menunggu Validasi</span><span class="step now">Diterbitkan</span></div></td>
+    <td class="num" style="min-width:170px">
+      <a href="lab-lab__laporan-4.html" class="btn btn-secondary btn-sm">Laporan</a>
+          </td></tr>
+</tbody></table></div></div>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

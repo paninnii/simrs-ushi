@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akun Pengguna &amp; Akses · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="dashboard.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                        <a href="dashboard.html" class="side-home">Dashboard</a>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Sistem</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="auth-pengguna.html" class="side-link active">Akun Pengguna</a>
+                            <a href="auth-hak_akses.html" class="side-link">Hak Akses</a>
+                            <a href="auth-audit.html" class="side-link">Audit Log</a>
+                            <a href="master-pengaturan.html" class="side-link">Konfigurasi RS</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Kepegawaian</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="master-pegawai__jenis-dokter.html" class="side-link">Data Dokter</a>
+                            <a href="master-pegawai__jenis-perawat.html" class="side-link">Data Perawat</a>
+                            <a href="master-pegawai__jenis-penunjang.html" class="side-link">Tenaga Penunjang Medis</a>
+                            <a href="master-pegawai__jenis-staf.html" class="side-link">Staf &amp; Manajemen</a>
+                            <a href="master-jadwal_dokter.html" class="side-link">Jadwal Praktik Dokter</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Data Layanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="master-poliklinik.html" class="side-link">Poliklinik</a>
+                            <a href="master-kamar.html" class="side-link">Kamar &amp; Bed</a>
+                            <a href="master-tarif.html" class="side-link">Tarif Layanan</a>
+                            <a href="master-penjamin.html" class="side-link">Penjamin / Asuransi</a>
+                            <a href="master-icd10.html" class="side-link">Diagnosis ICD-10</a>
+                            <a href="master-obat.html" class="side-link">Obat &amp; Alkes</a>
+                            <a href="master-jenis_lab.html" class="side-link">Pemeriksaan Lab</a>
+                            <a href="master-jenis_radiologi.html" class="side-link">Pemeriksaan Radiologi</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Manajemen</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="laporan-laporan.html" class="side-link">Laporan &amp; Indikator</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Logistik</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="inventori-inventori.html" class="side-link">Gudang &amp; Persediaan</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Akun Pengguna &amp; Akses</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                <p class="text-slate-500 text-sm">Tidak ada tugas yang menunggu.</p>
+                                            </div>
+        </details>
+        <div class="avatar">RF</div>
+        <div class="identity hidden sm:block"><b>Rizky Firmansyah, S.Kom.</b><small>Administrator SIMRS</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Akun Pengguna &amp; Akses</h1>
+            <p>Administrasi akun sesuai SOP Authentication: buat akun, role, aktif/nonaktif, reset password, buka kunci.</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+            <a href="auth-pengguna__form-baru.html" class="btn btn-primary">+ Tambah Akun</a>            <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <div class="metrics"><div class="metric metric-green"><span>Akun Aktif</span><strong>27</strong></div><div class="metric metric-amber"><span>Akun Nonaktif</span><strong>0</strong></div><div class="metric metric-red"><span>Terkunci</span><strong>0</strong></div><div class="metric metric-purple"><span>Wajib Ganti Password</span><strong>0</strong></div></div><div class="card mb-4" id="form"><div class="card-head"><h3>Tambah Akun</h3></div>
+  <form method="post" class="card-body"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="tambah">
+    <div class="flex gap-4 mb-3 text-sm font-semibold">
+      <label class="inline-flex gap-2"><input type="radio" name="jenis_akun" value="pegawai" checked onchange="this.form.querySelectorAll('[data-j]').forEach(e=>e.style.display=e.dataset.j==='pegawai'?'':'none')"> Akun pegawai</label>
+      <label class="inline-flex gap-2"><input type="radio" name="jenis_akun" value="pasien"  onchange="this.form.querySelectorAll('[data-j]').forEach(e=>e.style.display=e.dataset.j==='pasien'?'':'none')"> Akun portal pasien (tautkan No. RM)</label>
+    </div>
+    <div class="form-grid">
+      <div class="field" data-j="pegawai" style=""><label>Pegawai <span class="req">*</span></label><select name="id_pegawai" class=""><option value="">-- Pegawai belum punya akun --</option></select><p class="hint">Pegawai baru ditambahkan dulu di menu Kepegawaian.</p></div>
+      <div class="field" data-j="pegawai" style=""><label>Role <span class="req">*</span></label><select name="role" class=""><option value="">-- Pilih role --</option><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select></div>
+      <div class="field" data-j="pasien" style="display:none"><label>No. Rekam Medis pasien <span class="req">*</span></label><input name="nomor_rm" value="" placeholder="RM-2026-000001" class=""></div>
+      <div class="field"><label>Username <span class="req">*</span></label><input name="username" value="" maxlength="50" class=""></div>
+      <div class="field"><label>Password awal <span class="req">*</span></label><input name="password_awal" value="" class="" placeholder="contoh: Rina#2026"><p class="hint">Minimal 8 karakter huruf + angka. "password" ditolak.</p></div>
+    </div>
+    <div class="flex gap-2"><button class="btn btn-primary">Buat Akun</button><a href="auth-pengguna.html" class="btn btn-secondary">Batal</a></div>
+  </form></div>
+
+<div class="card"><div class="card-head"><h3>Direktori Akun</h3>
+  <form method="get" class="flex gap-2 flex-wrap"><select name="role" class="input" style="width:auto" onchange="this.form.submit()"><option value="">Semua role</option><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+    <input name="q" value="" class="input" style="width:200px" placeholder="Cari username / nama"><button class="btn btn-secondary">Cari</button></form></div>
+  <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Username</th><th>Nama / Terhubung ke</th><th>Role & Status</th><th>Login Terakhir</th><th class="num">Administrasi</th></tr></thead><tbody>
+      <tr><td class="mono"><b>atlm</b></td>
+      <td>Raka Mahendra, A.Md.AK.<div class="muted">AL-001 · Analis Lab</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="16">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm" selected>ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password atlm? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="16"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun atlm?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="16"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>atlm2</b></td>
+      <td>Intan Permatasari, S.Tr.AK.<div class="muted">AL-002 · Analis Lab</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="17">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm" selected>ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password atlm2? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="17"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun atlm2?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="17"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>adminrad</b></td>
+      <td>Yudi Hartanto<div class="muted">ST-009 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="26">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad" selected>Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password adminrad? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="26"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun adminrad?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="26"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>rekammedis</b></td>
+      <td>Bima Prasetyo, A.Md.RMIK<div class="muted">ST-006 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="24">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis" selected>Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password rekammedis? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="24"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun rekammedis?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="24"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>admin</b><div class="muted">akun Anda</div></td>
+      <td>Rizky Firmansyah, S.Kom.<div class="muted">ST-008 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="1">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin" selected>Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">31 Okt 2026 08:48</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password admin? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="1"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                      </td></tr>
+      <tr><td class="mono"><b>farmasi</b></td>
+      <td>apt. Nabila Putri, S.Farm.<div class="muted">AP-001 · Apoteker</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="14">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker" selected>Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password farmasi? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="14"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun farmasi?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="14"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>farmasi2</b></td>
+      <td>apt. Budi Hartono, S.Farm.<div class="muted">AP-002 · Apoteker</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="15">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker" selected>Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password farmasi2? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="15"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun farmasi2?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="15"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>dokter1</b></td>
+      <td>dr. Aditya Pranata, Sp.PD<div class="muted">DR-001 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="2">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter" selected>Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password dokter1? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="2"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun dokter1?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="2"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>dokter2</b></td>
+      <td>dr. Clarissa Wijaya, Sp.A<div class="muted">DR-002 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="3">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter" selected>Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password dokter2? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="3"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun dokter2?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="3"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>dokter3</b></td>
+      <td>dr. Bagus Santoso, Sp.B<div class="muted">DR-003 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="4">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter" selected>Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password dokter3? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="4"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun dokter3?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="4"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>dokter4</b></td>
+      <td>dr. Maria Ulfa, Sp.OG<div class="muted">DR-004 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="5">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter" selected>Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password dokter4? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="5"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun dokter4?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="5"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>dokter5</b></td>
+      <td>dr. Rendi Saputra<div class="muted">DR-005 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="6">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter" selected>Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password dokter5? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="6"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun dokter5?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="6"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>spk</b></td>
+      <td>dr. Helena Wijaya, Sp.PK<div class="muted">DR-006 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="7">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk" selected>Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password spk? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="7"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun spk?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="7"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>sprad</b></td>
+      <td>dr. Reza Mahardika, Sp.Rad<div class="muted">DR-007 · Dokter</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="8">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad" selected>Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password sprad? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="8"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun sprad?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="8"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>kasir</b></td>
+      <td>Ayu Lestari, S.E.<div class="muted">ST-003 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="21">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir" selected>Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password kasir? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="21"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun kasir?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="21"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>manajemen</b></td>
+      <td>dr. Ratna Kusuma, MARS<div class="muted">ST-007 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="25">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen" selected>Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password manajemen? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="25"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun manajemen?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="25"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>pasien</b></td>
+      <td>Rina Kurniawati<div class="muted">Pasien RM-2026-000011</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="27">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien" selected>Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password pasien? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="27"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun pasien?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="27"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>perawat</b></td>
+      <td>Ns. Dimas Prasetyo, S.Kep.<div class="muted">PR-001 · Perawat</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="9">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat" selected>Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password perawat? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="9"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun perawat?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="9"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>perawat2</b></td>
+      <td>Ns. Siti Nurhaliza, S.Kep.<div class="muted">PR-002 · Perawat</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="10">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat" selected>Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password perawat2? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="10"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun perawat2?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="10"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>perawat3</b></td>
+      <td>Ns. Yoga Pratama, A.Md.Kep.<div class="muted">PR-003 · Perawat</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="11">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat" selected>Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password perawat3? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="11"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun perawat3?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="11"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>perawat4</b></td>
+      <td>Ns. Lestari Ayu, S.Kep.<div class="muted">PR-004 · Perawat</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="12">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat" selected>Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password perawat4? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="12"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun perawat4?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="12"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>perawat5</b></td>
+      <td>Ns. Rina Kartika, S.Kep.<div class="muted">PR-005 · Perawat</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="13">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat" selected>Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password perawat5? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="13"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun perawat5?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="13"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>gudang</b></td>
+      <td>Fajar Nugroho, A.Md.Log.<div class="muted">ST-005 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="23">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang" selected>Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password gudang? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="23"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun gudang?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="23"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>pendaftaran</b></td>
+      <td>Nadia Permata, A.Md.MIK<div class="muted">ST-001 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="19">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran" selected>Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password pendaftaran? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="19"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun pendaftaran?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="19"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>radiologi</b></td>
+      <td>Dewi Anggraini, A.Md.Rad.<div class="muted">RG-001 · Radiografer</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="18">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer" selected>Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password radiologi? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="18"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun radiologi?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="18"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>supervisorreg</b></td>
+      <td>Fikri Ramadhan, S.KM.<div class="muted">ST-002 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="20">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg" selected>Supervisor Registrasi</option><option value="verifikator">Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password supervisorreg? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="20"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun supervisorreg?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="20"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+      <tr><td class="mono"><b>verifikator</b></td>
+      <td>Sinta Maharani, A.Md.AK.<div class="muted">ST-004 · Staf</div></td>
+      <td>
+                <form method="post" class="flex items-center gap-2 flex-wrap"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="simpan"><input type="hidden" name="id" value="22">
+          <select name="role" class="input" style="width:190px;padding:6px 8px"><option value="atlm">ATLM (Analis Laboratorium)</option><option value="adminrad">Admin Radiologi</option><option value="rekammedis">Admin Rekam Medis</option><option value="admin">Administrator SIMRS</option><option value="apoteker">Apoteker</option><option value="dokter">Dokter / DPJP</option><option value="spk">Dokter Sp. Patologi Klinik</option><option value="sprad">Dokter Sp. Radiologi</option><option value="kasir">Kasir</option><option value="manajemen">Manajemen Rumah Sakit</option><option value="pasien">Pasien</option><option value="perawat">Perawat</option><option value="gudang">Petugas Gudang / Logistik</option><option value="pendaftaran">Petugas Registrasi</option><option value="radiografer">Radiografer</option><option value="supervisorreg">Supervisor Registrasi</option><option value="verifikator" selected>Verifikator Asuransi</option></select>
+          <label class="inline-flex items-center gap-1 text-xs font-semibold"><input type="checkbox" name="aktif" value="1" checked> Aktif</label>
+          <button class="btn btn-secondary btn-sm">Simpan</button></form>
+                <div class="mt-1"><span class="badge badge-green">Aktif</span>  </div></td>
+      <td class="muted">-</td>
+      <td class="num">        <form method="post" class="inline" data-confirm="Reset password verifikator? Password sementara acak akan dibuat."><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="reset"><input type="hidden" name="id" value="22"><button class="btn btn-warning btn-sm">Reset Password</button></form>
+                <form method="post" class="inline" data-confirm="Hapus akun verifikator?"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="id" value="22"><button class="btn btn-danger btn-sm">Hapus</button></form>      </td></tr>
+    </tbody></table></div></div>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

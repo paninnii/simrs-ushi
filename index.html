@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumah Sakit Untuk Semua Hari Ini (RS USHI)</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  body { font-size: 16px; }
+  .pub-nav a { color: #1E293B; font-weight: 500; font-size: 15px; text-decoration: none; }
+  .pub-nav a:hover { color: var(--ushi-700); }
+  .hero { background: #F1F5F9; border-bottom: 1px solid var(--line); }
+  .pub-h2 { font-size: 24px; font-weight: 700; color: var(--ink); }
+  .svc { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .quick { display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; text-decoration: none; box-shadow: 0 4px 14px rgba(15,23,42,.06); transition: border-color .15s; }
+  .quick:hover { border-color: var(--ushi-700); }
+  .quick b { display: block; color: var(--ink); font-size: 15px; font-weight: 600; } .quick small { display: block; color: var(--muted); font-size: 13px; }
+  .quick-ico { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 10px; background: var(--ushi-700); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .doc-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; }
+  .doc-aksi { margin-top: auto; padding-top: 16px; }
+  .doc-jadwal { display: grid; grid-template-columns: 70px 1fr; gap: 4px 10px; font-size: 14px; color: #475569; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .doc-jadwal dd { margin: 0; font-family: "JetBrains Mono", "Roboto Mono", monospace; font-size: 13px; }
+  section[id], footer[id] { scroll-margin-top: 84px; }
+  .flip { perspective: 1200px; height: 370px; cursor: pointer; border-radius: 12px; outline: none; }
+  .flip:focus-visible { box-shadow: 0 0 0 3px rgba(11,120,150,.35); }
+  .flip-in { position: relative; width: 100%; height: 100%; transition: transform .6s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; }
+  .flip.is-flipped .flip-in { transform: rotateY(180deg); }
+  @media (hover: hover) { .flip:hover .flip-in { transform: rotateY(180deg); } }
+  .flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 12px; display: flex; flex-direction: column; }
+  .flip-front { background: #004C6D; color: #fff; padding: 28px; justify-content: center; }
+  .flip-front h3 { font-size: 20px; font-weight: 600; margin: 18px 0 8px; }
+  .flip-front p { font-size: 15px; color: rgba(255,255,255,.88); line-height: 1.55; }
+  .flip-ico { width: 56px; height: 56px; border-radius: 14px; background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: #fff; }
+  .flip-hint { margin-top: 18px; font-size: 13.5px; font-weight: 600; color: #B9DDA6; }
+  .flip-back { transform: rotateY(180deg); overflow-y: auto; }
+  .flip-back .flip-hint { color: var(--ushi-700); margin-top: auto; padding-top: 12px; }
+  @media (hover: hover) { .flip-back .flip-hint { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .flip-in { transition: none; } .flip.is-flipped .flip-in, .flip:hover .flip-in { transform: none; }
+    .flip-back { transform: none; opacity: 0; } .flip.is-flipped .flip-front, .flip:hover .flip-front { opacity: 0; } .flip.is-flipped .flip-back, .flip:hover .flip-back { opacity: 1; }
+  }
+  .info-card { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--ushi-700); border-radius: 12px; padding: 20px; font-size: 15px; color: #334155; }
+  .info-card h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin: 0 0 10px; }
+  .info-card ul { list-style: disc; padding-left: 18px; } .info-card ol { list-style: decimal; padding-left: 18px; } .info-card li { margin: 5px 0; }
+  .info-note { margin-top: 10px; font-size: 14px; color: #991B1B; background: #FEF2F2; border-radius: 8px; padding: 8px 10px; }
+  .foot-h { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: #fff; }
+  .foot-t { font-size: 14px; color: rgba(255,255,255,.85); line-height: 1.6; }
+  .foot-kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 14px; color: rgba(255,255,255,.85); }
+  .foot-kv dd { margin: 0; color: #fff; }
+  .foot-chip { font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,.3); color: #fff; }
+  .svc .ico { width: 44px; height: 44px; border-radius: 10px; background: var(--ushi-50); color: var(--ushi-700); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+</style>
+</head>
+<body class="bg-white">
+<!-- Pita informasi atas -->
+<div class="bg-[#004C6D] text-white text-[13px]">
+  <div class="max-w-6xl mx-auto px-5 py-2 flex flex-wrap justify-between gap-2">
+    <span>Jl. Kesehatan Raya No. 1, Tebet, Jakarta Selatan 12810</span>
+    <span>Pendaftaran (021) 555-0101 · <b>IGD 24 Jam (021) 555-0119</b></span>
+  </div>
+</div>
+
+<header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+  <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Logo RS USHI" class="w-12 h-12 rounded-full">
+      <div><b class="block text-[#004C6D] text-lg leading-tight">RS USHI</b><small class="text-slate-500 text-xs">Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <div class="flex items-center gap-8">
+      <nav class="pub-nav hidden lg:flex items-center gap-7">
+        <a href="#layanan">Layanan</a><a href="#dokter">Cari Dokter</a><a href="#poliklinik">Poliklinik</a><a href="#info">Info Pasien</a><a href="#kontak">Kontak</a>
+      </nav>
+      <div class="flex items-center lg:border-l lg:border-slate-200 lg:pl-6">
+        <a href="login.html" class="btn btn-primary btn-masuk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>Masuk</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <span class="badge badge-blue mb-3">Melayani Pasien BPJS Kesehatan, Asuransi, dan Umum</span>
+      <h1 class="text-4xl md:text-[44px] font-bold text-[#004C6D] leading-tight">Pelayanan kesehatan terintegrasi untuk setiap hari.</h1>
+      <p class="text-slate-600 mt-4 text-lg">Lihat jadwal praktik dokter dan buat janji temu secara online sebelum datang ke Rumah Sakit Untuk Semua Hari Ini.</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="login.html" class="btn btn-primary" style="padding:12px 18px">Buat Janji Temu</a>
+        <a href="#dokter" class="btn btn-secondary" style="padding:12px 18px">Lihat Jadwal Dokter</a>
+      </div>
+    </div>
+    <div class="card p-6 shadow-sm">
+      <h2 class="font-semibold text-lg mb-3 text-slate-900">Cari Dokter</h2>
+      <form method="get" action="#" class="space-y-3">
+        <div class="field mb-0"><label for="cari">Nama dokter atau spesialis</label><input id="cari" class="input" name="cari" value="" placeholder="contoh: Aditya / Anak / Bedah"></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="field mb-0"><label for="poli">Poliklinik</label><select id="poli" class="input" name="poli"><option value="">Semua poli</option><option value="3">Poli Anak</option><option value="4">Poli Bedah</option><option value="5">Poli Kandungan</option><option value="2">Poli Penyakit Dalam</option><option value="1">Poli Umum</option></select></div>
+          <div class="field mb-0"><label for="hari">Hari</label><select id="hari" class="input" name="hari"><option value="">Semua hari</option><option value="Senin">Senin</option><option value="Selasa">Selasa</option><option value="Rabu">Rabu</option><option value="Kamis">Kamis</option><option value="Jumat">Jumat</option><option value="Sabtu">Sabtu</option><option value="Minggu">Minggu</option></select></div>
+        </div>
+        <button class="btn btn-primary w-full" style="padding:11px">Cari Dokter</button>
+      </form>
+      <div class="mt-5 p-4 rounded-xl bg-red-50 border border-red-200">
+        <b class="text-red-800">Gawat darurat?</b>
+        <p class="text-sm text-red-900 mt-1">IGD buka 24 jam. Hubungi <b>(021) 555-0119</b> atau langsung datang ke IGD Gedung B lantai 1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-5 -mt-8 relative z-10" aria-label="Akses cepat">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <a href="login.html" class="quick"><span class="quick-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span><span><b>Buat Janji Temu</b><small>Pilih dokter & jam kunjungan</small></span></a>
+          <a href="#dokter" class="quick"><span class="quick-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><span><b>Cari Dokter</b><small>Jadwal praktik per poliklinik</small></span></a>
+          <a href="tel:0215550119" class="quick"><span class="quick-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><b>IGD 24 Jam</b><small>(021) 555-0119</small></span></a>
+          <a href="daftar.html" class="quick"><span class="quick-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span><b>Daftar Akun Pasien</b><small>Untuk pasien yang pernah berobat</small></span></a>
+      </div>
+</section>
+
+<section id="dokter" class="max-w-6xl mx-auto px-5 pt-16 pb-6">
+  <div class="flex flex-wrap justify-between items-end gap-3">
+    <div><h2 class="pub-h2">Cari Dokter</h2>
+    <p class="text-slate-600 mt-1">Jadwal dapat berubah sewaktu-waktu. Buat janji temu agar tidak menunggu lama.</p></div>
+      </div>
+  <form method="get" action="#" class="flex flex-wrap gap-2 mt-5">
+          <button name="poli" value="" class="tab active">Semua poli</button>
+          <button name="poli" value="3" class="tab">Poli Anak</button>
+          <button name="poli" value="4" class="tab">Poli Bedah</button>
+          <button name="poli" value="5" class="tab">Poli Kandungan</button>
+          <button name="poli" value="2" class="tab">Poli Penyakit Dalam</button>
+          <button name="poli" value="1" class="tab">Poli Umum</button>
+              </form>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+          <article class="doc-card">
+        <div class="flex gap-3 items-start">
+          <div class="avatar avatar-lg" aria-hidden="true">CW</div>
+          <div class="min-w-0"><h3 class="text-[16px] font-semibold text-slate-900 leading-snug">dr. Clarissa Wijaya, Sp.A</h3>
+            <div class="text-sm text-slate-600">Spesialis Anak</div>
+            <div class="text-sm text-[#004C6D] font-medium">Poli Anak</div></div>
+        </div>
+        <div class="mt-3"><span class="badge badge-green">Praktik hari ini · 08:30–12:30</span></div>
+        <dl class="doc-jadwal">
+          <dt>Senin</dt><dd>08:30–12:30</dd><dt>Selasa</dt><dd>08:30–12:30</dd><dt>Rabu</dt><dd>08:30–12:30</dd><dt>Kamis</dt><dd>08:30–12:30</dd><dt>Jumat</dt><dd>08:30–12:30</dd><dt class="font-semibold text-slate-900">Sabtu</dt><dd>08:30–12:30</dd>        </dl>
+        <div class="doc-aksi"><a href="login.html" class="btn btn-soft w-full">Buat Janji</a></div>
+      </article>
+          <article class="doc-card">
+        <div class="flex gap-3 items-start">
+          <div class="avatar avatar-lg" aria-hidden="true">BS</div>
+          <div class="min-w-0"><h3 class="text-[16px] font-semibold text-slate-900 leading-snug">dr. Bagus Santoso, Sp.B</h3>
+            <div class="text-sm text-slate-600">Spesialis Bedah</div>
+            <div class="text-sm text-[#004C6D] font-medium">Poli Bedah</div></div>
+        </div>
+        <div class="mt-3"><span class="badge badge-gray">Tidak praktik hari ini</span></div>
+        <dl class="doc-jadwal">
+          <dt>Senin</dt><dd>10:00–14:00</dd><dt>Rabu</dt><dd>10:00–14:00</dd><dt>Kamis</dt><dd>10:00–14:00</dd><dt>Jumat</dt><dd>10:00–14:00</dd>        </dl>
+        <div class="doc-aksi"><a href="login.html" class="btn btn-soft w-full">Buat Janji</a></div>
+      </article>
+          <article class="doc-card">
+        <div class="flex gap-3 items-start">
+          <div class="avatar avatar-lg" aria-hidden="true">MU</div>
+          <div class="min-w-0"><h3 class="text-[16px] font-semibold text-slate-900 leading-snug">dr. Maria Ulfa, Sp.OG</h3>
+            <div class="text-sm text-slate-600">Spesialis Obstetri &amp; Ginekologi</div>
+            <div class="text-sm text-[#004C6D] font-medium">Poli Kandungan</div></div>
+        </div>
+        <div class="mt-3"><span class="badge badge-green">Praktik hari ini · 09:00–13:00</span></div>
+        <dl class="doc-jadwal">
+          <dt>Selasa</dt><dd>09:00–13:00</dd><dt>Kamis</dt><dd>09:00–13:00</dd><dt class="font-semibold text-slate-900">Sabtu</dt><dd>09:00–13:00</dd>        </dl>
+        <div class="doc-aksi"><a href="login.html" class="btn btn-soft w-full">Buat Janji</a></div>
+      </article>
+          <article class="doc-card">
+        <div class="flex gap-3 items-start">
+          <div class="avatar avatar-lg" aria-hidden="true">AP</div>
+          <div class="min-w-0"><h3 class="text-[16px] font-semibold text-slate-900 leading-snug">dr. Aditya Pranata, Sp.PD</h3>
+            <div class="text-sm text-slate-600">Spesialis Penyakit Dalam</div>
+            <div class="text-sm text-[#004C6D] font-medium">Poli Penyakit Dalam</div></div>
+        </div>
+        <div class="mt-3"><span class="badge badge-green">Praktik hari ini · 08:00–12:00</span></div>
+        <dl class="doc-jadwal">
+          <dt>Senin</dt><dd>08:00–16:00</dd><dt>Selasa</dt><dd>08:00–16:00</dd><dt>Rabu</dt><dd>08:00–16:00</dd><dt>Kamis</dt><dd>08:00–16:00</dd><dt>Jumat</dt><dd>08:00–16:00</dd><dt class="font-semibold text-slate-900">Sabtu</dt><dd>08:00–12:00</dd>        </dl>
+        <div class="doc-aksi"><a href="login.html" class="btn btn-soft w-full">Buat Janji</a></div>
+      </article>
+          <article class="doc-card">
+        <div class="flex gap-3 items-start">
+          <div class="avatar avatar-lg" aria-hidden="true">RS</div>
+          <div class="min-w-0"><h3 class="text-[16px] font-semibold text-slate-900 leading-snug">dr. Rendi Saputra</h3>
+            <div class="text-sm text-slate-600">Dokter Umum</div>
+            <div class="text-sm text-[#004C6D] font-medium">Poli Umum</div></div>
+        </div>
+        <div class="mt-3"><span class="badge badge-green">Praktik hari ini · 08:00–20:00</span></div>
+        <dl class="doc-jadwal">
+          <dt>Senin</dt><dd>08:00–20:00</dd><dt>Selasa</dt><dd>08:00–20:00</dd><dt>Rabu</dt><dd>08:00–20:00</dd><dt>Kamis</dt><dd>08:00–20:00</dd><dt>Jumat</dt><dd>08:00–20:00</dd><dt class="font-semibold text-slate-900">Sabtu</dt><dd>08:00–20:00</dd><dt>Minggu</dt><dd>08:00–20:00</dd>        </dl>
+        <div class="doc-aksi"><a href="login.html" class="btn btn-soft w-full">Buat Janji</a></div>
+      </article>
+      </div>
+</section>
+
+<section id="layanan" class="max-w-6xl mx-auto px-5 py-14">
+  <h2 class="pub-h2">Layanan Kami</h2>
+  <p class="text-slate-600 mt-1">Layanan kesehatan yang tersedia di RS USHI.</p>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="12" r="2"/></svg></div><b class="block text-[#0F172A]">Rawat Jalan</b><p class="text-sm text-slate-600 mt-1">Poliklinik Umum, Penyakit Dalam, Anak, Bedah, dan Kandungan dengan jadwal praktik dokter setiap hari.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg></div><b class="block text-[#0F172A]">IGD 24 Jam</b><p class="text-sm text-slate-600 mt-1">Penanganan gawat darurat 24 jam setiap hari, termasuk hari Minggu dan hari libur nasional.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V8M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></svg></div><b class="block text-[#0F172A]">Rawat Inap</b><p class="text-sm text-slate-600 mt-1">Kamar VIP, Kelas I, II, III, ICU, dan ruang isolasi dengan perawatan perawat 24 jam.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg></div><b class="block text-[#0F172A]">Laboratorium</b><p class="text-sm text-slate-600 mt-1">Pemeriksaan darah, urine, dan kimia klinik. Hasil diperiksa oleh dokter spesialis patologi klinik.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 7v10M9 9h6M9 12h6M9 15h6"/></svg></div><b class="block text-[#0F172A]">Radiologi</b><p class="text-sm text-slate-600 mt-1">Pemeriksaan rontgen (X-Ray), USG, CT Scan, dan MRI. Hasil dibaca oleh dokter spesialis radiologi.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="m9.5 9.5 5 5"/></svg></div><b class="block text-[#0F172A]">Farmasi</b><p class="text-sm text-slate-600 mt-1">Pelayanan resep dokter disertai penjelasan cara dan waktu minum obat oleh apoteker.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><b class="block text-[#0F172A]">BPJS &amp; Asuransi</b><p class="text-sm text-slate-600 mt-1">Menerima BPJS Kesehatan, asuransi rekanan, dan pasien umum. Bayar tunai, debit, QRIS, atau transfer.</p></div>
+          <div class="svc"><div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></div><b class="block text-[#0F172A]">Janji Temu Online</b><p class="text-sm text-slate-600 mt-1">Pilih dokter, tanggal, dan jam kunjungan dari rumah, lalu datang sesuai jadwal.</p></div>
+      </div>
+</section>
+
+<section id="poliklinik" class="bg-[#F8FAFC] py-14">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="pub-h2">Poliklinik &amp; Unit</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+              <div class="svc flex items-center justify-between"><div><b class="text-[#0F172A]">Poli Umum</b><div class="text-sm text-slate-500">Lantai 1, Gedung A</div></div><span class="badge badge-green">Buka</span></div>
+              <div class="svc flex items-center justify-between"><div><b class="text-[#0F172A]">Poli Penyakit Dalam</b><div class="text-sm text-slate-500">Lantai 2, Gedung A</div></div><span class="badge badge-green">Buka</span></div>
+              <div class="svc flex items-center justify-between"><div><b class="text-[#0F172A]">Poli Anak</b><div class="text-sm text-slate-500">Lantai 2, Gedung A</div></div><span class="badge badge-green">Buka</span></div>
+              <div class="svc flex items-center justify-between"><div><b class="text-[#0F172A]">Poli Bedah</b><div class="text-sm text-slate-500">Lantai 3, Gedung A</div></div><span class="badge badge-green">Buka</span></div>
+              <div class="svc flex items-center justify-between"><div><b class="text-[#0F172A]">Poli Kandungan</b><div class="text-sm text-slate-500">Lantai 3, Gedung A</div></div><span class="badge badge-green">Buka</span></div>
+              <div class="svc flex items-center justify-between"><div><b class="text-[#0F172A]">Instalasi Gawat Darurat</b><div class="text-sm text-slate-500">Lantai 1, Gedung B</div></div><span class="badge badge-green">Buka</span></div>
+          </div>
+  </div>
+</section>
+
+
+
+<section id="alur" class="bg-[#F1F5F9] border-y border-slate-200 py-14">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="pub-h2">Cara Berobat di RS USHI</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-6">
+              <div class="rounded-xl bg-white border border-slate-200 p-5"><span class="inline-flex w-9 h-9 rounded-full bg-[#004C6D] text-white font-semibold items-center justify-center">1</span><p class="mt-3 text-[15px] text-slate-700">Daftar di loket atau buat appointment</p></div>
+              <div class="rounded-xl bg-white border border-slate-200 p-5"><span class="inline-flex w-9 h-9 rounded-full bg-[#004C6D] text-white font-semibold items-center justify-center">2</span><p class="mt-3 text-[15px] text-slate-700">Pengkajian awal oleh perawat</p></div>
+              <div class="rounded-xl bg-white border border-slate-200 p-5"><span class="inline-flex w-9 h-9 rounded-full bg-[#004C6D] text-white font-semibold items-center justify-center">3</span><p class="mt-3 text-[15px] text-slate-700">Pemeriksaan oleh dokter</p></div>
+              <div class="rounded-xl bg-white border border-slate-200 p-5"><span class="inline-flex w-9 h-9 rounded-full bg-[#004C6D] text-white font-semibold items-center justify-center">4</span><p class="mt-3 text-[15px] text-slate-700">Ambil obat / pemeriksaan penunjang</p></div>
+              <div class="rounded-xl bg-white border border-slate-200 p-5"><span class="inline-flex w-9 h-9 rounded-full bg-[#004C6D] text-white font-semibold items-center justify-center">5</span><p class="mt-3 text-[15px] text-slate-700">Pembayaran di kasir</p></div>
+          </div>
+    <div class="mt-5 rounded-xl bg-white border border-slate-200 border-l-4 border-l-[#5B9B3C] text-slate-800 p-5 flex flex-wrap items-center gap-4">
+      <div class="flex-1 min-w-[240px]"><b class="text-[#004C6D]">Sudah pernah berobat di RS USHI? Buat janji temu dari rumah.</b>
+        <p class="text-sm text-slate-600 mt-1">Buat akun pasien dengan NIK, tanggal lahir, dan nomor HP, lalu pilih dokter, tanggal, dan jam praktik yang masih kosong.</p></div>
+      <a href="daftar.html" class="btn btn-primary">Daftar Akun Pasien</a><a href="login.html" class="btn btn-secondary">Masuk</a>
+    </div>
+  </div>
+</section>
+
+<section id="info" class="max-w-6xl mx-auto px-5 py-14">
+  <h2 class="pub-h2">Informasi Pasien</h2>
+  <p class="text-slate-600 mt-1">Hal yang perlu disiapkan sebelum berobat dan berkunjung. Klik atau arahkan kursor ke kotak untuk melihat rinciannya.</p>
+  <div class="grid md:grid-cols-3 gap-4 mt-6">
+    <div class="flip" tabindex="0" role="button" aria-pressed="false" aria-label="Persyaratan Berobat: klik untuk melihat rincian">
+      <div class="flip-in">
+        <div class="flip-face flip-front">
+          <span class="flip-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></span>
+          <h3>Persyaratan Berobat</h3>
+          <p>Dokumen yang perlu dibawa: pasien umum, BPJS Kesehatan, asuransi, dan pasien lama.</p>
+          <span class="flip-hint">Lihat rincian &rarr;</span>
+        </div>
+        <div class="flip-face flip-back info-card">
+          <h3>Persyaratan Berobat</h3>
+      <ul>
+        <li><b>Pasien umum:</b> KTP / KK (NIK 16 digit). Anak: KK atau akta kelahiran.</li>
+        <li><b>Pasien BPJS Kesehatan:</b> kartu BPJS / KIS aktif dan surat rujukan dari faskes tingkat pertama (Puskesmas / klinik).</li>
+        <li><b>Pasien asuransi:</b> kartu asuransi dan KTP pemegang polis.</li>
+        <li><b>Pasien lama:</b> cukup sebutkan No. Rekam Medis atau tunjukkan kartu berobat.</li>
+      </ul>
+          <span class="flip-hint">&larr; Ketuk lagi untuk kembali</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip" tabindex="0" role="button" aria-pressed="false" aria-label="Alur Pasien BPJS Kesehatan: klik untuk melihat rincian">
+      <div class="flip-in">
+        <div class="flip-face flip-front">
+          <span class="flip-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h10"/><path d="m16 4 2 2-2 2M16 16l2 2-2 2"/></svg></span>
+          <h3>Alur Pasien BPJS Kesehatan</h3>
+          <p>Langkah berobat dengan BPJS Kesehatan, dari rujukan faskes pertama sampai pemeriksaan.</p>
+          <span class="flip-hint">Lihat rincian &rarr;</span>
+        </div>
+        <div class="flip-face flip-back info-card">
+          <h3>Alur Pasien BPJS Kesehatan</h3>
+      <ol>
+        <li>Minta surat rujukan di faskes tingkat pertama sesuai kartu BPJS.</li>
+        <li>Daftar di loket pendaftaran dengan kartu BPJS / KIS dan rujukan.</li>
+        <li>Petugas memeriksa kepesertaan dan menerbitkan SEP.</li>
+        <li>Pemeriksaan di poliklinik sesuai rujukan.</li>
+      </ol>
+      <p class="info-note">Keadaan gawat darurat dapat langsung ke IGD tanpa surat rujukan.</p>
+          <span class="flip-hint">&larr; Ketuk lagi untuk kembali</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip" tabindex="0" role="button" aria-pressed="false" aria-label="Jam Besuk Rawat Inap: klik untuk melihat rincian">
+      <div class="flip-in">
+        <div class="flip-face flip-front">
+          <span class="flip-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Jam Besuk Rawat Inap</h3>
+          <p>Waktu kunjungan pasien rawat inap dan ketentuan bagi pengunjung.</p>
+          <span class="flip-hint">Lihat rincian &rarr;</span>
+        </div>
+        <div class="flip-face flip-back info-card">
+          <h3>Jam Besuk Rawat Inap</h3>
+      <dl class="doc-jadwal" style="grid-template-columns:90px 1fr"><dt>Siang</dt><dd>11.00–13.00</dd><dt>Sore</dt><dd>17.00–20.00</dd><dt>ICU</dt><dd style="font-family:inherit;font-size:14px">sesuai arahan perawat jaga</dd></dl>
+      <ul class="mt-3">
+        <li>Maksimal 2 pengunjung per pasien secara bergantian.</li>
+        <li>Anak di bawah 12 tahun tidak dianjurkan berkunjung.</li>
+        <li>Jaga kebersihan tangan sebelum dan sesudah berkunjung.</li>
+      </ul>
+          <span class="flip-hint">&larr; Ketuk lagi untuk kembali</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak" class="bg-[#004C6D] text-white">
+  <div class="max-w-6xl mx-auto px-5 pt-12 pb-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-3"><img src="assets/logo.png" alt="" class="w-12 h-12 rounded-full bg-white p-0.5"><div><b class="block text-lg leading-tight">RS USHI</b><span class="text-sm text-white/80">Rumah Sakit Untuk Semua Hari Ini</span></div></div>
+      <p class="text-sm text-white/80 mt-4">Melayani pasien umum, BPJS Kesehatan, dan asuransi. IGD buka 24 jam setiap hari.</p>
+    </div>
+    <div>
+      <h3 class="foot-h">Alamat</h3>
+      <p class="foot-t">Jl. Kesehatan Raya No. 1, Tebet, Jakarta Selatan 12810</p>
+    </div>
+    <div>
+      <h3 class="foot-h">Kontak</h3>
+      <dl class="foot-kv"><dt>Pendaftaran</dt><dd>(021) 555-0101</dd><dt>IGD 24 jam</dt><dd>(021) 555-0119</dd><dt>Email</dt><dd>info@rsushi.id</dd></dl>
+    </div>
+    <div>
+      <h3 class="foot-h">Tautan</h3>
+      <ul class="foot-t space-y-1.5">
+        <li><a href="#dokter" class="hover:underline">Cari Dokter</a></li>
+        <li><a href="login.html" class="hover:underline">Buat Janji Temu</a></li>
+        <li><a href="daftar.html" class="hover:underline">Daftar Akun Pasien</a></li>
+        <li><a href="#info" class="hover:underline">Informasi Pasien</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 pb-8">
+    <h3 class="foot-h">Penjamin yang diterima</h3>
+    <div class="flex flex-wrap gap-2"><span class="foot-chip">Pasien Umum / Pribadi</span><span class="foot-chip">BPJS Kesehatan</span><span class="foot-chip">Prudential</span><span class="foot-chip">Mandiri Inhealth</span><span class="foot-chip">Allianz</span></div>
+  </div>
+  <div class="border-t border-white/20">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex flex-wrap items-center justify-between gap-3 text-sm text-white/85">
+      <span>&copy; 2026 Rumah Sakit Untuk Semua Hari Ini · SIMRS Kelompok 10</span>
+      <span class="flex gap-5"><a href="login.html" class="hover:underline">Masuk</a><a href="daftar.html" class="hover:underline">Daftar Akun Pasien</a></span>
+    </div>
+    <p class="max-w-6xl mx-auto px-5 pb-4 text-[12.5px] text-white/75">Website ini dibuat untuk tugas mata kuliah Sistem Informasi Kesehatan. Nama rumah sakit, alamat, nomor telepon, dokter, dan data pasien bersifat fiktif. Dalam keadaan darurat hubungi <b class="text-white">119</b> atau IGD rumah sakit terdekat.</p>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.flip').forEach(function (k) {
+  function balik() { var on = k.classList.toggle('is-flipped'); k.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  k.addEventListener('click', function () { if (!matchMedia('(hover: hover)').matches) balik(); });   // HP/tablet: ketuk; laptop: arahkan kursor
+  k.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); balik(); } });
+});
+</script>
+<script>window.DEMO_ROOT=""</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Akun Pasien · RS USHI</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="min-h-screen bg-[#F1F5F9] flex items-center justify-center p-4">
+<div class="w-full max-w-5xl grid lg:grid-cols-2 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+  <div class="bg-[#004C6D] text-white p-8 lg:p-10 flex flex-col">
+    <a href="index.html" class="inline-flex items-center gap-3">
+      <img src="assets/logo.png" class="w-14 h-14 rounded-full bg-white p-1" alt="Logo RS USHI">
+      <div><b class="block text-xl">RS USHI</b><span class="text-white/85 text-sm">Rumah Sakit Untuk Semua Hari Ini</span></div>
+    </a>
+    <h1 class="text-[26px] font-bold leading-tight mt-10">Akun Pasien</h1>
+    <p class="text-white/85 mt-3 text-[15px]">Buat janji temu dokter dari rumah, lihat hasil laboratorium dan radiologi yang sudah divalidasi dokter, riwayat berobat, dan tagihan Anda.</p>
+    <div class="mt-6 rounded-xl bg-white/10 border border-white/20 p-4 text-[14px] space-y-2">
+      <b class="block">Syarat membuat akun</b>
+      <div>1. Sudah pernah berobat di RS USHI (data Anda sudah tercatat di rumah sakit).</div>
+      <div>2. Menyiapkan <b>NIK</b> (16 digit, sesuai KTP/KK), <b>tanggal lahir</b>, dan <b>nomor HP</b> yang Anda berikan saat mendaftar di loket.</div>
+      <div>3. Belum pernah berobat? Datang ke loket pendaftaran dengan membawa KTP untuk pendaftaran pertama.</div>
+    </div>
+    <div class="mt-auto pt-10"><div class="pt-6 text-sm text-white/85 border-t border-white/20">
+      IGD 24 jam: <b class="text-white">(021) 555-0119</b><br>
+      <a href="index.html" class="inline-block mt-2 underline text-white">&larr; Kembali ke halaman utama</a>
+    </div></div>
+  </div>
+
+  <div class="p-8 lg:p-10">
+    <h2 class="text-[22px] font-bold text-slate-900">Daftar Akun Pasien</h2>
+    <p class="text-sm text-slate-600 mt-1 mb-6">Identitas Anda dicocokkan dengan data rekam medis rumah sakit.</p>
+        <form method="post" autocomplete="off" novalidate>
+      <input type="hidden" name="_csrf" value="44057a240e5fc0bead60d7869b1331a0">      <div class="section-label mt-0">1. Verifikasi identitas</div>
+            <div class="form-grid">
+        <div class="field"><label for="nik">NIK <span class="req">*</span></label>
+          <input id="nik" name="nik" value="" data-digits="16" inputmode="numeric" placeholder="16 digit" class=""></div>
+        <div class="field"><label for="tanggal_lahir">Tanggal lahir <span class="req">*</span></label>
+          <input id="tanggal_lahir" type="date" name="tanggal_lahir" value="" max="2026-10-31" class=""></div>
+      </div>
+      <div class="field"><label for="no_hp">Nomor HP terdaftar <span class="req">*</span></label>
+        <input id="no_hp" name="no_hp" value="" data-hp inputmode="tel" placeholder="contoh: 081234567890" maxlength="15" class="">        <p class="hint">Nomor yang Anda berikan saat mendaftar di loket rumah sakit.</p></div>
+      <div class="section-label">2. Buat akun</div>
+      <div class="field"><label for="username">Username <span class="req">*</span></label>
+        <input id="username" name="username" value="" placeholder="contoh: rina.k88" maxlength="50" class=""></div>
+      <div class="form-grid">
+        <div class="field"><label for="password">Password <span class="req">*</span></label>
+          <input id="password" type="password" name="password" placeholder="min. 8, huruf + angka" class=""></div>
+        <div class="field"><label for="password2">Ulangi password <span class="req">*</span></label>
+          <input id="password2" type="password" name="password2" class=""></div>
+      </div>
+      <label class="flex gap-2 items-start text-xs text-slate-600 mt-1"><input type="checkbox" name="setuju" value="1" class="mt-0.5" >
+        <span>Saya adalah pasien yang bersangkutan / wali sah, dan menyetujui data rekam medis saya ditampilkan di akun pasien sesuai UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</span></label>
+            <button class="btn btn-primary w-full mt-4" style="padding:12px">Buat Akun Pasien</button>
+    </form>
+    <div class="mt-6 pt-4 border-t border-slate-200 text-center text-sm text-slate-600">Sudah punya akun? <a href="login.html" class="text-[#0b7896] font-semibold hover:underline">Masuk</a></div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+<script>window.DEMO_ROOT=''</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

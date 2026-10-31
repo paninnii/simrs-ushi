@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antrean Rawat Jalan · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="rawat_jalan-antrian.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                    <details class="side-sec" open>
+            <summary class="side-group"><span>Administrasi Pasien</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="registrasi-pasien.html" class="side-link">Data Pasien</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Pelayanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="rawat_jalan-antrian.html" class="side-link active">Rawat Jalan (Poliklinik)</a>
+                            <a href="igd-igd.html" class="side-link">Gawat Darurat (IGD)</a>
+                            <a href="rawat_inap-ranap.html" class="side-link">Rawat Inap &amp; Bed</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Klinis</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="emr-emr.html" class="side-link">Rekam Medis (EMR)</a>
+                            <a href="cpoe-cpoe.html" class="side-link">Order Klinis (CPOE)</a>
+                            <a href="keperawatan-keperawatan.html" class="side-link">Asuhan Keperawatan</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Penunjang</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="lab-lab.html" class="side-link">Laboratorium</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Logistik</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="inventori-inventori.html" class="side-link">Gudang &amp; Persediaan</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Antrean Rawat Jalan</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bubble">5</span></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                                    <a href="rawat_jalan-antrian.html" class="notif-item"><span>Pasien menunggu pengkajian</span><span class="notif-n">2<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                        <a href="igd-igd.html" class="notif-item"><span>Pasien IGD belum triase</span><span class="notif-n">1<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                        <a href="cpoe-cpoe__jenis-tindakan.html" class="notif-item"><span>Order tindakan belum dikerjakan</span><span class="notif-n">2<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                    <p class="text-xs text-slate-500 mt-2">Klik untuk membuka halaman terkait.</p>            </div>
+        </details>
+        <div class="avatar">SN</div>
+        <div class="identity hidden sm:block"><b>Ns. Siti Nurhaliza, S.Kep.</b><small>Perawat</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Antrean Rawat Jalan</h1>
+            <p>Pengkajian awal perawat sebelum pasien diperiksa dokter.</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+                        <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <div class="metrics"><div class="metric metric-teal"><span>Total Pasien</span><strong>8</strong></div><div class="metric metric-amber"><span>Menunggu Pengkajian</span><strong>2</strong></div><div class="metric metric-purple"><span>Siap Diperiksa Dokter</span><strong>1</strong></div><div class="metric metric-green"><span>Selesai</span><strong>5</strong></div></div><div class="card"><div class="card-head"><h3>Antrean 31 Okt 2026</h3>
+  <form method="get" class="flex gap-2 flex-wrap">
+    <select name="poli" class="input" style="width:auto" onchange="this.form.submit()"><option value="">Semua poli</option><option value="1">Poli Umum</option><option value="2">Poli Penyakit Dalam</option><option value="3">Poli Anak</option><option value="4">Poli Bedah</option><option value="5">Poli Kandungan</option></select>    <input type="date" name="tanggal" value="2026-10-31" class="input" style="width:auto" onchange="this.form.submit()">
+    <input data-filter="tblAntrian" class="input" style="width:180px" placeholder="Cari nama / RM"></form></div>
+  <div class="tbl-wrap"><table class="tbl" id="tblAntrian"><thead><tr><th>No.</th><th>Pasien</th><th>Poli / DPJP</th><th>Penjamin</th><th>Status / Tahap</th><th class="num">Tindakan</th></tr></thead><tbody>
+        <tr><td class="mono font-bold text-[#004c6d] text-base">B-002</td>
+      <td><b class="pname">Rina Kurniawati</b><div class="muted">RM-2026-000011 · Perempuan · 38 th</div>
+        </td>
+      <td>Poli Penyakit Dalam<div class="muted">dr. Aditya Pranata, Sp.PD</div></td>
+      <td>BPJS Kesehatan</td>
+      <td><span class="badge badge-amber">Siap Diperiksa</span><div class="muted">Pengkajian selesai · menunggu dokter · TD 154/96, S 36.5</div>
+        </td>
+      <td class="num">
+                  <a class="btn btn-secondary btn-sm" href="rawat_jalan-pengkajian__id-2.html">Ubah Pengkajian</a>
+                                      </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">B-001</td>
+      <td><b class="pname">Rizal Hidayat</b><div class="muted">RM-2026-000006 · Laki-laki · 35 th</div>
+        </td>
+      <td>Poli Penyakit Dalam<div class="muted">dr. Aditya Pranata, Sp.PD</div></td>
+      <td>Mandiri Inhealth</td>
+      <td><span class="badge badge-amber">Menunggu</span><div class="muted">Menunggu pengkajian perawat</div>
+        </td>
+      <td class="num">
+                  <a class="btn btn-primary btn-sm" href="rawat_jalan-pengkajian__id-1.html">Pengkajian Awal</a>
+                                      </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">C-003</td>
+      <td><b class="pname">Kevin Pratama</b><div class="muted">RM-2026-000014 · Laki-laki · 10 th</div>
+        </td>
+      <td>Poli Anak<div class="muted">dr. Clarissa Wijaya, Sp.A</div></td>
+      <td>BPJS Kesehatan</td>
+      <td><span class="badge badge-amber">Menunggu</span><div class="muted">Menunggu pengkajian perawat</div>
+        </td>
+      <td class="num">
+                  <a class="btn btn-primary btn-sm" href="rawat_jalan-pengkajian__id-3.html">Pengkajian Awal</a>
+                                      </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">A-001</td>
+      <td><b class="pname">Budi Santoso</b><div class="muted">RM-2026-000015 · Laki-laki · 41 th</div>
+        </td>
+      <td>Poli Umum<div class="muted">dr. Rendi Saputra</div></td>
+      <td>Pasien Umum / Pribadi</td>
+      <td><span class="badge badge-green">Selesai</span><div class="muted">Pemeriksaan selesai · TD 118/76, S 36.9</div>
+         <span class="muted">EMR Final · J00</span></td>
+      <td class="num">
+                        <a class="btn btn-secondary btn-sm" href="emr-emr__id-8.html">Lihat EMR</a>              </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">B-003</td>
+      <td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009 · Perempuan · 52 th</div>
+        <span class="badge badge-red mt-1">Alergi Sulfonamid</span></td>
+      <td>Poli Penyakit Dalam<div class="muted">dr. Aditya Pranata, Sp.PD</div></td>
+      <td>Prudential</td>
+      <td><span class="badge badge-green">Selesai</span><div class="muted">Pemeriksaan selesai · TD 148/92, S 36.5</div>
+         <span class="muted">EMR Final · I10</span></td>
+      <td class="num">
+                        <a class="btn btn-secondary btn-sm" href="emr-emr__id-7.html">Lihat EMR</a>              </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">C-001</td>
+      <td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003 · Perempuan · 6 th</div>
+        </td>
+      <td>Poli Anak<div class="muted">dr. Clarissa Wijaya, Sp.A</div></td>
+      <td>BPJS Kesehatan</td>
+      <td><span class="badge badge-green">Selesai</span><div class="muted">Pemeriksaan selesai · TD 98/62, S 38.2</div>
+         <span class="muted">EMR Draft · R50.9</span></td>
+      <td class="num">
+                        <a class="btn btn-secondary btn-sm" href="emr-emr__id-4.html">Lihat EMR</a>              </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">C-002</td>
+      <td><b class="pname">Daffa Pratama</b><div class="muted">RM-2026-000008 · Laki-laki · 14 th</div>
+        </td>
+      <td>Poli Anak<div class="muted">dr. Clarissa Wijaya, Sp.A</div></td>
+      <td>BPJS Kesehatan</td>
+      <td><span class="badge badge-green">Selesai</span><div class="muted">Pemeriksaan selesai · TD 104/68, S 36.6</div>
+         <span class="muted">EMR Final · D50.9</span></td>
+      <td class="num">
+                        <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Lihat EMR</a>              </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d] text-base">D-001</td>
+      <td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007 · Perempuan · 31 th</div>
+        </td>
+      <td>Poli Bedah<div class="muted">dr. Bagus Santoso, Sp.B</div></td>
+      <td>Pasien Umum / Pribadi</td>
+      <td><span class="badge badge-green">Selesai</span><div class="muted">Pemeriksaan selesai · TD 118/74, S 36.8</div>
+         <span class="muted">EMR Final · K80.2</span></td>
+      <td class="num">
+                        <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Lihat EMR</a>              </td></tr>
+    </tbody></table></div></div>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

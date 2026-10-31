@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Obat &amp; Alat Kesehatan · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="dashboard.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                        <a href="dashboard.html" class="side-home">Dashboard</a>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Sistem</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="auth-pengguna.html" class="side-link">Akun Pengguna</a>
+                            <a href="auth-hak_akses.html" class="side-link">Hak Akses</a>
+                            <a href="auth-audit.html" class="side-link">Audit Log</a>
+                            <a href="master-pengaturan.html" class="side-link">Konfigurasi RS</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Kepegawaian</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="master-pegawai__jenis-dokter.html" class="side-link">Data Dokter</a>
+                            <a href="master-pegawai__jenis-perawat.html" class="side-link">Data Perawat</a>
+                            <a href="master-pegawai__jenis-penunjang.html" class="side-link">Tenaga Penunjang Medis</a>
+                            <a href="master-pegawai__jenis-staf.html" class="side-link">Staf &amp; Manajemen</a>
+                            <a href="master-jadwal_dokter.html" class="side-link">Jadwal Praktik Dokter</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Data Layanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="master-poliklinik.html" class="side-link">Poliklinik</a>
+                            <a href="master-kamar.html" class="side-link">Kamar &amp; Bed</a>
+                            <a href="master-tarif.html" class="side-link">Tarif Layanan</a>
+                            <a href="master-penjamin.html" class="side-link">Penjamin / Asuransi</a>
+                            <a href="master-icd10.html" class="side-link">Diagnosis ICD-10</a>
+                            <a href="master-obat.html" class="side-link active">Obat &amp; Alkes</a>
+                            <a href="master-jenis_lab.html" class="side-link">Pemeriksaan Lab</a>
+                            <a href="master-jenis_radiologi.html" class="side-link">Pemeriksaan Radiologi</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Manajemen</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="laporan-laporan.html" class="side-link">Laporan &amp; Indikator</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Logistik</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="inventori-inventori.html" class="side-link">Gudang &amp; Persediaan</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Data Obat &amp; Alat Kesehatan</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                <p class="text-slate-500 text-sm">Tidak ada tugas yang menunggu.</p>
+                                            </div>
+        </details>
+        <div class="avatar">RF</div>
+        <div class="identity hidden sm:block"><b>Rizky Firmansyah, S.Kom.</b><small>Administrator SIMRS</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Data Obat &amp; Alat Kesehatan</h1>
+            <p>Formularium RS. Stok bertambah lewat penerimaan barang (Gudang) dan berkurang saat dispensing (Farmasi).</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+            <a href="master-obat__form-baru.html" class="btn btn-primary">+ Tambah Obat &amp; Alkes</a>            <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+        <div class="card mb-4" id="form">
+      <div class="card-head"><h3>Ubah Obat &amp; Alkes</h3></div>
+      <form method="post" class="card-body">
+        <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec">        <input type="hidden" name="aksi" value="simpan">
+        <input type="hidden" name="_id" value="22">
+                <div class="form-grid">
+                  <div class="field">
+                          <label for="f_kode">Kode <span class="req">*</span></label>
+                              <input id="f_kode" name="kode" value="ALK-003" class=""
+                       type="text"
+                       maxlength="20"                                                                      placeholder=""  required>
+                                                                </div>
+                  <div class="field">
+                          <label for="f_nama_obat">Nama Obat / Barang <span class="req">*</span></label>
+                              <input id="f_nama_obat" name="nama_obat" value="Kasa Steril 16x16 cm" class=""
+                       type="text"
+                       maxlength="150"                                                                      placeholder=""  required>
+                                                                </div>
+                  <div class="field">
+                          <label for="f_kategori">Kategori <span class="req">*</span></label>
+                              <select id="f_kategori" name="kategori" class=""><option value="">-- Pilih --</option><option value="Obat">Obat</option><option value="Alkes/BHP" selected>Alkes / BHP</option></select>
+                                                                </div>
+                  <div class="field">
+                          <label for="f_satuan">Satuan <span class="req">*</span></label>
+                              <input id="f_satuan" name="satuan" value="pack" class=""
+                       type="text"
+                       maxlength="30"                                                                      placeholder="tablet, botol, vial, box"  required>
+                                                                </div>
+                  <div class="field">
+                          <label for="f_harga_satuan">Harga per Satuan (Rp) <span class="req">*</span></label>
+                              <input id="f_harga_satuan" name="harga_satuan" value="6000" class=""
+                       type="number"
+                                              min="0" max="100000000"                       step="100"                       placeholder=""  required>
+                                                                </div>
+                  <div class="field">
+                          <label for="f_stok_minimum">Stok Minimum <span class="req">*</span></label>
+                              <input id="f_stok_minimum" name="stok_minimum" value="50" class=""
+                       type="number"
+                                              min="0" max="100000"                       step="1"                       placeholder=""  required>
+                            <p class="hint">Di bawah angka ini muncul peringatan stok menipis.</p>                                    </div>
+                  <div class="field">
+                          <label class="lbl">&nbsp;</label>
+              <label class="inline-flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="high_alert" value="1" > High Alert</label>
+                      </div>
+                  <div class="field">
+                          <label class="lbl">&nbsp;</label>
+              <label class="inline-flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="lasa" value="1" > LASA (mirip nama/rupa)</label>
+                      </div>
+                  <div class="field">
+                          <label class="lbl">&nbsp;</label>
+              <label class="inline-flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="aktif" value="1" checked> Status Aktif</label>
+                      </div>
+                </div>
+        <div class="flex gap-2 mt-2">
+          <button class="btn btn-primary">Simpan</button>
+          <a href="master-obat.html" class="btn btn-secondary">Batal</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="card">
+      <div class="card-head">
+        <h3>Daftar Obat &amp; Alkes <span class="muted">(24 data)</span></h3>
+        <form method="get" class="flex gap-2 flex-wrap">
+                      <select name="kategori" class="input" style="width:auto" onchange="this.form.submit()"><option value="">Semua kategori</option><option value="Obat">Obat</option><option value="Alkes/BHP">Alkes/BHP</option></select>
+                    <input name="q" value="" class="input" style="width:220px" placeholder="Cari..."><button class="btn btn-secondary">Cari</button>        </form>
+      </div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr>
+          <th>Kode</th><th>Nama Obat / Barang</th><th>Kategori</th><th>Satuan</th><th class="num">Harga per Satuan (Rp)</th><th class="num">Stok Minimum</th><th>Status Aktif</th>          <th>Stok</th><th>Penanda</th>          <th class="num">Aksi</th>        </tr></thead>
+        <tbody>
+                          <tr class="row-hl">
+                      <td>ALK-003</td>
+                      <td class="pname">Kasa Steril 16x16 cm</td>
+                      <td>Alkes / BHP</td>
+                      <td>pack</td>
+                      <td class="num">Rp 6.000</td>
+                      <td class="num">50</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">150</b> pack</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="master-obat__edit-22.html">Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="22">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>ALK-002</td>
+                      <td class="pname">Sarung Tangan Medis Ukuran M</td>
+                      <td>Alkes / BHP</td>
+                      <td>box</td>
+                      <td class="num">Rp 55.000</td>
+                      <td class="num">100</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="text-red-700">65</b> box</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="master-obat__edit-21.html">Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="21">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>ALK-001</td>
+                      <td class="pname">Spuit 5 mL</td>
+                      <td>Alkes / BHP</td>
+                      <td>pcs</td>
+                      <td class="num">Rp 2.500</td>
+                      <td class="num">100</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">300</b> pcs</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="master-obat__edit-20.html">Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="20">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-003</td>
+                      <td class="pname">Amlodipine 10 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 1.200</td>
+                      <td class="num">80</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">260</b> tablet</td><td><span class="badge badge-purple">LASA</span></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="3">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-004</td>
+                      <td class="pname">Amlodipine 5 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 900</td>
+                      <td class="num">50</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">150</b> tablet</td><td><span class="badge badge-purple">LASA</span></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="4">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-002</td>
+                      <td class="pname">Amoxicillin 500 mg</td>
+                      <td>Obat</td>
+                      <td>kapsul</td>
+                      <td class="num">Rp 1.500</td>
+                      <td class="num">30</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="text-red-700">8</b> kapsul</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="2">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-011</td>
+                      <td class="pname">Antasida DOEN</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 400</td>
+                      <td class="num">50</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">200</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="11">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-015</td>
+                      <td class="pname">Asam Mefenamat 500 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 700</td>
+                      <td class="num">20</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">80</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="15">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-014</td>
+                      <td class="pname">Captopril 25 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 600</td>
+                      <td class="num">20</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="text-red-700">9</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="14">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-021</td>
+                      <td class="pname">Cefixime 100 mg</td>
+                      <td>Obat</td>
+                      <td>kapsul</td>
+                      <td class="num">Rp 3.500</td>
+                      <td class="num">40</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="text-red-700">0</b> kapsul</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="24">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-009</td>
+                      <td class="pname">Ceftriaxone 1 g injeksi</td>
+                      <td>Obat</td>
+                      <td>vial</td>
+                      <td class="num">Rp 18.000</td>
+                      <td class="num">40</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">120</b> vial</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="9">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-008</td>
+                      <td class="pname">Cetirizine 10 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 1.000</td>
+                      <td class="num">20</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="text-red-700">6</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="8">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-019</td>
+                      <td class="pname">Cotrimoxazole 480 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 600</td>
+                      <td class="num">30</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">100</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="19">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-016</td>
+                      <td class="pname">Furosemide 40 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 800</td>
+                      <td class="num">20</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">60</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="16">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-007</td>
+                      <td class="pname">Ibuprofen 400 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 900</td>
+                      <td class="num">30</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">90</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="7">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-012</td>
+                      <td class="pname">Infus NaCl 0,9% 500 mL</td>
+                      <td>Obat</td>
+                      <td>botol</td>
+                      <td class="num">Rp 15.000</td>
+                      <td class="num">50</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">84</b> botol</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="12">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-017</td>
+                      <td class="pname">Insulin Glargine 100 IU/mL pen</td>
+                      <td>Obat</td>
+                      <td>pen</td>
+                      <td class="num">Rp 185.000</td>
+                      <td class="num">5</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">12</b> pen</td><td><span class="badge badge-red">High Alert</span> </td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="17">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-018</td>
+                      <td class="pname">Kalium Klorida (KCl) 7,46% 25 mL</td>
+                      <td>Obat</td>
+                      <td>ampul</td>
+                      <td class="num">Rp 25.000</td>
+                      <td class="num">10</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">20</b> ampul</td><td><span class="badge badge-red">High Alert</span> </td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="18">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-005</td>
+                      <td class="pname">Metformin 500 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 800</td>
+                      <td class="num">80</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">300</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="5">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-006</td>
+                      <td class="pname">Omeprazole 20 mg</td>
+                      <td>Obat</td>
+                      <td>kapsul</td>
+                      <td class="num">Rp 2.000</td>
+                      <td class="num">40</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">120</b> kapsul</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="6">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-010</td>
+                      <td class="pname">Oralit</td>
+                      <td>Obat</td>
+                      <td>sachet</td>
+                      <td class="num">Rp 1.500</td>
+                      <td class="num">30</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">100</b> sachet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="10">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-001</td>
+                      <td class="pname">Paracetamol 500 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 500</td>
+                      <td class="num">100</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">420</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="1">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-013</td>
+                      <td class="pname">Paracetamol Sirup 120 mg/5 mL</td>
+                      <td>Obat</td>
+                      <td>botol</td>
+                      <td class="num">Rp 12.000</td>
+                      <td class="num">10</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="">25</b> botol</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="13">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                  <tr class="">
+                      <td>OBT-020</td>
+                      <td class="pname">Ranitidine 150 mg</td>
+                      <td>Obat</td>
+                      <td>tablet</td>
+                      <td class="num">Rp 800</td>
+                      <td class="num">50</td>
+                      <td><span class="badge badge-green">Aktif</span></td>
+                    <td><b class="text-red-700">0</b> tablet</td><td></td>                      <td class="num">
+              <a class="btn btn-secondary btn-sm" href="#" data-demo-off>Ubah</a>
+                            <form method="post" class="inline" data-confirm="Hapus data ini? Data yang sudah dipakai transaksi tidak bisa dihapus.">
+                <input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec"><input type="hidden" name="aksi" value="hapus"><input type="hidden" name="_id" value="23">
+                <button class="btn btn-danger btn-sm">Hapus</button>
+              </form>
+                          </td>
+                    </tr>
+                </tbody>
+      </table></div>
+    </div>
+    </main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

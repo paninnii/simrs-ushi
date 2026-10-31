@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendaftaran Pasien · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="registrasi-pendaftaran.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                    <details class="side-sec" open>
+            <summary class="side-group"><span>Administrasi Pasien</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="registrasi-pendaftaran.html" class="side-link active">Pendaftaran Pasien</a>
+                            <a href="registrasi-pasien.html" class="side-link">Data Pasien</a>
+                            <a href="jadwal-appointment.html" class="side-link">Jadwal &amp; Appointment</a>
+                            <a href="jadwal-praktik.html" class="side-link">Jadwal Praktik Dokter</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Pelayanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="igd-igd.html" class="side-link">Gawat Darurat (IGD)</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Pendaftaran Pasien</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bubble">2</span></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                                    <a href="jadwal-appointment__tanggal-2026-11-07.html" class="notif-item"><span>Appointment menunggu konfirmasi</span><span class="notif-n">2<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                    <p class="text-xs text-slate-500 mt-2">Klik untuk membuka halaman terkait.</p>            </div>
+        </details>
+        <div class="avatar">NP</div>
+        <div class="identity hidden sm:block"><b>Nadia Permata, A.Md.MIK</b><small>Petugas Registrasi</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Pendaftaran Pasien</h1>
+            <p>Identifikasi pasien baru/lama, penjamin, poli tujuan, dan nomor antrean.</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+                        <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <div class="metrics"><div class="metric metric-teal"><span>Kunjungan Hari Ini</span><strong>11</strong></div><div class="metric metric-amber"><span>Menunggu</span><strong>3</strong></div><div class="metric metric-purple"><span>Dalam Pelayanan</span><strong>2</strong></div><div class="metric metric-green"><span>Selesai</span><strong>6</strong></div><div class="metric metric-teal"><span>Total Pasien Terdaftar</span><strong>15</strong></div></div><div class="grid xl:grid-cols-5 gap-4">
+<div class="xl:col-span-3 space-y-4">
+  <div class="card"><div class="card-head"><h3>1. Cari Pasien Lama</h3><span class="muted">Wajib dicek dulu agar tidak terjadi No. RM ganda</span></div>
+    <div class="card-body"><form method="get" class="flex gap-2"><input name="cari" value="" class="input" placeholder="Nama, No. RM, NIK, atau No. BPJS"><button class="btn btn-primary">Cari</button><a href="registrasi-pendaftaran.html" class="btn btn-secondary">Reset</a></form>
+    </div></div>
+
+    <div class="card" id="form"><div class="card-head"><h3>2. Kunjungan Pasien Lama</h3><a href="registrasi-pendaftaran.html" class="btn btn-secondary btn-sm">Pasien baru</a></div>
+  <form method="post" class="card-body" autocomplete="off">
+    <input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="daftar"><input type="hidden" name="mode" value="lama">
+            
+          <div class="patient-banner"><div class="avatar avatar-lg">DL</div><div class="min-w-0"><div class="text-lg font-bold text-slate-900">Dewi Lestari</div><div class="text-sm text-slate-600">RM-2026-000013 · Perempuan · 36 th · Lahir 7 Sep 1990</div><div class="text-sm text-slate-600 mt-0.5">NIK 3173134709900013 · HP 081234560013</div></div><div class="ml-auto text-right"><span class="badge badge-red">Alergi: Cotrimoxazole</span></div></div>    
+    <div class="section-label">Tujuan pelayanan</div>
+    <div class="form-grid">
+      <div class="field"><label>Tujuan <span class="req">*</span></label><select name="tujuan" id="tujuan" class=""><option value="rawat_jalan" selected>Rawat Jalan (Poliklinik)</option><option value="igd">IGD (Gawat Darurat)</option></select></div>
+      <div class="field rj"><label>Poliklinik <span class="req">*</span></label><select name="id_poli" id="id_poli" class=""><option value="">-- Pilih poli --</option><option value="1">Poli Umum</option><option value="2">Poli Penyakit Dalam</option><option value="3">Poli Anak</option><option value="4">Poli Bedah</option><option value="5">Poli Kandungan</option></select></div>
+      <div class="field rj"><label for="regTanggal">Tanggal kunjungan <span class="req">*</span></label><input type="date" id="regTanggal" name="tanggal" value="2026-10-31" min="2026-10-31" max="2027-01-29" class=""><p class="hint">Hari ini = langsung dapat nomor antrean. Tanggal lain = dibuat sebagai janji temu.</p></div>
+      <div class="field rj"><label>Dokter (praktik hari <span id="lblHari">Sabtu</span>) <span class="req">*</span></label><select name="id_dokter" id="id_dokter" class=""></select></div>
+      <div class="field rj" style="grid-column:1/-1"><span class="lbl">Jam kunjungan <span class="req">*</span></span>
+        <input type="hidden" id="regDokterPoli">
+        <div data-slot-picker data-url="/jadwal/slot.php" data-dokter="#regDokterPoli" data-tanggal="#regTanggal" data-terpilih=""><p class="slot-msg">Pilih tanggal, poliklinik, dan dokter untuk melihat jam yang tersedia.</p></div>
+        </div>
+      <div class="field"><label>Penjamin <span class="req">*</span></label><select name="id_penjamin" id="id_penjamin"><option value="1" selected>Pasien Umum / Pribadi</option><option value="2">BPJS Kesehatan</option><option value="3">Prudential</option><option value="4">Mandiri Inhealth</option><option value="5">Allianz</option></select></div>
+      <div class="field" id="box_kartu"><label id="lbl_kartu">No. kartu penjamin</label><input name="no_kartu" value="" maxlength="30" class="" placeholder="BPJS: kosongkan untuk memakai no. BPJS pasien"></div>
+      <div class="field" style="grid-column:1/-1"><label>Keluhan awal <span class="req igd-only">*</span></label><input name="keluhan" value="" maxlength="255" class="" placeholder="contoh: Demam 3 hari"></div>
+    </div>
+    <div class="flex gap-2 mt-2"><button class="btn btn-success" style="padding:10px 18px">Simpan &amp; Buat Bukti Registrasi</button><button type="reset" class="btn btn-secondary">Reset</button></div>
+  </form></div>
+  </div>
+
+<div class="xl:col-span-2" id="antrean"><div class="card"><div class="card-head"><h3>Antrean Hari Ini</h3>
+  <form method="get"><select name="poli" class="input" style="width:auto" onchange="this.form.submit()"><option value="">Semua poli</option><option value="1">Poli Umum</option><option value="2">Poli Penyakit Dalam</option><option value="3">Poli Anak</option><option value="4">Poli Bedah</option><option value="5">Poli Kandungan</option><option value="6">Instalasi Gawat Darurat</option></select></form></div>
+  <div class="tbl-wrap"><table class="tbl"><thead><tr><th>No.</th><th>Pasien</th><th>Status</th><th></th></tr></thead><tbody>
+        <tr><td class="mono font-bold text-[#004c6d]">G-003</td>
+      <td><b>Budi Santoso</b><div class="muted">RM-2026-000004 · Instalasi Gawat Darurat</div><div class="muted">dr. Rendi Saputra · Prudential</div></td>
+      <td><span class="badge badge-green">Selesai</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="registrasi-pendaftaran__bukti-15.html">Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">G-002</td>
+      <td><b>Siti Aminah</b><div class="muted">RM-2026-000005 · Instalasi Gawat Darurat</div><div class="muted">dr. Rendi Saputra · BPJS Kesehatan</div></td>
+      <td><span class="badge badge-amber">Menunggu</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="registrasi-pendaftaran__bukti-10.html">Bukti</a>
+        <form method="post" class="inline" data-confirm="Batalkan kunjungan Siti Aminah?"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="10"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">G-001</td>
+      <td><b>Yusuf Maulana</b><div class="muted">RM-2026-000012 · Instalasi Gawat Darurat</div><div class="muted">dr. Rendi Saputra · BPJS Kesehatan</div></td>
+      <td><span class="badge badge-gray">Dalam Pelayanan</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="registrasi-pendaftaran__bukti-9.html">Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">A-001</td>
+      <td><b>Budi Santoso</b><div class="muted">RM-2026-000015 · Poli Umum</div><div class="muted">dr. Rendi Saputra · Pasien Umum / Pribadi</div></td>
+      <td><span class="badge badge-green">Selesai</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">B-003</td>
+      <td><b>Lina Marlina</b><div class="muted">RM-2026-000009 · Poli Penyakit Dalam</div><div class="muted">dr. Aditya Pranata, Sp.PD · Prudential</div></td>
+      <td><span class="badge badge-green">Selesai</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">D-001</td>
+      <td><b>Aulia Rahma</b><div class="muted">RM-2026-000007 · Poli Bedah</div><div class="muted">dr. Bagus Santoso, Sp.B · Pasien Umum / Pribadi</div></td>
+      <td><span class="badge badge-green">Selesai</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">C-002</td>
+      <td><b>Daffa Pratama</b><div class="muted">RM-2026-000008 · Poli Anak</div><div class="muted">dr. Clarissa Wijaya, Sp.A · BPJS Kesehatan</div></td>
+      <td><span class="badge badge-green">Selesai</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">C-001</td>
+      <td><b>Nur Sari</b><div class="muted">RM-2026-000003 · Poli Anak</div><div class="muted">dr. Clarissa Wijaya, Sp.A · BPJS Kesehatan</div></td>
+      <td><span class="badge badge-green">Selesai</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">C-003</td>
+      <td><b>Kevin Pratama</b><div class="muted">RM-2026-000014 · Poli Anak</div><div class="muted">dr. Clarissa Wijaya, Sp.A · BPJS Kesehatan</div></td>
+      <td><span class="badge badge-amber">Menunggu</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        <form method="post" class="inline" data-confirm="Batalkan kunjungan Kevin Pratama?"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="3"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">B-002</td>
+      <td><b>Rina Kurniawati</b><div class="muted">RM-2026-000011 · Poli Penyakit Dalam</div><div class="muted">dr. Aditya Pranata, Sp.PD · BPJS Kesehatan</div></td>
+      <td><span class="badge badge-gray">Dalam Pelayanan</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        </td></tr>
+      <tr><td class="mono font-bold text-[#004c6d]">B-001</td>
+      <td><b>Rizal Hidayat</b><div class="muted">RM-2026-000006 · Poli Penyakit Dalam</div><div class="muted">dr. Aditya Pranata, Sp.PD · Mandiri Inhealth</div></td>
+      <td><span class="badge badge-amber">Menunggu</span></td>
+      <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
+        <form method="post" class="inline" data-confirm="Batalkan kunjungan Rizal Hidayat?"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="1"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
+    </tbody></table></div></div></div>
+</div>
+<script>
+const DOKTER_HARI = {"1":{"Sabtu":{"5":"dr. Rendi Saputra (08:00-20:00)"},"Minggu":{"5":"dr. Rendi Saputra (08:00-20:00)"},"Senin":{"5":"dr. Rendi Saputra (08:00-20:00)"},"Selasa":{"5":"dr. Rendi Saputra (08:00-20:00)"},"Rabu":{"5":"dr. Rendi Saputra (08:00-20:00)"},"Kamis":{"5":"dr. Rendi Saputra (08:00-20:00)"},"Jumat":{"5":"dr. Rendi Saputra (08:00-20:00)"}},"2":{"Sabtu":{"1":"dr. Aditya Pranata, Sp.PD (08:00-12:00)"},"Minggu":[],"Senin":{"1":"dr. Aditya Pranata, Sp.PD (08:00-16:00)"},"Selasa":{"1":"dr. Aditya Pranata, Sp.PD (08:00-16:00)"},"Rabu":{"1":"dr. Aditya Pranata, Sp.PD (08:00-16:00)"},"Kamis":{"1":"dr. Aditya Pranata, Sp.PD (08:00-16:00)"},"Jumat":{"1":"dr. Aditya Pranata, Sp.PD (08:00-16:00)"}},"3":{"Sabtu":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"},"Minggu":[],"Senin":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"},"Selasa":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"},"Rabu":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"},"Kamis":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"},"Jumat":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"}},"4":{"Sabtu":[],"Minggu":[],"Senin":{"3":"dr. Bagus Santoso, Sp.B (10:00-14:00)"},"Selasa":[],"Rabu":{"3":"dr. Bagus Santoso, Sp.B (10:00-14:00)"},"Kamis":{"3":"dr. Bagus Santoso, Sp.B (10:00-14:00)"},"Jumat":{"3":"dr. Bagus Santoso, Sp.B (10:00-14:00)"}},"5":{"Sabtu":{"4":"dr. Maria Ulfa, Sp.OG (09:00-13:00)"},"Minggu":[],"Senin":[],"Selasa":{"4":"dr. Maria Ulfa, Sp.OG (09:00-13:00)"},"Rabu":[],"Kamis":{"4":"dr. Maria Ulfa, Sp.OG (09:00-13:00)"},"Jumat":[]},"6":{"Sabtu":{"3":"dr. Bagus Santoso, Sp.B (08:00-20:00)","5":"dr. Rendi Saputra (00:00-23:59)"},"Minggu":{"3":"dr. Bagus Santoso, Sp.B (08:00-20:00)","5":"dr. Rendi Saputra (00:00-23:59)"},"Senin":{"5":"dr. Rendi Saputra (00:00-23:59)"},"Selasa":{"5":"dr. Rendi Saputra (00:00-23:59)"},"Rabu":{"5":"dr. Rendi Saputra (00:00-23:59)"},"Kamis":{"5":"dr. Rendi Saputra (00:00-23:59)"},"Jumat":{"5":"dr. Rendi Saputra (00:00-23:59)"}}}, NAMA_HARI = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'], tglEl = document.getElementById('regTanggal');
+function hariDipilih() { const v = tglEl && tglEl.value ? new Date(tglEl.value + 'T00:00:00') : new Date(); return NAMA_HARI[v.getDay()]; }
+const DOKTER = {"1":{"5":"dr. Rendi Saputra (08:00-20:00)"},"2":{"1":"dr. Aditya Pranata, Sp.PD (08:00-12:00)"},"3":{"2":"dr. Clarissa Wijaya, Sp.A (08:30-12:30)"},"4":[],"5":{"4":"dr. Maria Ulfa, Sp.OG (09:00-13:00)"},"6":{"3":"dr. Bagus Santoso, Sp.B (08:00-20:00)","5":"dr. Rendi Saputra (00:00-23:59)"}}, TIPE = {"1":"Umum","2":"BPJS","3":"Asuransi","4":"Asuransi","5":"Asuransi"}, PILIH = "";
+const tujuan = document.getElementById('tujuan'), poli = document.getElementById('id_poli'), dok = document.getElementById('id_dokter'), pj = document.getElementById('id_penjamin');
+function isiDokter() {
+  if (!dok) return;
+  const d = (DOKTER_HARI[poli.value] || {})[hariDipilih()] || {}, lama = dok.value || PILIH;
+  const lh = document.getElementById('lblHari'); if (lh) lh.textContent = hariDipilih();
+  dok.innerHTML = '<option value="">' + (poli.value ? (Object.keys(d).length ? '-- Pilih dokter --' : 'Tidak ada dokter praktik pada hari ' + hariDipilih()) : '-- Pilih poli dulu --') + '</option>' +
+    Object.entries(d).map(([id, n]) => '<option value="' + id + '"' + (id === lama ? ' selected' : '') + '>' + n.replace(/</g, '&lt;') + '</option>').join('');
+}
+function aturTujuan() {
+  if (!tujuan) return;
+  document.querySelectorAll('.rj').forEach(e => e.style.display = tujuan.value === 'igd' ? 'none' : '');
+  document.querySelectorAll('.igd-only').forEach(e => e.style.display = tujuan.value === 'igd' ? '' : 'none');
+}
+function aturPenjamin() {
+  if (!pj) return;
+  const t = TIPE[pj.value];
+  document.getElementById('box_kartu').style.display = t === 'Umum' ? 'none' : '';
+  document.getElementById('lbl_kartu').textContent = t === 'BPJS' ? 'No. kartu BPJS (13 digit)' : 'No. polis / kartu asuransi *';
+}
+function aturJam() { const h = document.getElementById('regDokterPoli'); if (!h) return; h.value = dok.value && poli.value ? dok.value + '-' + poli.value : ''; h.dispatchEvent(new Event('change')); }
+poli && poli.addEventListener('change', isiDokter); poli && poli.addEventListener('change', aturJam);
+tglEl && tglEl.addEventListener('change', function () { isiDokter(); aturJam(); }); dok && dok.addEventListener('change', aturJam); tujuan && tujuan.addEventListener('change', aturTujuan); pj && pj.addEventListener('change', aturPenjamin);
+isiDokter(); aturTujuan(); aturPenjamin(); aturJam();
+</script>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

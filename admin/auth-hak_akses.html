@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hak Akses · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="dashboard.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                        <a href="dashboard.html" class="side-home">Dashboard</a>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Sistem</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="auth-pengguna.html" class="side-link">Akun Pengguna</a>
+                            <a href="auth-hak_akses.html" class="side-link active">Hak Akses</a>
+                            <a href="auth-audit.html" class="side-link">Audit Log</a>
+                            <a href="master-pengaturan.html" class="side-link">Konfigurasi RS</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Kepegawaian</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="master-pegawai__jenis-dokter.html" class="side-link">Data Dokter</a>
+                            <a href="master-pegawai__jenis-perawat.html" class="side-link">Data Perawat</a>
+                            <a href="master-pegawai__jenis-penunjang.html" class="side-link">Tenaga Penunjang Medis</a>
+                            <a href="master-pegawai__jenis-staf.html" class="side-link">Staf &amp; Manajemen</a>
+                            <a href="master-jadwal_dokter.html" class="side-link">Jadwal Praktik Dokter</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Data Layanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="master-poliklinik.html" class="side-link">Poliklinik</a>
+                            <a href="master-kamar.html" class="side-link">Kamar &amp; Bed</a>
+                            <a href="master-tarif.html" class="side-link">Tarif Layanan</a>
+                            <a href="master-penjamin.html" class="side-link">Penjamin / Asuransi</a>
+                            <a href="master-icd10.html" class="side-link">Diagnosis ICD-10</a>
+                            <a href="master-obat.html" class="side-link">Obat &amp; Alkes</a>
+                            <a href="master-jenis_lab.html" class="side-link">Pemeriksaan Lab</a>
+                            <a href="master-jenis_radiologi.html" class="side-link">Pemeriksaan Radiologi</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Manajemen</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="laporan-laporan.html" class="side-link">Laporan &amp; Indikator</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Logistik</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="inventori-inventori.html" class="side-link">Gudang &amp; Persediaan</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Hak Akses</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                <p class="text-slate-500 text-sm">Tidak ada tugas yang menunggu.</p>
+                                            </div>
+        </details>
+        <div class="avatar">RF</div>
+        <div class="identity hidden sm:block"><b>Rizky Firmansyah, S.Kom.</b><small>Administrator SIMRS</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Hak Akses</h1>
+            <p>Atur menu yang dapat dibuka setiap peran. Setiap peran hanya membuka menu sesuai tugasnya.</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+                        <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <div class="notice mb-4"><b>Lihat</b> = hanya dapat membuka dan membaca. <b>Ubah</b> = dapat menambah dan mengubah data. Di dalam setiap menu, langkah tertentu tetap dibatasi sesuai tugas, misalnya hanya dokter spesialis patologi klinik yang dapat menerbitkan hasil laboratorium.</div>
+<form method="post" class="card"><input type="hidden" name="_csrf" value="64934d69466e28043617c2e2f976e1ec">  <div class="card-head"><h3>Hak Akses per Peran</h3><button class="btn btn-primary">Simpan Hak Akses</button></div>
+  <div class="tbl-wrap"><table class="tbl" style="font-size:12px">
+    <thead><tr><th style="position:sticky;left:0;background:#f5f8fa;z-index:1">Peran</th>
+      <th title="Modul 1: Authentication &amp; User Management" style="text-align:center;white-space:normal;min-width:84px">Akun &amp; Hak Akses</th><th title="Modul 2: Patient Registration" style="text-align:center;white-space:normal;min-width:84px">Pendaftaran Pasien</th><th title="Modul 3: Electronic Medical Record" style="text-align:center;white-space:normal;min-width:84px">Rekam Medis</th><th title="Modul 4: CPOE (Order Management)" style="text-align:center;white-space:normal;min-width:84px">Order Klinis</th><th title="Modul 5: Outpatient (Rawat Jalan)" style="text-align:center;white-space:normal;min-width:84px">Rawat Jalan</th><th title="Modul 6: Inpatient (Rawat Inap)" style="text-align:center;white-space:normal;min-width:84px">Rawat Inap</th><th title="Modul 7: Emergency Department (IGD)" style="text-align:center;white-space:normal;min-width:84px">IGD</th><th title="Modul 8: Laboratory" style="text-align:center;white-space:normal;min-width:84px">Laboratorium</th><th title="Modul 9: Radiology" style="text-align:center;white-space:normal;min-width:84px">Radiologi</th><th title="Modul 10: Pharmacy" style="text-align:center;white-space:normal;min-width:84px">Farmasi</th><th title="Modul 11: Billing &amp; Insurance" style="text-align:center;white-space:normal;min-width:84px">Billing &amp; Asuransi</th><th title="Modul 12: Scheduling &amp; Appointment" style="text-align:center;white-space:normal;min-width:84px">Jadwal &amp; Janji Temu</th><th title="Modul 13: Nursing" style="text-align:center;white-space:normal;min-width:84px">Keperawatan</th><th title="Modul 14: Inventory &amp; Warehouse" style="text-align:center;white-space:normal;min-width:84px">Gudang &amp; Persediaan</th><th title="Modul 15: Reporting &amp; Dashboard" style="text-align:center;white-space:normal;min-width:84px">Laporan</th><th title="Modul 16: Master Data &amp; Configuration" style="text-align:center;white-space:normal;min-width:84px">Data Master</th><th title="Modul tambahan: Portal Pasien" style="text-align:center;white-space:normal;min-width:84px">Akun Pasien</th></tr></thead>
+    <tbody>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>ATLM (Analis Laboratorium)</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[atlm][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[atlm][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Admin Radiologi</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[adminrad][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[adminrad][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Admin Rekam Medis</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[rekammedis][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[rekammedis][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[rekammedis][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[rekammedis][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[rekammedis][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Administrator SIMRS</b></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[admin][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[admin][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[admin][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[admin][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[admin][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Apoteker</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[apoteker][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[apoteker][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[apoteker][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[apoteker][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Dokter / DPJP</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[dokter][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[dokter][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[dokter][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[dokter][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[dokter][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[dokter][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[dokter][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[dokter][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[dokter][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[dokter][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[dokter][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[dokter][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[dokter][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[dokter][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[dokter][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[dokter][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[dokter][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Dokter Sp. Patologi Klinik</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[spk][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[spk][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Dokter Sp. Radiologi</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[sprad][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[sprad][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Kasir</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[kasir][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[kasir][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[kasir][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[kasir][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Manajemen Rumah Sakit</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[manajemen][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[manajemen][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[manajemen][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[manajemen][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Pasien</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pasien][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[pasien][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Perawat</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[perawat][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[perawat][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[perawat][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[perawat][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[perawat][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[perawat][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[perawat][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[perawat][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[perawat][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[perawat][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Petugas Gudang / Logistik</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[gudang][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[gudang][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Petugas Registrasi</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[pendaftaran][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[pendaftaran][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[pendaftaran][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[pendaftaran][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Radiografer</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[radiografer][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[radiografer][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Supervisor Registrasi</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[supervisorreg][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[supervisorreg][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[supervisorreg][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#e0f2fe">
+          <select name="h[supervisorreg][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat" selected>Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[supervisorreg][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+          <tr><td style="position:sticky;left:0;background:#fff"><b>Verifikator Asuransi</b></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][auth]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][registrasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][emr]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][cpoe]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][rawat_jalan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][rawat_inap]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][igd]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][lab]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][radiologi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][farmasi]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:#dcfce7">
+          <select name="h[verifikator][billing]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="">–</option><option value="lihat">Lihat</option><option value="ubah" selected>Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][jadwal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][keperawatan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][inventori]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][laporan]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][master]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+              <td style="text-align:center;background:transparent">
+          <select name="h[verifikator][portal]" style="font-size:11px;padding:3px;border:1px solid #cbd5e1;border-radius:6px;background:transparent" >
+            <option value="" selected>–</option><option value="lihat">Lihat</option><option value="ubah">Ubah</option></select></td>
+      </tr>
+        </tbody></table></div>
+</form>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

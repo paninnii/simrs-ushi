@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pemeriksaan Dokter · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="rawat_jalan-antrian.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                    <details class="side-sec" open>
+            <summary class="side-group"><span>Administrasi Pasien</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="registrasi-pasien.html" class="side-link">Data Pasien</a>
+                            <a href="jadwal-appointment.html" class="side-link">Jadwal &amp; Appointment</a>
+                            <a href="jadwal-praktik.html" class="side-link">Jadwal Praktik Dokter</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Pelayanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="rawat_jalan-antrian.html" class="side-link">Rawat Jalan (Poliklinik)</a>
+                            <a href="igd-igd.html" class="side-link">Gawat Darurat (IGD)</a>
+                            <a href="rawat_inap-ranap.html" class="side-link">Rawat Inap &amp; Bed</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Klinis</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="emr-emr.html" class="side-link">Rekam Medis (EMR)</a>
+                            <a href="cpoe-cpoe.html" class="side-link">Order Klinis (CPOE)</a>
+                            <a href="keperawatan-keperawatan.html" class="side-link">Asuhan Keperawatan</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Penunjang</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="lab-lab.html" class="side-link">Laboratorium</a>
+                            <a href="radiologi-radiologi.html" class="side-link">Radiologi</a>
+                            <a href="farmasi-farmasi.html" class="side-link">Farmasi</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Pemeriksaan Dokter</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bubble">2</span></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                                    <a href="rawat_inap-ranap.html" class="notif-item"><span>Laporan perawat belum dibaca</span><span class="notif-n">1<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                        <a href="rawat_jalan-antrian.html" class="notif-item"><span>Pasien siap diperiksa</span><span class="notif-n">1<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                    <p class="text-xs text-slate-500 mt-2">Klik untuk membuka halaman terkait.</p>            </div>
+        </details>
+        <div class="avatar">AP</div>
+        <div class="identity hidden sm:block"><b>dr. Aditya Pranata, Sp.PD</b><small>Dokter / DPJP</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Pemeriksaan Dokter</h1>
+            <p>Antrean B-002 · Poli Penyakit Dalam</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+            <a href="rawat_jalan-antrian.html" class="btn btn-secondary">&larr; Pasien saya</a>            <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <div class="patient-banner"><div class="avatar avatar-lg">RK</div><div class="min-w-0"><div class="text-lg font-bold text-slate-900">Rina Kurniawati</div><div class="text-sm text-slate-600">RM-2026-000011 · Perempuan · 38 th · Lahir 11 Jan 1988</div><div class="text-sm text-slate-600 mt-0.5">BPJS Kesehatan · 0006677889900 · Gol. darah AB</div></div><div class="ml-auto text-right"><span class="badge badge-green">Tidak ada alergi tercatat</span></div></div><div class="grid lg:grid-cols-3 gap-4 mb-4">
+  <div class="card lg:col-span-2"><div class="card-head"><h3>Hasil Pengkajian Perawat</h3><span class="muted">read-only</span></div>
+    <div class="card-body"><div class="readonly-box"><b>Pengkajian perawat:</b> TD 154/96 mmHg, Nadi 84x/mnt, RR 18x/mnt, Suhu 36.5 °C, SpO2 99%, BB 65 kg, TB 160 cm (BMI 25.4), Nyeri 0/10<br><b>Keluhan utama:</b> Pusing ringan sore hari, kontrol tekanan darah      </div></div></div>
+  <div class="card"><div class="card-head"><h3>Riwayat Kunjungan</h3></div><div class="card-body text-sm space-y-2">
+        <div class="border-b border-slate-100 pb-2"><b>26 Okt 2026</b> · Poli Penyakit Dalam<br><span class="mono text-[#004c6d]">I10</span> Hipertensi esensial<div class="muted">Amlodipine 1x5 mg, kurangi garam, kontrol 1 minggu.</div></div>  </div></div>
+</div>
+
+<form method="post"><input type="hidden" name="_csrf" value="e1c70e15bf26bf4ed6446575c2eeb9ea">      <div class="card mb-3"><div class="card-head"><h3>Catatan SOAP</h3><span class="muted">tersimpan ke Rekam Medis Elektronik</span></div><div class="card-body">
+    <div class="form-grid">
+      <div class="field"><label>S · Subjective (anamnesis) *</label><textarea name="subjektif" maxlength="2000" class="">Pusing ringan sore hari, kontrol tekanan darah</textarea></div>
+      <div class="field"><label>O · Objective (pemeriksaan fisik) *</label><textarea name="objektif" maxlength="2000" class="">TD 154/96 mmHg, Nadi 84x/mnt, RR 18x/mnt, Suhu 36.5 °C, SpO2 99%, BB 65 kg, TB 160 cm (BMI 25.4), Nyeri 0/10. </textarea></div>
+      <div class="field"><label>A · Assessment (diagnosis kerja) *</label><textarea name="assessment" maxlength="1000" class=""></textarea></div>
+      <div class="field"><label>P · Plan (terapi, edukasi, rencana) *</label><textarea name="plan" maxlength="2000" class=""></textarea></div>
+    </div>
+    <div class="form-grid">
+      <div class="field"><label>Kode ICD-10 *</label><input name="kode_icd10" list="dl_icd" value="" class="" placeholder="Ketik kode atau nama penyakit">
+        <datalist id="dl_icd"><option value="A01.0">Demam tifoid</option><option value="A09">Diare dan gastroenteritis yang diduga infeksi</option><option value="A90">Demam dengue</option><option value="A91">Demam berdarah dengue</option><option value="B34.9">Infeksi virus, tidak spesifik</option><option value="D50.9">Anemia defisiensi besi</option><option value="E11.9">Diabetes melitus tipe 2 tanpa komplikasi</option><option value="E28.2">Sindrom ovarium polikistik (PCOS)</option><option value="E78.5">Hiperlipidemia</option><option value="H10.9">Konjungtivitis</option><option value="I10">Hipertensi esensial (primer)</option><option value="I21.9">Infark miokard akut</option><option value="I50.9">Gagal jantung</option><option value="I63.9">Infark serebral, tidak spesifik</option><option value="J00">Nasofaringitis akut (common cold)</option><option value="J02.9">Faringitis akut</option><option value="J06.9">Infeksi saluran pernapasan atas akut (ISPA)</option><option value="J18.9">Pneumonia</option><option value="J45.9">Asma</option><option value="K29.7">Gastritis</option><option value="K30">Dispepsia</option><option value="K35.8">Apendisitis akut</option><option value="K80.2">Batu kandung empedu tanpa kolesistitis</option><option value="L30.9">Dermatitis</option><option value="M54.5">Nyeri punggung bawah</option><option value="N10">Pielonefritis akut</option><option value="N39.0">Infeksi saluran kemih</option><option value="R05">Batuk</option><option value="R07.4">Nyeri dada</option><option value="R10.1">Nyeri perut bagian atas</option><option value="R10.3">Nyeri perut bagian bawah</option><option value="R50.9">Demam, tidak spesifik</option><option value="R51">Nyeri kepala</option><option value="S06.0">Gegar otak (komosio serebri)</option><option value="S09.9">Cedera kepala</option><option value="T78.4">Alergi, tidak spesifik</option><option value="Z00.0">Pemeriksaan kesehatan umum</option><option value="Z34.9">Pemeriksaan kehamilan normal</option></datalist></div>
+      <div class="field"><label>Tindak lanjut *</label><select name="tindak_lanjut" id="tl" class=""><option value="Pulang" selected>Pulang</option><option value="Kontrol">Kontrol ulang (surat kontrol)</option><option value="Rujuk">Rujuk ke faskes lain</option><option value="Rawat Inap">Rawat inap (admission)</option></select></div>
+      <div class="field tl tl-Kontrol"><label>Tanggal kontrol *</label><input type="date" name="tanggal_kontrol" min="2026-11-01" value="" class=""></div>
+      <div class="field tl tl-Kontrol"><label>Catatan kontrol</label><input name="catatan_kontrol" maxlength="255" value="" placeholder="Bawa hasil lab"></div>
+      <div class="field tl tl-Rujuk"><label>Rujuk ke *</label><input name="rujuk_ke" maxlength="150" value="" class="" placeholder="RSUP / Sp. Jantung"></div>
+      <div class="field tl tl-Rujuk"><label>Alasan rujukan</label><input name="alasan_rujuk" maxlength="255" value=""></div>
+    </div>
+  </div></div>
+      <div class="card mb-3" id="orderBox">
+      <div class="card-head"><h3>Order Pelayanan &amp; Penunjang</h3><span class="muted">dikirim bersama saat disimpan</span></div>
+      <div class="card-body">
+        <div class="form-grid mb-3">
+          <div class="field" style="grid-column:span 2"><label for="orderIndikasi">Indikasi / diagnosis klinis untuk lab &amp; radiologi</label>
+            <input id="orderIndikasi" name="order_indikasi" maxlength="255" value="" class="" placeholder="contoh: Demam hari ke-3, suspek DBD">
+            <span class="hint" id="indHint" hidden>Terisi otomatis dari Assessment bila masih kosong.</span></div>
+          <div class="field"><label>Prioritas</label><select name="order_urgensi"><option value="Rutin" selected>Rutin</option><option value="CITO">CITO (segera)</option></select></div>
+        </div>
+        
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-otab="tindakan" role="tab">Tindakan Medis <span class="otab-n" data-n="tindakan"></span></button><button type="button" class="tab " data-otab="lab" role="tab">Laboratorium <span class="otab-n" data-n="lab"></span></button><button type="button" class="tab " data-otab="rad" role="tab">Radiologi <span class="otab-n" data-n="rad"></span></button><button type="button" class="tab " data-otab="resep" role="tab">E-Resep <span class="otab-n" data-n="resep"></span></button>        </div>
+
+                <div class="opanel" data-panel="tindakan" >
+          <p class="text-sm muted mb-3">Pilih tindakan dan siapa yang mengerjakan. Tindakan oleh perawat masuk ke daftar kerja perawat; tindakan yang Anda kerjakan sendiri langsung tercatat selesai.</p>
+          <div id="tndRows" class="space-y-3 mb-3">
+                      <div class="o-row tnd-row border border-slate-200 rounded-lg p-3">
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div class="field lg:col-span-2"><label>Tindakan</label><select name="tindakan[0][id]" class="tnd-sel"><option value="">— Pilih tindakan —</option><option value="16" data-harga="300000" data-ket="1" data-invasif="1" data-petunjuk="contoh: ulkus diabetik plantar pedis kiri">Debridement Luka — Rp 300.000</option><option value="7" data-harga="100000" data-ket="0" data-invasif="0" data-petunjuk="">EKG 12 Lead — Rp 100.000</option><option value="19" data-harga="200000" data-ket="1" data-invasif="1" data-petunjuk="contoh: unguis incarnatus hallux kanan">Ekstraksi Kuku — Rp 200.000</option><option value="6" data-harga="35000" data-ket="1" data-invasif="0" data-petunjuk="contoh: Ondansetron 4 mg IV">Injeksi IM/IV — Rp 35.000</option><option value="15" data-harga="250000" data-ket="1" data-invasif="1" data-petunjuk="contoh: abses regio gluteus kanan 2 cm">Insisi Abses — Rp 250.000</option><option value="18" data-harga="75000" data-ket="1" data-invasif="0" data-petunjuk="contoh: serumen telinga kanan">Irigasi Telinga — Rp 75.000</option><option value="8" data-harga="150000" data-ket="1" data-invasif="1" data-petunjuk="contoh: luka robek regio cruris kanan 3 cm, 4 jahitan">Jahit Luka (Hecting) — Rp 150.000</option><option value="14" data-harga="50000" data-ket="1" data-invasif="0" data-petunjuk="contoh: luka regio antebrachii kiri, 5 jahitan">Lepas Jahitan (Aff Hecting) — Rp 50.000</option><option value="4" data-harga="60000" data-ket="1" data-invasif="0" data-petunjuk="contoh: Salbutamol 2,5 mg + NaCl 0,9% 2 cc">Nebulisasi — Rp 60.000</option><option value="17" data-harga="125000" data-ket="1" data-invasif="0" data-petunjuk="contoh: suspek fraktur antebrachii kanan">Pemasangan Bidai / Spalk — Rp 125.000</option><option value="3" data-harga="75000" data-ket="1" data-invasif="1" data-petunjuk="contoh: RL 20 tpm, tangan kiri">Pemasangan Infus — Rp 75.000</option><option value="9" data-harga="120000" data-ket="0" data-invasif="1" data-petunjuk="">Pemasangan Kateter Urin — Rp 120.000</option><option value="10" data-harga="100000" data-ket="0" data-invasif="1" data-petunjuk="">Pemasangan NGT — Rp 100.000</option><option value="12" data-harga="40000" data-ket="1" data-invasif="0" data-petunjuk="contoh: nasal kanul 3 lpm">Pemberian Oksigen — Rp 40.000</option><option value="5" data-harga="50000" data-ket="1" data-invasif="0" data-petunjuk="contoh: luka lecet regio genu kanan 4x3 cm">Perawatan Luka — Rp 50.000</option><option value="13" data-harga="45000" data-ket="0" data-invasif="0" data-petunjuk="">Suction (Penghisapan Lendir) — Rp 45.000</option></select></div>
+                <div class="field"><label>Jumlah</label><input type="number" name="tindakan[0][jumlah]" min="1" max="50" value="1" class="tnd-qty"></div>
+                <div class="field"><label>Dikerjakan oleh</label><select name="tindakan[0][pelaksana]"><option value="Perawat" selected>Perawat (dikirim ke perawat)</option><option value="Dokter">Dokter (saya kerjakan sendiri)</option></select></div>
+              </div>
+              <div class="field mt-2"><label>Keterangan / lokasi <span class="tnd-wajib">*</span></label><input name="tindakan[0][keterangan]" maxlength="255" value="" class="tnd-ket"></div>
+              <label class="flex items-start gap-2 text-sm mt-2 tnd-ic" hidden><input type="checkbox" name="tindakan[0][persetujuan]" value="1"  class="mt-1"> <span><b>Persetujuan tindakan (informed consent)</b> sudah dijelaskan dan ditandatangani pasien / keluarga.</span></label>
+              <div class="flex flex-wrap items-center justify-between gap-2 mt-2 text-sm"><span class="o-info muted"></span><button type="button" class="btn btn-outline-danger btn-sm o-hapus">Hapus baris</button></div>
+                          </div>
+                    </div>
+          <button type="button" class="btn btn-soft btn-sm o-tambah" data-target="tndRows">+ Tambah tindakan</button>
+        </div>
+        
+        <div class="opanel" data-panel="lab" hidden>
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+            <input type="search" id="labCari" class="input" style="max-width:260px" placeholder="Cari pemeriksaan, contoh: gula">
+            <span class="text-sm muted ml-1">Paket cepat:</span>
+                          <button type="button" class="btn btn-soft btn-sm lab-paket" data-ids="1,9,10">Paket Demam</button>
+                          <button type="button" class="btn btn-soft btn-sm lab-paket" data-ids="3,14,5">Paket Diabetes</button>
+                          <button type="button" class="btn btn-soft btn-sm lab-paket" data-ids="1,21,2,13,17">Paket Pra-Operasi</button>
+                          <button type="button" class="btn btn-soft btn-sm lab-paket" data-ids="1,3,15,5,6,7,8">Medical Check-Up</button>
+                      </div>
+                      <div class="lab-grup mb-3"><h4 class="lab-kat">Hematologi</h4><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="darah lengkap (cbc) hem-01 hematologi">
+              <input type="checkbox" name="lab[]" value="1" data-harga="85000" data-puasa="0" data-nama="Darah Lengkap (CBC)" class="mt-1" >
+              <span>Darah Lengkap (CBC)                <span class="block muted">Darah vena (EDTA) · Rp 85.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="golongan darah &amp; rhesus hem-03 hematologi">
+              <input type="checkbox" name="lab[]" value="13" data-harga="35000" data-puasa="0" data-nama="Golongan Darah &amp; Rhesus" class="mt-1" >
+              <span>Golongan Darah &amp; Rhesus                <span class="block muted">Darah vena (EDTA) · Rp 35.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="laju endap darah (led) hem-02 hematologi">
+              <input type="checkbox" name="lab[]" value="12" data-harga="30000" data-puasa="0" data-nama="Laju Endap Darah (LED)" class="mt-1" >
+              <span>Laju Endap Darah (LED)                <span class="block muted">Darah vena (sitrat) · Rp 30.000</span>
+                              </span></label>
+          </div></div>            <div class="lab-grup mb-3"><h4 class="lab-kat">Kimia Klinik</h4><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="asam urat kk-06 kimia klinik">
+              <input type="checkbox" name="lab[]" value="7" data-harga="30000" data-puasa="0" data-nama="Asam Urat" class="mt-1" >
+              <span>Asam Urat                <span class="block muted">Darah vena · Rp 30.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="elektrolit (na, k, cl) kk-09 kimia klinik">
+              <input type="checkbox" name="lab[]" value="16" data-harga="120000" data-puasa="0" data-nama="Elektrolit (Na, K, Cl)" class="mt-1" >
+              <span>Elektrolit (Na, K, Cl)                <span class="block muted">Darah vena · Rp 120.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="fungsi ginjal (ureum, kreatinin) kk-04 kimia klinik">
+              <input type="checkbox" name="lab[]" value="5" data-harga="70000" data-puasa="0" data-nama="Fungsi Ginjal (Ureum, Kreatinin)" class="mt-1" >
+              <span>Fungsi Ginjal (Ureum, Kreatinin)                <span class="block muted">Darah vena · Rp 70.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="fungsi hati (sgot, sgpt) kk-05 kimia klinik">
+              <input type="checkbox" name="lab[]" value="6" data-harga="70000" data-puasa="0" data-nama="Fungsi Hati (SGOT, SGPT)" class="mt-1" >
+              <span>Fungsi Hati (SGOT, SGPT)                <span class="block muted">Darah vena · Rp 70.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="gula darah puasa kk-02 kimia klinik">
+              <input type="checkbox" name="lab[]" value="3" data-harga="25000" data-puasa="1" data-nama="Gula Darah Puasa" class="mt-1" >
+              <span>Gula Darah Puasa                <span class="block muted">Darah vena · Rp 25.000</span>
+                <span class="tag-puasa">Puasa 8–10 jam, boleh minum air putih.</span>              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="gula darah sewaktu kk-01 kimia klinik">
+              <input type="checkbox" name="lab[]" value="2" data-harga="25000" data-puasa="0" data-nama="Gula Darah Sewaktu" class="mt-1" >
+              <span>Gula Darah Sewaktu                <span class="block muted">Darah vena / kapiler · Rp 25.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="hba1c kk-07 kimia klinik">
+              <input type="checkbox" name="lab[]" value="14" data-harga="180000" data-puasa="0" data-nama="HbA1c" class="mt-1" >
+              <span>HbA1c                <span class="block muted">Darah vena (EDTA) · Rp 180.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="kolesterol total kk-03 kimia klinik">
+              <input type="checkbox" name="lab[]" value="4" data-harga="40000" data-puasa="1" data-nama="Kolesterol Total" class="mt-1" >
+              <span>Kolesterol Total                <span class="block muted">Darah vena · Rp 40.000</span>
+                <span class="tag-puasa">Puasa 10–12 jam.</span>              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="profil lipid (kolesterol, hdl, ldl, tg) kk-08 kimia klinik">
+              <input type="checkbox" name="lab[]" value="15" data-harga="150000" data-puasa="1" data-nama="Profil Lipid (Kolesterol, HDL, LDL, TG)" class="mt-1" >
+              <span>Profil Lipid (Kolesterol, HDL, LDL, TG)                <span class="block muted">Darah vena · Rp 150.000</span>
+                <span class="tag-puasa">Puasa 10–12 jam.</span>              </span></label>
+          </div></div>            <div class="lab-grup mb-3"><h4 class="lab-kat">Urinalisis</h4><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="tes kehamilan (beta-hcg urin) ur-02 urinalisis">
+              <input type="checkbox" name="lab[]" value="20" data-harga="35000" data-puasa="0" data-nama="Tes Kehamilan (Beta-hCG Urin)" class="mt-1" >
+              <span>Tes Kehamilan (Beta-hCG Urin)                <span class="block muted">Urin pagi · Rp 35.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="urinalisis lengkap ur-01 urinalisis">
+              <input type="checkbox" name="lab[]" value="8" data-harga="45000" data-puasa="0" data-nama="Urinalisis Lengkap" class="mt-1" >
+              <span>Urinalisis Lengkap                <span class="block muted">Urin pagi porsi tengah · Rp 45.000</span>
+                <span class="block text-xs muted">Tampung urin porsi tengah di wadah steril.</span>              </span></label>
+          </div></div>            <div class="lab-grup mb-3"><h4 class="lab-kat">Imunologi</h4><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="anti-hiv (rapid) im-05 imunologi">
+              <input type="checkbox" name="lab[]" value="18" data-harga="120000" data-puasa="0" data-nama="Anti-HIV (Rapid)" class="mt-1" >
+              <span>Anti-HIV (Rapid)                <span class="block muted">Darah vena · Rp 120.000</span>
+                <span class="block text-xs muted">Wajib konseling dan persetujuan pasien.</span>              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="crp kuantitatif im-06 imunologi">
+              <input type="checkbox" name="lab[]" value="19" data-harga="110000" data-puasa="0" data-nama="CRP Kuantitatif" class="mt-1" >
+              <span>CRP Kuantitatif                <span class="block muted">Darah vena · Rp 110.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="ferritin im-03 imunologi">
+              <input type="checkbox" name="lab[]" value="11" data-harga="140000" data-puasa="0" data-nama="Ferritin" class="mt-1" >
+              <span>Ferritin                <span class="block muted">Darah vena · Rp 140.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="hbsag im-04 imunologi">
+              <input type="checkbox" name="lab[]" value="17" data-harga="90000" data-puasa="0" data-nama="HBsAg" class="mt-1" >
+              <span>HBsAg                <span class="block muted">Darah vena · Rp 90.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="ns1 antigen dengue im-01 imunologi">
+              <input type="checkbox" name="lab[]" value="9" data-harga="150000" data-puasa="0" data-nama="NS1 Antigen Dengue" class="mt-1" >
+              <span>NS1 Antigen Dengue                <span class="block muted">Darah vena · Rp 150.000</span>
+                              </span></label>
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="widal im-02 imunologi">
+              <input type="checkbox" name="lab[]" value="10" data-harga="60000" data-puasa="0" data-nama="Widal" class="mt-1" >
+              <span>Widal                <span class="block muted">Darah vena · Rp 60.000</span>
+                              </span></label>
+          </div></div>            <div class="lab-grup mb-3"><h4 class="lab-kat">Koagulasi</h4><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="pt / aptt koa-01 koagulasi">
+              <input type="checkbox" name="lab[]" value="21" data-harga="160000" data-puasa="0" data-nama="PT / APTT" class="mt-1" >
+              <span>PT / APTT                <span class="block muted">Darah vena (sitrat) · Rp 160.000</span>
+                              </span></label>
+          </div></div>            <div class="lab-grup mb-3"><h4 class="lab-kat">Mikrobiologi</h4><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <label class="lab-item flex items-start gap-2 border border-slate-200 rounded-lg px-3 py-2 text-sm" data-cari="kultur urin + uji kepekaan mik-01 mikrobiologi">
+              <input type="checkbox" name="lab[]" value="22" data-harga="250000" data-puasa="0" data-nama="Kultur Urin + Uji Kepekaan" class="mt-1" >
+              <span>Kultur Urin + Uji Kepekaan                <span class="block muted">Urin porsi tengah (wadah steril) · Rp 250.000</span>
+                <span class="block text-xs muted">Sebelum antibiotik bila memungkinkan.</span>              </span></label>
+          </div></div>          <p id="labKosong" class="muted text-sm" hidden>Pemeriksaan tidak ditemukan.</p>
+          <div class="field mt-2" id="labPuasaBox" hidden style="max-width:420px"><label>Status puasa pasien *</label>
+            <select name="lab_puasa" class=""><option value="" selected>— Pilih —</option><option value="Puasa">Sudah puasa sesuai persiapan</option><option value="Tidak puasa">Tidak / belum puasa</option></select>
+            <span class="hint" id="labPuasaInfo"></span></div>
+                  </div>
+
+        <div class="opanel" data-panel="rad" hidden>
+          <p class="text-sm muted mb-3">Pilih jenis alat, bagian tubuh, lalu tentukan pemakaian kontras dan sisi bila diminta. Biaya terhitung otomatis.</p>
+                    <div id="radRows" class="space-y-3 mb-3">
+                      <div class="o-row rad-row border border-slate-200 rounded-lg p-3">
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div class="field"><label>Jenis alat (modalitas)</label>
+                  <select name="rad[0][modalitas]" class="rad-mod"><option value="">— Pilih —</option><option value="X-Ray" >X-Ray (Rontgen)</option><option value="CT Scan" >CT Scan</option><option value="MRI" >MRI</option><option value="USG" >USG</option></select></div>
+                <div class="field"><label>Bagian tubuh</label>
+                  <select name="rad[0][id]" class="rad-bagian"><option value="">— Pilih bagian —</option>
+                  <option value="5" data-mod="CT Scan" data-nama="CT Scan Abdomen" data-bagian="Abdomen" data-kontras="1" data-sisi="0" data-biaya="1900000" data-biaya-kontras="750000" data-persiapan="Bila dengan kontras: cek ureum-kreatinin, puasa 4 jam, tanyakan riwayat alergi kontras." >Abdomen (CT Scan)</option><option value="4" data-mod="CT Scan" data-nama="CT Scan Kepala" data-bagian="Kepala" data-kontras="1" data-sisi="0" data-biaya="1650000" data-biaya-kontras="650000" data-persiapan="Bila dengan kontras: cek ureum-kreatinin, puasa 4 jam, tanyakan riwayat alergi kontras." >Kepala (CT Scan)</option><option value="13" data-mod="CT Scan" data-nama="CT Scan Thorax" data-bagian="Thorax" data-kontras="1" data-sisi="0" data-biaya="1800000" data-biaya-kontras="700000" data-persiapan="Bila dengan kontras: cek ureum-kreatinin, puasa 4 jam, tanyakan riwayat alergi kontras." >Thorax (CT Scan)</option><option value="14" data-mod="MRI" data-nama="MRI Kepala" data-bagian="Kepala" data-kontras="1" data-sisi="0" data-biaya="2700000" data-biaya-kontras="900000" data-persiapan="Lepas semua logam. Tanyakan implan logam / alat pacu jantung." >Kepala (MRI)</option><option value="15" data-mod="MRI" data-nama="MRI Lutut" data-bagian="Lutut" data-kontras="1" data-sisi="1" data-biaya="2600000" data-biaya-kontras="900000" data-persiapan="Lepas semua logam. Tanyakan implan logam / alat pacu jantung." >Lutut (MRI)</option><option value="6" data-mod="MRI" data-nama="MRI Vertebra Lumbal" data-bagian="Vertebra Lumbal" data-kontras="1" data-sisi="0" data-biaya="2500000" data-biaya-kontras="900000" data-persiapan="Lepas semua logam. Tanyakan implan logam / alat pacu jantung." >Vertebra Lumbal (MRI)</option><option value="3" data-mod="USG" data-nama="USG Abdomen" data-bagian="Abdomen" data-kontras="0" data-sisi="0" data-biaya="450000" data-biaya-kontras="0" data-persiapan="Puasa 6–8 jam dan tahan buang air kecil sebelum pemeriksaan." >Abdomen (USG)</option><option value="11" data-mod="USG" data-nama="USG Ginjal &amp; Saluran Kemih" data-bagian="Ginjal &amp; Saluran Kemih" data-kontras="0" data-sisi="0" data-biaya="400000" data-biaya-kontras="0" data-persiapan="Tahan buang air kecil sebelum pemeriksaan." >Ginjal &amp; Saluran Kemih (USG)</option><option value="7" data-mod="USG" data-nama="USG Kehamilan (Obstetri)" data-bagian="Kehamilan" data-kontras="0" data-sisi="0" data-biaya="350000" data-biaya-kontras="0" data-persiapan="" >Kehamilan (USG)</option><option value="12" data-mod="USG" data-nama="USG Mammae" data-bagian="Mammae" data-kontras="0" data-sisi="1" data-biaya="450000" data-biaya-kontras="0" data-persiapan="" >Mammae (USG)</option><option value="16" data-mod="USG" data-nama="USG Ginekologi (Uterus &amp; Ovarium)" data-bagian="Uterus &amp; Ovarium" data-kontras="0" data-sisi="0" data-biaya="400000" data-biaya-kontras="0" data-persiapan="Transabdominal: tahan buang air kecil. Transvaginal: kosongkan kandung kemih." >Uterus &amp; Ovarium (USG)</option><option value="2" data-mod="X-Ray" data-nama="X-Ray Abdomen (BNO)" data-bagian="Abdomen" data-kontras="0" data-sisi="0" data-biaya="160000" data-biaya-kontras="0" data-persiapan="Lepas benda logam di area perut." >Abdomen (X-Ray)</option><option value="8" data-mod="X-Ray" data-nama="X-Ray Ekstremitas" data-bagian="Ekstremitas" data-kontras="0" data-sisi="1" data-biaya="175000" data-biaya-kontras="0" data-persiapan="Sebutkan sisi dan bagian (contoh: antebrachii kanan)." >Ekstremitas (X-Ray)</option><option value="10" data-mod="X-Ray" data-nama="X-Ray Pelvis" data-bagian="Pelvis" data-kontras="0" data-sisi="0" data-biaya="180000" data-biaya-kontras="0" data-persiapan="" >Pelvis (X-Ray)</option><option value="1" data-mod="X-Ray" data-nama="X-Ray Thorax" data-bagian="Thorax" data-kontras="0" data-sisi="0" data-biaya="150000" data-biaya-kontras="0" data-persiapan="Lepas perhiasan dan benda logam di area dada." >Thorax (X-Ray)</option><option value="9" data-mod="X-Ray" data-nama="X-Ray Vertebra Lumbal" data-bagian="Vertebra Lumbal" data-kontras="0" data-sisi="0" data-biaya="200000" data-biaya-kontras="0" data-persiapan="" >Vertebra Lumbal (X-Ray)</option></select></div>
+                <div class="field"><label>Kontras</label>
+                  <select name="rad[0][kontras]" class="rad-kontras"><option value="">— Pilih —</option><option value="0" >Tanpa kontras</option><option value="1" >Dengan kontras</option></select>
+                  <span class="hint rad-kontras-na">Tidak memakai kontras</span></div>
+                <div class="field"><label>Sisi</label>
+                  <select name="rad[0][sisi]" class="rad-sisi"><option value="">— Pilih —</option><option value="Kanan" >Kanan</option><option value="Kiri" >Kiri</option><option value="Bilateral" >Bilateral (kanan & kiri)</option></select>
+                  <span class="hint rad-sisi-na">Tidak perlu sisi</span></div>
+              </div>
+              <div class="field mt-2"><label>Keterangan bagian <span class="rad-ket-wajib">*</span><span class="rad-ket-ops muted">(opsional)</span></label><input name="rad[0][keterangan]" maxlength="150" value="" class="rad-ket" placeholder="contoh: antebrachii 1/3 distal, curiga fraktur"></div>
+              <div class="field mt-2 rad-alasan-box" hidden><label>Alasan klinis pemakaian kontras (pasien alergi) *</label><input name="rad[0][alasan]" maxlength="255" value=""></div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mt-2 text-sm"><span class="o-info muted"></span><button type="button" class="btn btn-outline-danger btn-sm o-hapus">Hapus baris</button></div>
+                          </div>
+                    </div>
+          <button type="button" class="btn btn-soft btn-sm o-tambah mb-3" data-target="radRows">+ Tambah pemeriksaan radiologi</button>
+                    <div class="form-grid" id="radHamilBox" hidden>
+            <div class="field"><label>Status kehamilan *</label><select name="rad_hamil" class=""><option value="" selected>— Pilih —</option><option value="Tidak hamil">Tidak hamil</option><option value="Hamil">Hamil</option><option value="Tidak tahu">Belum pasti / tidak tahu</option></select><span class="hint">Wajib untuk X-Ray / CT Scan pada perempuan usia 12–50 tahun (keselamatan radiasi).</span></div>
+            <div class="field" style="grid-column:span 2" id="radHamilAlasan" hidden><label>Alasan klinis pemeriksaan dengan radiasi *</label><input name="rad_alasan_hamil" maxlength="255" value="" placeholder="contoh: Trauma kepala berat, manfaat lebih besar; pakai apron pelindung"></div>
+          </div>
+                            </div>
+
+        <div class="opanel" data-panel="resep" hidden>
+          <p class="text-sm muted mb-3">Cari nama obat untuk melihat stok, lalu pilih dan isi dosis sesuai kondisi pasien. Obat yang stoknya habis tidak bisa dipilih.</p>
+                    <div class="obat-cari-box mb-3">
+            <input type="search" id="obatCari" class="input" placeholder="Ketik nama obat, contoh: amlo, para, omep" autocomplete="off" style="max-width:420px">
+            <div id="obatHasil" class="obat-hasil mt-2"></div>
+          </div>
+          <div id="obatPilih">
+            <div class="tbl-wrap"><table class="tbl" id="obatTbl"><thead><tr><th style="min-width:200px">Obat</th><th>Jumlah</th><th>Dosis</th><th>Frekuensi</th><th>Aturan pakai</th><th></th></tr></thead><tbody>
+                        </tbody></table></div>
+            <p class="muted text-sm mt-2" id="obatKosong">Belum ada obat dipilih.</p>
+          </div>
+          <div class="field mt-3"><label>Catatan untuk apoteker</label><input name="resep_catatan" maxlength="255" value="" placeholder="contoh: Racik puyer bila pasien sulit menelan"></div>
+          <script>window.__OBAT = [{"id":3,"nama":"Amlodipine 10 mg","satuan":"tablet","stok":260,"harga":1200,"ha":0,"lasa":1,"alergi":""},{"id":4,"nama":"Amlodipine 5 mg","satuan":"tablet","stok":150,"harga":900,"ha":0,"lasa":1,"alergi":""},{"id":2,"nama":"Amoxicillin 500 mg","satuan":"kapsul","stok":8,"harga":1500,"ha":0,"lasa":0,"alergi":""},{"id":11,"nama":"Antasida DOEN","satuan":"tablet","stok":200,"harga":400,"ha":0,"lasa":0,"alergi":""},{"id":15,"nama":"Asam Mefenamat 500 mg","satuan":"tablet","stok":80,"harga":700,"ha":0,"lasa":0,"alergi":""},{"id":14,"nama":"Captopril 25 mg","satuan":"tablet","stok":9,"harga":600,"ha":0,"lasa":0,"alergi":""},{"id":24,"nama":"Cefixime 100 mg","satuan":"kapsul","stok":0,"harga":3500,"ha":0,"lasa":0,"alergi":""},{"id":9,"nama":"Ceftriaxone 1 g injeksi","satuan":"vial","stok":120,"harga":18000,"ha":0,"lasa":0,"alergi":""},{"id":8,"nama":"Cetirizine 10 mg","satuan":"tablet","stok":6,"harga":1000,"ha":0,"lasa":0,"alergi":""},{"id":19,"nama":"Cotrimoxazole 480 mg","satuan":"tablet","stok":100,"harga":600,"ha":0,"lasa":0,"alergi":""},{"id":16,"nama":"Furosemide 40 mg","satuan":"tablet","stok":60,"harga":800,"ha":0,"lasa":0,"alergi":""},{"id":7,"nama":"Ibuprofen 400 mg","satuan":"tablet","stok":90,"harga":900,"ha":0,"lasa":0,"alergi":""},{"id":12,"nama":"Infus NaCl 0,9% 500 mL","satuan":"botol","stok":84,"harga":15000,"ha":0,"lasa":0,"alergi":""},{"id":17,"nama":"Insulin Glargine 100 IU\/mL pen","satuan":"pen","stok":12,"harga":185000,"ha":1,"lasa":0,"alergi":""},{"id":18,"nama":"Kalium Klorida (KCl) 7,46% 25 mL","satuan":"ampul","stok":20,"harga":25000,"ha":1,"lasa":0,"alergi":""},{"id":5,"nama":"Metformin 500 mg","satuan":"tablet","stok":300,"harga":800,"ha":0,"lasa":0,"alergi":""},{"id":6,"nama":"Omeprazole 20 mg","satuan":"kapsul","stok":120,"harga":2000,"ha":0,"lasa":0,"alergi":""},{"id":10,"nama":"Oralit","satuan":"sachet","stok":100,"harga":1500,"ha":0,"lasa":0,"alergi":""},{"id":1,"nama":"Paracetamol 500 mg","satuan":"tablet","stok":420,"harga":500,"ha":0,"lasa":0,"alergi":""},{"id":13,"nama":"Paracetamol Sirup 120 mg\/5 mL","satuan":"botol","stok":25,"harga":12000,"ha":0,"lasa":0,"alergi":""},{"id":23,"nama":"Ranitidine 150 mg","satuan":"tablet","stok":0,"harga":800,"ha":0,"lasa":0,"alergi":""}];</script>
+        </div>
+
+        <div class="o-ringkas mt-4" id="orderRingkas">
+          <h4>Ringkasan order</h4>
+          <p class="muted text-sm" id="ringkasKosong">Belum ada order yang dipilih.</p>
+          <div class="tbl-wrap" id="ringkasTbl" hidden><table class="tbl"><thead><tr><th>Jenis</th><th>Order</th><th class="num">Perkiraan biaya</th></tr></thead><tbody></tbody>
+            <tfoot><tr><td colspan="2" class="num"><b>Total perkiraan</b></td><td class="num"><b id="ringkasTotal">Rp 0</b></td></tr></tfoot></table></div>
+          <p class="hint">Perkiraan biaya. Tagihan akhir dihitung Kasir dari pelayanan yang benar-benar dikerjakan.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function () {
+      var box = document.getElementById('orderBox'); if (!box) return;
+      var alergiKontras = false, cekHamil = true, asuransi = false, BATAS = 1000000;
+      var rp = function (n) { return 'Rp ' + Math.round(+n).toLocaleString('id-ID'); };
+      var esc = function (t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; };
+
+      box.querySelectorAll('[data-otab]').forEach(function (b) { b.addEventListener('click', function () {
+        box.querySelectorAll('[data-otab]').forEach(function (x) { x.classList.toggle('active', x === b); });
+        box.querySelectorAll('.opanel').forEach(function (p) { p.hidden = p.dataset.panel !== b.dataset.otab; });
+      }); });
+
+      var ind = document.getElementById('orderIndikasi'), asm = document.querySelector('[name=assessment]'), icd = document.querySelector('[name=kode_icd10]');
+      if (asm) document.getElementById('indHint').hidden = false;
+      function isiInd() { if (ind && asm && !ind.value.trim() && asm.value.trim()) ind.value = asm.value.trim() + (icd && icd.value.trim() ? ' (' + icd.value.trim() + ')' : ''); }
+
+      function aturTnd(row) {
+        var s = row.querySelector('.tnd-sel'), o = s.options[s.selectedIndex], ada = o && o.value;
+        var wajib = ada && o.dataset.ket === '1';
+        row.querySelector('.tnd-wajib').hidden = !wajib;
+        row.querySelector('.tnd-ket').placeholder = ada && o.dataset.petunjuk ? o.dataset.petunjuk : 'Opsional';
+        row.querySelector('.tnd-ic').hidden = !(ada && o.dataset.invasif === '1');
+        var q = parseInt(row.querySelector('.tnd-qty').value || '1', 10);
+        row.querySelector('.o-info').innerHTML = ada ? 'Biaya: <b>' + rp(o.dataset.harga * q) + '</b>' + (o.dataset.invasif === '1' ? ' · <span style="color:#92400e">tindakan invasif, perlu persetujuan tindakan</span>' : '') : '';
+      }
+      function aturRad(row) {
+        var mod = row.querySelector('.rad-mod'), bag = row.querySelector('.rad-bagian'), kon = row.querySelector('.rad-kontras'), sisi = row.querySelector('.rad-sisi');
+        Array.prototype.forEach.call(bag.options, function (o) { if (o.value) { o.hidden = !!mod.value && o.dataset.mod !== mod.value; o.disabled = o.hidden; } });
+        var o = bag.options[bag.selectedIndex];
+        if (o && o.value && mod.value && o.dataset.mod !== mod.value) { bag.value = ''; o = null; }
+        if (o && o.value && !mod.value) mod.value = o.dataset.mod;
+        var ada = o && o.value, adaK = ada && o.dataset.kontras === '1', adaS = ada && o.dataset.sisi === '1', eks = ada && o.dataset.bagian === 'Ekstremitas';
+        kon.hidden = !adaK; kon.disabled = !adaK; row.querySelector('.rad-kontras-na').hidden = adaK;
+        sisi.hidden = !adaS; sisi.disabled = !adaS; row.querySelector('.rad-sisi-na').hidden = adaS;
+        row.querySelector('.rad-ket-wajib').hidden = !eks; row.querySelector('.rad-ket-ops').hidden = eks;
+        row.querySelector('.rad-alasan-box').hidden = !(adaK && kon.value === '1' && alergiKontras);
+        var info = row.querySelector('.o-info');
+        if (ada) {
+          var b = +o.dataset.biaya + (adaK && kon.value === '1' ? +o.dataset.biayaKontras : 0);
+          info.innerHTML = 'Biaya: <b>' + rp(b) + '</b>' + (adaK && kon.value !== '1' ? ' <span class="muted">(+' + rp(o.dataset.biayaKontras) + ' bila dengan kontras)</span>' : '') + (asuransi && b >= BATAS ? ' · <span style="color:#92400e">perlu persetujuan asuransi</span>' : '') + (o.dataset.persiapan ? '<br>Persiapan: ' + esc(o.dataset.persiapan) : '');
+        } else info.textContent = 'Pilih jenis alat lalu bagian tubuh.';
+      }
+      function atur(row) { if (row.classList.contains('tnd-row')) aturTnd(row); else aturRad(row); ringkas(); }
+      function kosongkan(x) { if (x.type === 'checkbox') x.checked = false; else if (x.type === 'number') x.value = 1; else if (x.tagName === 'SELECT' && x.name.indexOf('[pelaksana]') > 0) x.value = 'Perawat'; else x.value = ''; }
+      function pasang(row) {
+        row.querySelectorAll('select,input').forEach(function (s) { s.addEventListener('change', function () { atur(row); }); if (s.type === 'number') s.addEventListener('input', function () { atur(row); }); });
+        row.querySelector('.o-hapus').addEventListener('click', function () {
+          var wrap = row.parentNode;
+          if (wrap.querySelectorAll('.o-row').length > 1) { row.remove(); ringkas(); }
+          else { row.querySelectorAll('select,input').forEach(kosongkan); atur(row); }
+        });
+        atur(row);
+      }
+      var n = 100;
+      box.querySelectorAll('.o-row').forEach(pasang);
+      box.querySelectorAll('.o-tambah').forEach(function (btn) { btn.addEventListener('click', function () {
+        var wrap = document.getElementById(btn.dataset.target); if (wrap.querySelectorAll('.o-row').length >= 8) return;
+        var row = wrap.querySelector('.o-row').cloneNode(true), i = n++;
+        row.querySelectorAll('[name]').forEach(function (x) { x.name = x.name.replace(/^(\w+)\[\d+\]/, '$1[' + i + ']'); kosongkan(x); });
+        row.querySelectorAll('.field-error').forEach(function (x) { x.remove(); });
+        wrap.appendChild(row); pasang(row);
+      }); });
+
+      var cari = document.getElementById('labCari');
+      cari.addEventListener('input', function () { var q = cari.value.trim().toLowerCase(), ada = 0;
+        box.querySelectorAll('.lab-item').forEach(function (l) { var m = !q || l.dataset.cari.indexOf(q) >= 0; l.hidden = !m; if (m) ada++; });
+        box.querySelectorAll('.lab-grup').forEach(function (g) { g.hidden = !g.querySelector('.lab-item:not([hidden])'); });
+        document.getElementById('labKosong').hidden = ada > 0; });
+      cari.addEventListener('keydown', function (e) { if (e.key === 'Enter') e.preventDefault(); });
+      box.querySelectorAll('.lab-paket').forEach(function (b) { b.addEventListener('click', function () {
+        b.dataset.ids.split(',').forEach(function (id) { var c = box.querySelector('[name="lab[]"][value="' + id + '"]'); if (c) c.checked = true; });
+        ringkas(); }); });
+      box.querySelectorAll('[name="lab[]"]').forEach(function (c) { c.addEventListener('change', ringkas); });
+      var hamilSel = document.querySelector('[name=rad_hamil]');
+      if (hamilSel) hamilSel.addEventListener('change', ringkas);
+
+      function ringkas() {
+        var rows = [], total = 0, cnt = { tindakan: 0, lab: 0, rad: 0, resep: 0 }, puasa = [], radiasi = false;
+        box.querySelectorAll('.tnd-row').forEach(function (r) { var o = r.querySelector('.tnd-sel').selectedOptions[0]; if (!o || !o.value) return;
+          var q = parseInt(r.querySelector('.tnd-qty').value || '1', 10), b = o.dataset.harga * q; cnt.tindakan++; total += b;
+          rows.push(['Tindakan', o.textContent.split(' — ')[0] + (q > 1 ? ' × ' + q : ''), b]); });
+        box.querySelectorAll('[name="lab[]"]:checked').forEach(function (c) { cnt.lab++; total += +c.dataset.harga; rows.push(['Laboratorium', c.dataset.nama, +c.dataset.harga, asuransi && +c.dataset.harga >= BATAS]); if (c.dataset.puasa === '1') puasa.push(c.dataset.nama); });
+        box.querySelectorAll('.rad-row').forEach(function (r) { var o = r.querySelector('.rad-bagian').selectedOptions[0]; if (!o || !o.value) return;
+          var k = r.querySelector('.rad-kontras'), s = r.querySelector('.rad-sisi'), kt = r.querySelector('.rad-ket').value.trim();
+          var b = +o.dataset.biaya + (o.dataset.kontras === '1' && k.value === '1' ? +o.dataset.biayaKontras : 0); cnt.rad++; total += b;
+          if (o.dataset.mod === 'X-Ray' || o.dataset.mod === 'CT Scan') radiasi = true;
+          rows.push(['Radiologi', o.dataset.nama + (kt ? ' (' + kt + ')' : '') + (o.dataset.kontras === '1' ? (k.value === '1' ? ' · Dengan kontras' : k.value === '0' ? ' · Tanpa kontras' : ' · kontras belum dipilih') : '') + (o.dataset.sisi === '1' && s.value ? ' · ' + s.value : ''), b, asuransi && b >= BATAS]); });
+        box.querySelectorAll('.obat-row').forEach(function (tr) { var o = tr.querySelector('.obat-id'), j = parseInt(tr.querySelector('.obat-jml').value || '0', 10);
+          var b = (+o.dataset.harga || 0) * j; cnt.resep++; total += b; rows.push(['E-Resep', o.dataset.nama + (j ? ' × ' + j : ''), b]); });
+        var ok = document.getElementById('obatKosong'); if (ok) { ok.hidden = cnt.resep > 0; document.getElementById('obatTbl').hidden = !cnt.resep; }
+        document.getElementById('labPuasaBox').hidden = !puasa.length;
+        document.getElementById('labPuasaInfo').textContent = puasa.length ? 'Perlu puasa: ' + puasa.join(', ') + '.' : '';
+        var hb = document.getElementById('radHamilBox'), hs = document.querySelector('[name=rad_hamil]'); if (hb && hs) { hb.hidden = !(cekHamil && radiasi); document.getElementById('radHamilAlasan').hidden = !(hs.value === 'Hamil' || hs.value === 'Tidak tahu'); }
+        Object.keys(cnt).forEach(function (k) { var e = box.querySelector('[data-n="' + k + '"]'); if (e) e.textContent = cnt[k] ? '(' + cnt[k] + ')' : ''; });
+        var tb = document.querySelector('#ringkasTbl tbody'); tb.innerHTML = '';
+        rows.forEach(function (r) { var tr = document.createElement('tr'); tr.innerHTML = '<td>' + r[0] + '</td><td>' + esc(r[1]) + (r[3] ? ' <span class="badge badge-amber">perlu persetujuan asuransi</span>' : '') + '</td><td class="num">' + rp(r[2]) + '</td>'; tb.appendChild(tr); });
+        document.getElementById('ringkasTbl').hidden = !rows.length; document.getElementById('ringkasKosong').hidden = !!rows.length;
+        document.getElementById('ringkasTotal').textContent = rp(total);
+        if (cnt.lab || cnt.rad) isiInd();
+      }
+
+      // ---- E-resep: cari obat -> lihat stok -> pilih -> isi dosis
+      var OB = window.__OBAT || [], oc = document.getElementById('obatCari'), oh = document.getElementById('obatHasil'), otb = document.querySelector('#obatTbl tbody'), on = 0;
+      function stokLabel(o) { if (o.stok <= 0) return '<span class="badge badge-red">Stok habis</span>'; if (o.stok <= 20) return '<span class="badge badge-amber">Stok menipis · ' + o.stok + ' ' + esc(o.satuan) + '</span>'; return '<span class="badge badge-green">Tersedia · ' + o.stok + ' ' + esc(o.satuan) + '</span>'; }
+      function sudahDipilih(id) { return !!otb.querySelector('.obat-row[data-id="' + id + '"]'); }
+      function cariObat() {
+        var q = oc.value.trim().toLowerCase(); oh.innerHTML = '';
+        if (q.length < 2) { oh.hidden = true; return; }
+        var hasil = OB.filter(function (o) { return o.nama.toLowerCase().indexOf(q) >= 0; }).slice(0, 8); oh.hidden = false;
+        if (!hasil.length) { oh.innerHTML = '<p class="muted text-sm p-2">Obat "' + esc(oc.value) + '" tidak ada di formularium.</p>'; return; }
+        hasil.forEach(function (o) {
+          var d = document.createElement('div'); d.className = 'obat-opsi' + (o.stok <= 0 ? ' habis' : '');
+          var dip = sudahDipilih(o.id);
+          d.innerHTML = '<div><b>' + esc(o.nama) + '</b> ' + (o.ha ? '<span class="badge badge-red">High Alert</span> ' : '') + (o.lasa ? '<span class="badge badge-amber">LASA</span> ' : '') + (o.alergi ? '<span class="badge badge-red">Alergi ' + esc(o.alergi) + '</span>' : '') +
+            '<div class="text-xs muted">' + rp(o.harga) + ' / ' + esc(o.satuan) + '</div></div><div class="flex items-center gap-2">' + stokLabel(o) +
+            (o.stok > 0 ? '<button type="button" class="btn btn-primary btn-sm"' + (dip ? ' disabled' : '') + '>' + (dip ? 'Sudah dipilih' : 'Pilih') + '</button>' : '') + '</div>';
+          var b = d.querySelector('button'); if (b) b.addEventListener('click', function () { tambahObat(o); });
+          oh.appendChild(d);
+        });
+      }
+      function tambahObat(o) {
+        if (sudahDipilih(o.id)) return;
+        if (o.alergi && !confirm('Pasien alergi "' + o.alergi + '". Tetap resepkan ' + o.nama + ' dengan alasan klinis?')) return;
+        var i = 'n' + (on++), tr = document.createElement('tr'); tr.className = 'obat-row'; tr.dataset.id = o.id;
+        tr.innerHTML = '<td><input type="hidden" name="obat[' + i + '][id]" value="' + o.id + '" class="obat-id" data-harga="' + o.harga + '" data-nama="' + esc(o.nama) + '"><b>' + esc(o.nama) + '</b><div class="muted text-xs">Stok ' + o.stok + ' ' + esc(o.satuan) + '</div>' +
+          (o.alergi ? '<input name="obat[' + i + '][alasan]" class="input mt-1" placeholder="Alasan klinis (pasien alergi ' + esc(o.alergi) + ')" style="border-color:#b91c2c">' : '') + '</td>' +
+          '<td><input type="number" name="obat[' + i + '][jumlah]" min="1" max="' + o.stok + '" class="input obat-jml" style="width:80px"></td>' +
+          '<td><input name="obat[' + i + '][dosis]" maxlength="50" class="input" placeholder="contoh: 500 mg"></td>' +
+          '<td><input name="obat[' + i + '][frekuensi]" maxlength="50" class="input" placeholder="contoh: 3x sehari"></td>' +
+          '<td><input name="obat[' + i + '][aturan]" maxlength="100" class="input" placeholder="contoh: Sesudah makan"></td>' +
+          '<td><button type="button" class="btn btn-outline-danger btn-sm obat-hapus">Hapus</button></td>';
+        otb.appendChild(tr); pasangObat(tr); oc.value = ''; cariObat(); tr.querySelector('.obat-jml').focus(); ringkas();
+      }
+      function pasangObat(tr) {
+        tr.querySelector('.obat-hapus').addEventListener('click', function () { tr.remove(); ringkas(); });
+        tr.querySelectorAll('input').forEach(function (x) { x.addEventListener('input', ringkas); });
+      }
+      otb.querySelectorAll('.obat-row').forEach(pasangObat);
+      oc.addEventListener('input', cariObat);
+      oc.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); var b = oh.querySelector('button:not([disabled])'); if (b) b.click(); } });
+      cariObat();
+      ringkas();
+    })();
+    </script>
+      <div class="card"><div class="modal-foot"><a href="rawat_jalan-antrian.html" class="btn btn-secondary">Batal</a><button class="btn btn-success" style="padding:10px 18px">Simpan Pemeriksaan &amp; Kirim Order</button></div></div>
+</form>
+<script>
+(function () { var tl = document.getElementById('tl');
+  function f() { document.querySelectorAll('.tl').forEach(function (e) { e.style.display = e.classList.contains('tl-' + tl.value) ? '' : 'none'; }); }
+  tl.addEventListener('change', f); f(); })();
+</script>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>

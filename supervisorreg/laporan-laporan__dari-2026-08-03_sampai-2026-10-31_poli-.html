@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan Registrasi · SIMRS RS USHI</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body class="app-body">
+<aside id="sidebar" class="sidebar">
+    <a href="registrasi-pasien.html" class="side-brand">
+        <img src="../assets/logo.png" alt="Logo RS USHI">
+        <div><b>RS USHI</b><small>Rumah Sakit Untuk Semua Hari Ini</small></div>
+    </a>
+    <nav class="side-nav">
+                    <details class="side-sec" open>
+            <summary class="side-group"><span>Administrasi Pasien</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="registrasi-pendaftaran.html" class="side-link">Pendaftaran Pasien</a>
+                            <a href="registrasi-pasien.html" class="side-link">Data Pasien</a>
+                            <a href="jadwal-appointment.html" class="side-link">Jadwal &amp; Appointment</a>
+                            <a href="jadwal-praktik.html" class="side-link">Jadwal Praktik Dokter</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Pelayanan</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="igd-igd.html" class="side-link">Gawat Darurat (IGD)</a>
+                        </div>
+        </details>
+                            <details class="side-sec" open>
+            <summary class="side-group"><span>Manajemen</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="side-items">
+                            <a href="laporan-laporan.html" class="side-link active">Laporan &amp; Indikator</a>
+                        </div>
+        </details>
+                </nav>
+    <div class="side-foot">SIMRS v2.0 · Kelompok 10</div>
+</aside>
+<div id="sideBack" class="side-back" onclick="document.body.classList.remove('side-open')"></div>
+<div class="shell">
+<header class="topbar no-print">
+    <div class="flex items-center gap-3 min-w-0">
+        <button class="hamb" onclick="document.body.classList.toggle('side-open')" aria-label="Menu">&#9776;</button>
+        <img src="../assets/logo.png" class="top-logo" alt="">
+        <div class="top-title">SIMRS RS USHI<span class="hidden md:inline"> · Laporan Registrasi</span></div>
+    </div>
+    <div class="flex items-center gap-2 sm:gap-3">
+        <details class="notif">
+            <summary title="Notifikasi" aria-label="Notifikasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bubble">11</span></summary>
+            <div class="notif-panel">
+                <b class="block mb-2 text-slate-800">Tugas menunggu</b>
+                                    <a href="registrasi-pendaftaran.html" class="notif-item"><span>Pasien terdaftar hari ini</span><span class="notif-n">11<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+                                                    <p class="text-xs text-slate-500 mt-2">Klik untuk membuka halaman terkait.</p>            </div>
+        </details>
+        <div class="avatar">FR</div>
+        <div class="identity hidden sm:block"><b>Fikri Ramadhan, S.KM.</b><small>Supervisor Registrasi</small></div>
+        <a href="#" data-demo-off class="btn btn-akun hidden lg:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Ganti Password</a>
+        <a href="../login.html" class="btn btn-keluar" data-confirm-link="Keluar dari SIMRS?"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Keluar</a>
+    </div>
+</header>
+<main class="content">
+    <div class="page-head no-print">
+        <div>
+            <h1>Laporan Registrasi</h1>
+            <p>Periode 3 Agu 2026 – 31 Okt 2026 · semua unit · data agregat</p>        </div>
+        <div class="flex items-center gap-2 flex-wrap justify-end">
+            <a href="#" data-demo-off class="btn btn-secondary">Ekspor CSV</a> <button onclick="window.print()" class="btn btn-primary">Cetak</button>            <span class="page-date">Tanggal sistem 31 Okt 2026 · Sabtu</span>
+        </div>
+    </div>
+    <form class="card mb-4 no-print"><div class="card-body flex flex-wrap gap-3 items-end">
+  <div class="field mb-0"><label>Dari</label><input type="date" name="dari" value="2026-08-03" max="2026-10-31"></div>
+  <div class="field mb-0"><label>Sampai</label><input type="date" name="sampai" value="2026-10-31" max="2026-10-31"></div>
+  <div class="field mb-0"><label>Unit</label><select name="poli"><option value="">Semua unit</option><option value="6">Instalasi Gawat Darurat</option><option value="3">Poli Anak</option><option value="4">Poli Bedah</option><option value="5">Poli Kandungan</option><option value="2">Poli Penyakit Dalam</option><option value="1">Poli Umum</option></select></div>
+  <div class="flex gap-1"><a class="btn btn-secondary btn-sm" href="laporan-laporan__dari-2026-10-25_sampai-2026-10-31_poli-.html">7 hari</a><a class="btn btn-secondary btn-sm" href="laporan-laporan__dari-2026-10-02_sampai-2026-10-31_poli-.html">30 hari</a><a class="btn btn-secondary btn-sm" href="laporan-laporan__dari-2026-08-03_sampai-2026-10-31_poli-.html">90 hari</a></div>
+  <button class="btn btn-primary">Terapkan</button></div></form>
+
+<div class="metrics"><div class="metric metric-teal"><span>Total Kunjungan</span><strong>26</strong></div><div class="metric metric-green"><span>Pasien Baru</span><strong>15</strong></div><div class="metric metric-purple"><span>Rawat Jalan</span><strong>17</strong></div><div class="metric metric-red"><span>IGD</span><strong>2</strong></div><div class="metric metric-amber"><span>Pasien BPJS</span><strong>13</strong></div></div>
+<div class="grid lg:grid-cols-3 gap-4 mb-4">
+  <div class="card lg:col-span-2"><div class="card-head"><b>Kunjungan per hari</b><span class="muted">26 kunjungan · rata-rata 0.3/hari</span></div><div class="card-body"><div class="chart-box"><canvas id="cHari" role="img" aria-label="Grafik garis jumlah kunjungan per hari"></canvas></div></div></div>
+  </div>
+
+<div class="grid lg:grid-cols-2 gap-4 mb-4">
+  <div class="card"><div class="card-head"><b>Kunjungan per poliklinik</b></div><div class="card-body"><div class="chart-box"><canvas id="cPoli" role="img" aria-label="Grafik batang kunjungan per poliklinik"></canvas></div></div></div>
+  </div>
+
+<div class="grid lg:grid-cols-3 gap-4">
+    <div class="space-y-4">
+    <div class="card"><div class="card-head"><b>Komposisi</b></div><div class="card-body text-sm"><dl class="kv">
+      <dt>Rawat Jalan</dt><dd>17</dd><dt>IGD</dt><dd>2</dd><dt>Rawat Inap</dt><dd>7</dd>      <dt>Pasien Umum</dt><dd>6 <span class="muted font-normal">(23%)</span></dd><dt>Pasien BPJS</dt><dd>13 <span class="muted font-normal">(50%)</span></dd><dt>Pasien Asuransi</dt><dd>7 <span class="muted font-normal">(27%)</span></dd></dl></div></div>
+      </div>
+</div>
+
+<details class="card mt-4"><summary class="card-head cursor-pointer"><b>Tabel data grafik</b><span class="muted">untuk dibaca tanpa grafik</span></summary><div class="card-body grid md:grid-cols-3 gap-4 text-sm">
+  <table class="tbl"><thead><tr><th>Tanggal</th><th class="num">Kunjungan</th></tr></thead><tbody><tr><td>3 Agu 2026</td><td class="num">0</td></tr><tr><td>4 Agu 2026</td><td class="num">0</td></tr><tr><td>5 Agu 2026</td><td class="num">0</td></tr><tr><td>6 Agu 2026</td><td class="num">0</td></tr><tr><td>7 Agu 2026</td><td class="num">0</td></tr><tr><td>8 Agu 2026</td><td class="num">0</td></tr><tr><td>9 Agu 2026</td><td class="num">0</td></tr><tr><td>10 Agu 2026</td><td class="num">0</td></tr><tr><td>11 Agu 2026</td><td class="num">0</td></tr><tr><td>12 Agu 2026</td><td class="num">0</td></tr><tr><td>13 Agu 2026</td><td class="num">0</td></tr><tr><td>14 Agu 2026</td><td class="num">0</td></tr><tr><td>15 Agu 2026</td><td class="num">0</td></tr><tr><td>16 Agu 2026</td><td class="num">0</td></tr><tr><td>17 Agu 2026</td><td class="num">0</td></tr><tr><td>18 Agu 2026</td><td class="num">0</td></tr><tr><td>19 Agu 2026</td><td class="num">0</td></tr><tr><td>20 Agu 2026</td><td class="num">0</td></tr><tr><td>21 Agu 2026</td><td class="num">0</td></tr><tr><td>22 Agu 2026</td><td class="num">0</td></tr><tr><td>23 Agu 2026</td><td class="num">0</td></tr><tr><td>24 Agu 2026</td><td class="num">0</td></tr><tr><td>25 Agu 2026</td><td class="num">0</td></tr><tr><td>26 Agu 2026</td><td class="num">0</td></tr><tr><td>27 Agu 2026</td><td class="num">0</td></tr><tr><td>28 Agu 2026</td><td class="num">0</td></tr><tr><td>29 Agu 2026</td><td class="num">0</td></tr><tr><td>30 Agu 2026</td><td class="num">0</td></tr><tr><td>31 Agu 2026</td><td class="num">0</td></tr><tr><td>1 Sep 2026</td><td class="num">0</td></tr><tr><td>2 Sep 2026</td><td class="num">0</td></tr><tr><td>3 Sep 2026</td><td class="num">0</td></tr><tr><td>4 Sep 2026</td><td class="num">0</td></tr><tr><td>5 Sep 2026</td><td class="num">0</td></tr><tr><td>6 Sep 2026</td><td class="num">0</td></tr><tr><td>7 Sep 2026</td><td class="num">0</td></tr><tr><td>8 Sep 2026</td><td class="num">0</td></tr><tr><td>9 Sep 2026</td><td class="num">0</td></tr><tr><td>10 Sep 2026</td><td class="num">0</td></tr><tr><td>11 Sep 2026</td><td class="num">0</td></tr><tr><td>12 Sep 2026</td><td class="num">0</td></tr><tr><td>13 Sep 2026</td><td class="num">0</td></tr><tr><td>14 Sep 2026</td><td class="num">0</td></tr><tr><td>15 Sep 2026</td><td class="num">0</td></tr><tr><td>16 Sep 2026</td><td class="num">0</td></tr><tr><td>17 Sep 2026</td><td class="num">0</td></tr><tr><td>18 Sep 2026</td><td class="num">0</td></tr><tr><td>19 Sep 2026</td><td class="num">0</td></tr><tr><td>20 Sep 2026</td><td class="num">0</td></tr><tr><td>21 Sep 2026</td><td class="num">0</td></tr><tr><td>22 Sep 2026</td><td class="num">0</td></tr><tr><td>23 Sep 2026</td><td class="num">0</td></tr><tr><td>24 Sep 2026</td><td class="num">0</td></tr><tr><td>25 Sep 2026</td><td class="num">0</td></tr><tr><td>26 Sep 2026</td><td class="num">0</td></tr><tr><td>27 Sep 2026</td><td class="num">0</td></tr><tr><td>28 Sep 2026</td><td class="num">0</td></tr><tr><td>29 Sep 2026</td><td class="num">0</td></tr><tr><td>30 Sep 2026</td><td class="num">0</td></tr><tr><td>1 Okt 2026</td><td class="num">0</td></tr><tr><td>2 Okt 2026</td><td class="num">0</td></tr><tr><td>3 Okt 2026</td><td class="num">1</td></tr><tr><td>4 Okt 2026</td><td class="num">0</td></tr><tr><td>5 Okt 2026</td><td class="num">0</td></tr><tr><td>6 Okt 2026</td><td class="num">0</td></tr><tr><td>7 Okt 2026</td><td class="num">0</td></tr><tr><td>8 Okt 2026</td><td class="num">0</td></tr><tr><td>9 Okt 2026</td><td class="num">0</td></tr><tr><td>10 Okt 2026</td><td class="num">0</td></tr><tr><td>11 Okt 2026</td><td class="num">1</td></tr><tr><td>12 Okt 2026</td><td class="num">0</td></tr><tr><td>13 Okt 2026</td><td class="num">0</td></tr><tr><td>14 Okt 2026</td><td class="num">0</td></tr><tr><td>15 Okt 2026</td><td class="num">0</td></tr><tr><td>16 Okt 2026</td><td class="num">0</td></tr><tr><td>17 Okt 2026</td><td class="num">0</td></tr><tr><td>18 Okt 2026</td><td class="num">0</td></tr><tr><td>19 Okt 2026</td><td class="num">1</td></tr><tr><td>20 Okt 2026</td><td class="num">0</td></tr><tr><td>21 Okt 2026</td><td class="num">0</td></tr><tr><td>22 Okt 2026</td><td class="num">0</td></tr><tr><td>23 Okt 2026</td><td class="num">0</td></tr><tr><td>24 Okt 2026</td><td class="num">0</td></tr><tr><td>25 Okt 2026</td><td class="num">1</td></tr><tr><td>26 Okt 2026</td><td class="num">2</td></tr><tr><td>27 Okt 2026</td><td class="num">2</td></tr><tr><td>28 Okt 2026</td><td class="num">2</td></tr><tr><td>29 Okt 2026</td><td class="num">2</td></tr><tr><td>30 Okt 2026</td><td class="num">3</td></tr><tr><td>31 Okt 2026</td><td class="num">11</td></tr></tbody></table>
+  <table class="tbl"><thead><tr><th>Poliklinik</th><th class="num">Kunjungan</th></tr></thead><tbody><tr><td>Poli Penyakit Dalam</td><td class="num">11</td></tr><tr><td>Poli Anak</td><td class="num">5</td></tr><tr><td>Instalasi Gawat Darurat</td><td class="num">4</td></tr><tr><td>Poli Umum</td><td class="num">3</td></tr><tr><td>Poli Bedah</td><td class="num">2</td></tr><tr><td>Poli Kandungan</td><td class="num">1</td></tr></tbody></table>
+  </div></details>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+(function () {
+  if (!window.Chart) return;
+  const TEAL = '#0b7896', INK = '#475569', GRID = '#e2e8f0';
+  Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+  Chart.defaults.color = INK;
+  const rp = v => 'Rp ' + Number(v).toLocaleString('id-ID');
+  const base = (fmt, horiz) => ({ responsive: true, maintainAspectRatio: false, indexAxis: horiz ? 'y' : 'x', interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ' ' + (fmt ? fmt(c.parsed[horiz ? 'x' : 'y']) : c.parsed[horiz ? 'x' : 'y']) } } },
+    scales: { x: { grid: { display: !!horiz, color: GRID }, ticks: horiz && fmt ? { callback: v => fmt(v) } : { maxRotation: 0, autoSkip: true } },
+              y: { grid: { display: !horiz, color: GRID }, beginAtZero: true, ticks: !horiz ? (fmt ? { callback: v => fmt(v) } : { precision: 0 }) : {} } } });
+  const hari = ["3\/8","4\/8","5\/8","6\/8","7\/8","8\/8","9\/8","10\/8","11\/8","12\/8","13\/8","14\/8","15\/8","16\/8","17\/8","18\/8","19\/8","20\/8","21\/8","22\/8","23\/8","24\/8","25\/8","26\/8","27\/8","28\/8","29\/8","30\/8","31\/8","1\/9","2\/9","3\/9","4\/9","5\/9","6\/9","7\/9","8\/9","9\/9","10\/9","11\/9","12\/9","13\/9","14\/9","15\/9","16\/9","17\/9","18\/9","19\/9","20\/9","21\/9","22\/9","23\/9","24\/9","25\/9","26\/9","27\/9","28\/9","29\/9","30\/9","1\/10","2\/10","3\/10","4\/10","5\/10","6\/10","7\/10","8\/10","9\/10","10\/10","11\/10","12\/10","13\/10","14\/10","15\/10","16\/10","17\/10","18\/10","19\/10","20\/10","21\/10","22\/10","23\/10","24\/10","25\/10","26\/10","27\/10","28\/10","29\/10","30\/10","31\/10"];
+  new Chart(document.getElementById('cHari'), { type: 'line', data: { labels: hari, datasets: [{ data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,2,2,2,2,3,11], borderColor: TEAL, backgroundColor: 'rgba(11,120,150,.08)', fill: true, borderWidth: 2, tension: .3, pointRadius: 0, pointHoverRadius: 5 }] }, options: base() });
+  new Chart(document.getElementById('cPoli'), { type: 'bar', data: { labels: ["Poli Penyakit Dalam","Poli Anak","Instalasi Gawat Darurat","Poli Umum","Poli Bedah","Poli Kandungan"], datasets: [{ data: [11,5,4,3,2,1], backgroundColor: TEAL, borderRadius: 4, maxBarThickness: 22 }] }, options: base(null, true) });
+  if (document.getElementById('cKomp')) new Chart(document.getElementById('cKomp'), { type: 'bar', data: { labels: ["Radiologi","Kamar","Konsultasi","Administrasi","Laboratorium","Obat","Tindakan"], datasets: [{ data: [4150000,3250000,1030000,280000,125000,110000,35000], backgroundColor: TEAL, borderRadius: 4, maxBarThickness: 22 }] }, options: base(rp, true) });
+})();
+</script>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
+  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
+  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+})();
+</script></body>
+</html>
