@@ -10,7 +10,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
 <link rel="stylesheet" href="../assets/app.css">
-</head>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var asli=window.fetch, muat=null;
+  function data(){ if(!muat) muat=new Promise(function(ok){var s=document.createElement('script');s.src=(window.DEMO_ROOT||'')+'assets/slot-demo.js';s.onload=ok;s.onerror=ok;document.head.appendChild(s)}); return muat; }
+  window.fetch=function(u){var s=String(u); if(s.indexOf('slot.php')<0) return asli.apply(this,arguments);
+    return data().then(function(){var q=new URLSearchParams(s.split('?')[1]||''), k=q.get('dokter')+'|'+q.get('tanggal');
+      var d=(window.__SLOT||{})[k]||{slot:[],info:'',pesan:'Mode demo: contoh jam praktik hanya tersedia untuk 30 hari sejak versi demo dibuat. Pilih tanggal lain.',tanggal_lain:[]};
+      return new Response(JSON.stringify(d),{headers:{'Content-Type':'application/json'}});});};
+})();
+</script></head>
 <body class="app-body">
 <aside id="sidebar" class="sidebar">
     <a href="rawat_jalan-antrian.html" class="side-brand">
@@ -91,128 +100,128 @@
     <div class="metrics"><div class="metric metric-teal"><span>Total Order</span><strong>38</strong></div><div class="metric metric-purple"><span>Order Lab</span><strong>8</strong></div><div class="metric metric-purple"><span>Order Radiologi</span><strong>8</strong></div><div class="metric metric-purple"><span>Item Resep</span><strong>15</strong></div><div class="metric metric-amber"><span>Tindakan Belum Dikerjakan</span><strong>2</strong></div><div class="metric metric-green"><span>Hasil Final</span><strong>25</strong></div><div class="metric metric-red"><span>CITO Belum Final</span><strong>2</strong></div></div><div class="card"><div class="card-head"><div class="tabs" style="margin:0"><a class="tab active" href="cpoe-cpoe__jenis-.html">Semua</a><a class="tab" href="cpoe-cpoe__jenis-lab.html">Laboratorium</a><a class="tab" href="cpoe-cpoe__jenis-rad.html">Radiologi</a><a class="tab" href="cpoe-cpoe__jenis-resep.html">Farmasi</a><a class="tab" href="cpoe-cpoe__jenis-tindakan.html">Tindakan</a></div>
   <input data-filter="tblOrder" class="input" style="width:200px" placeholder="Cari pasien / item"></div>
   <div class="tbl-wrap"><table class="tbl" id="tblOrder"><thead><tr><th>Waktu</th><th>Pasien</th><th>Jenis</th><th>Order</th><th>Prioritas</th><th>Status</th><th>Hasil</th><th class="num">Aksi</th></tr></thead><tbody>
-    <tr><td class="muted">31 Okt 2026 07:48</td><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003</div></td>
+    <tr><td class="muted">31 Okt 2026 09:15</td><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003</div></td>
     <td>Farmasi</td><td><b>Paracetamol Sirup 120 mg/5 mL</b><div class="muted">1 botol · 5 mL 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-amber">Order Baru</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="emr-emr__id-4.html">EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 07:48</td><td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 09:15</td><td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007</div></td>
     <td>Farmasi</td><td><b>Paracetamol 500 mg</b><div class="muted">10 tablet · 500 mg 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-blue">Terverifikasi</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 07:48</td><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009</div><span class="badge badge-red">Alergi Sulfonamid</span></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 09:15</td><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009</div><span class="badge badge-red">Alergi Sulfonamid</span></td>
     <td>Farmasi</td><td><b>Amlodipine 10 mg</b><div class="muted">30 tablet · 10 mg 1x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Malam hari      <div><a class="underline text-[#0b7896]" href="emr-emr__id-7.html">EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 07:48</td><td><b class="pname">Budi Santoso</b><div class="muted">RM-2026-000015</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 09:15</td><td><b class="pname">Budi Santoso</b><div class="muted">RM-2026-000015</div></td>
     <td>Farmasi</td><td><b>Paracetamol 500 mg</b><div class="muted">10 tablet · 500 mg 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Sesudah makan bila perlu      <div><a class="underline text-[#0b7896]" href="emr-emr__id-8.html">EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 06:48</td><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 08:15</td><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003</div></td>
     <td>Laboratorium</td><td><b>Darah Lengkap (CBC)</b><div class="muted">Demam hari ke-3, evaluasi trombosit</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Spesimen Diterima</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="emr-emr__id-4.html">EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 06:48</td><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 08:15</td><td><b class="pname">Nur Sari</b><div class="muted">RM-2026-000003</div></td>
     <td>Laboratorium</td><td><b>NS1 Antigen Dengue</b><div class="muted">Suspek infeksi dengue</div></td><td><span class="badge badge-red">CITO</span></td>
     <td><span class="badge badge-amber">Order Baru</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="emr-emr__id-4.html">EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 06:48</td><td><b class="pname">Daffa Pratama</b><div class="muted">RM-2026-000008</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 08:15</td><td><b class="pname">Daffa Pratama</b><div class="muted">RM-2026-000008</div></td>
     <td>Laboratorium</td><td><b>Darah Lengkap (CBC)</b><div class="muted">Suspek anemia defisiensi besi</div></td><td>Rutin</td>
     <td><span class="badge badge-amber">Menunggu Validasi</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 06:48</td><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009</div><span class="badge badge-red">Alergi Sulfonamid</span></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 08:15</td><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009</div><span class="badge badge-red">Alergi Sulfonamid</span></td>
     <td>Laboratorium</td><td><b>Fungsi Ginjal (Ureum, Kreatinin)</b><div class="muted">Evaluasi fungsi ginjal pada hipertensi</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Ureum 32 mg/dL; Kreatinin 0,9 mg/dL      <div><a class="underline text-[#0b7896]" href="emr-emr__id-7.html">EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 06:48</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 08:15</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
     <td>Radiologi</td><td><b>CT Scan Abdomen · Dengan kontras</b><div class="muted">Pielonefritis tidak membaik setelah 72 jam antibiotik, suspek abses ginjal kanan</div></td><td>Rutin</td>
     <td><span class="badge badge-amber">Menunggu Persetujuan Asuransi</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 06:48</td><td><b class="pname">Budi Santoso</b><div class="muted">RM-2026-000004</div><span class="badge badge-red">Alergi Penisilin</span></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 08:15</td><td><b class="pname">Budi Santoso</b><div class="muted">RM-2026-000004</div><span class="badge badge-red">Alergi Penisilin</span></td>
     <td>Tindakan</td><td><b>Pemasangan Infus</b><div class="muted">1x · RL 20 tpm, tangan kiri · Instalasi Gawat Darurat</div></td><td>-</td>
     <td><span class="badge badge-green">Dikerjakan</span></td><td class="text-xs">Dikerjakan sesuai instruksi DPJP      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 05:48</td><td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 07:15</td><td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007</div></td>
     <td>Radiologi</td><td><b>USG Abdomen</b><div class="muted">Suspek kolelitiasis</div></td><td>Rutin</td>
     <td><span class="badge badge-blue">Terjadwal</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 05:48</td><td><b class="pname">Yusuf Maulana</b><div class="muted">RM-2026-000012</div></td>
+    <td class="num"></td></tr><tr><td class="muted">31 Okt 2026 07:15</td><td><b class="pname">Yusuf Maulana</b><div class="muted">RM-2026-000012</div></td>
     <td>Radiologi</td><td><b>CT Scan Kepala · Tanpa kontras</b><div class="muted">Cedera kepala dengan muntah dan episode bingung, evaluasi perdarahan intrakranial</div></td><td><span class="badge badge-red">CITO</span></td>
     <td><span class="badge badge-amber">Order Baru</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 07:48</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
+    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 09:15</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
     <td>Farmasi</td><td><b>Ceftriaxone 1 g injeksi</b><div class="muted">4 vial · 1 g 2x sehari</div></td><td>-</td>
     <td><span class="badge badge-amber">Dispensing</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 07:48</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
+    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 09:15</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
     <td>Farmasi</td><td><b>Infus NaCl 0,9% 500 mL</b><div class="muted">4 botol · 500 mL 20 tetes/menit</div></td><td>-</td>
     <td><span class="badge badge-amber">Dispensing</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 07:48</td><td><b class="pname">Rizal Hidayat</b><div class="muted">RM-2026-000006</div></td>
+    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 09:15</td><td><b class="pname">Rizal Hidayat</b><div class="muted">RM-2026-000006</div></td>
     <td>Farmasi</td><td><b>Oralit</b><div class="muted">6 sachet · 1 sachet Setiap BAB cair</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Larutkan dalam 200 mL air      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 06:48</td><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009</div><span class="badge badge-red">Alergi Sulfonamid</span></td>
+    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 08:15</td><td><b class="pname">Lina Marlina</b><div class="muted">RM-2026-000009</div><span class="badge badge-red">Alergi Sulfonamid</span></td>
     <td>Laboratorium</td><td><b>Kolesterol Total</b><div class="muted">Evaluasi dislipidemia</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Kolesterol total 238 mg/dL (tinggi)      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 06:48</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
+    <td class="num"></td></tr><tr><td class="muted">30 Okt 2026 08:15</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
     <td>Tindakan</td><td><b>Pemasangan Infus</b><div class="muted">1x · RL 20 tpm, tangan kiri · Instalasi Gawat Darurat</div></td><td>-</td>
     <td><span class="badge badge-green">Dikerjakan</span></td><td class="text-xs">Dikerjakan sesuai instruksi DPJP      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 07:48</td><td><b class="pname">Yusuf Maulana</b><div class="muted">RM-2026-000012</div></td>
+    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 09:15</td><td><b class="pname">Yusuf Maulana</b><div class="muted">RM-2026-000012</div></td>
     <td>Farmasi</td><td><b>Asam Mefenamat 500 mg</b><div class="muted">10 tablet · 500 mg 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Sesudah makan      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 06:48</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
+    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 08:15</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
     <td>Laboratorium</td><td><b>Urinalisis Lengkap</b><div class="muted">Suspek pielonefritis</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Leukosit urin 25-30/LPB (+3); nitrit (+); bakteri (+)      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 06:48</td><td><b class="pname">Yusuf Maulana</b><div class="muted">RM-2026-000012</div></td>
+    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 08:15</td><td><b class="pname">Yusuf Maulana</b><div class="muted">RM-2026-000012</div></td>
     <td>Tindakan</td><td><b>Injeksi IM/IV</b><div class="muted">1x · Ondansetron 4 mg IV · Poli Bedah</div></td><td>-</td>
     <td><span class="badge badge-green">Dikerjakan</span></td><td class="text-xs">Dikerjakan sesuai instruksi DPJP      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 06:48</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
+    <td class="num"></td></tr><tr><td class="muted">29 Okt 2026 08:15</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
     <td>Tindakan</td><td><b>Pemasangan Kateter Urin</b><div class="muted">1x · Poli Penyakit Dalam</div></td><td>-</td>
     <td><span class="badge badge-amber">Order</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
     <td class="num">      <button class="btn btn-primary btn-sm" data-open="tk7">Validasi &amp; Kerjakan</button>
-      <dialog class="modal" id="tk7"><form method="post"><input type="hidden" name="_csrf" value="690059d04501eb86171a0f9d5a545782"><input type="hidden" name="id" value="7"><div class="modal-head"><h3>Pemasangan Kateter Urin · Dewi Lestari</h3></div>
+      <dialog class="modal" id="tk7"><form method="post"><input type="hidden" name="_csrf" value="7e3331091d4a0d8b5d30a94d7d6dce0b"><input type="hidden" name="id" value="7"><div class="modal-head"><h3>Pemasangan Kateter Urin · Dewi Lestari</h3></div>
         <div class="modal-body text-left"><label class="flex gap-2 items-center text-sm mb-2"><input type="checkbox" name="cek_identitas" value="1"> Identitas pasien sudah dicek (nama + tanggal lahir / No. RM) dan instruksi dokter jelas</label>
         <input name="catatan" class="input" placeholder="Catatan pelaksanaan, contoh: infus RL 20 tpm terpasang di tangan kiri"></div>
         <div class="modal-foot"><button name="aksi" value="tolak" class="btn btn-secondary">Kembalikan ke Dokter</button><button name="aksi" value="kerjakan" class="btn btn-success">Selesai Dikerjakan</button></div></form></dialog>
-    </td></tr><tr><td class="muted">29 Okt 2026 05:48</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
+    </td></tr><tr><td class="muted">29 Okt 2026 07:15</td><td><b class="pname">Dewi Lestari</b><div class="muted">RM-2026-000013</div><span class="badge badge-red">Alergi Cotrimoxazole</span></td>
     <td>Radiologi</td><td><b>USG Ginjal &amp; Saluran Kemih</b><div class="muted">Pielonefritis, evaluasi ginjal kanan</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Gambaran pielonefritis akut ginjal kanan. Tidak tampak batu maupun hidronefrosis bilateral      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 07:48</td><td><b class="pname">Hendra Gunawan</b><div class="muted">RM-2026-000010</div></td>
+    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 09:15</td><td><b class="pname">Hendra Gunawan</b><div class="muted">RM-2026-000010</div></td>
     <td>Farmasi</td><td><b>Furosemide 40 mg</b><div class="muted">10 tablet · 40 mg 1x sehari</div></td><td>-</td>
     <td><span class="badge badge-amber">Siap Diserahkan</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 07:48</td><td><b class="pname">Daffa Pratama</b><div class="muted">RM-2026-000008</div></td>
+    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 09:15</td><td><b class="pname">Daffa Pratama</b><div class="muted">RM-2026-000008</div></td>
     <td>Farmasi</td><td><b>Oralit</b><div class="muted">6 sachet · 1 sachet Setiap BAB cair</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Larutkan dalam 200 mL air      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 06:48</td><td><b class="pname">Hendra Gunawan</b><div class="muted">RM-2026-000010</div></td>
+    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 08:15</td><td><b class="pname">Hendra Gunawan</b><div class="muted">RM-2026-000010</div></td>
     <td>Tindakan</td><td><b>EKG 12 Lead</b><div class="muted">1x · Poli Penyakit Dalam</div></td><td>-</td>
     <td><span class="badge badge-green">Dikerjakan</span></td><td class="text-xs">Dikerjakan sesuai instruksi DPJP      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 05:48</td><td><b class="pname">Hendra Gunawan</b><div class="muted">RM-2026-000010</div></td>
+    <td class="num"></td></tr><tr><td class="muted">28 Okt 2026 07:15</td><td><b class="pname">Hendra Gunawan</b><div class="muted">RM-2026-000010</div></td>
     <td>Radiologi</td><td><b>X-Ray Thorax</b><div class="muted">Sesak dan edema kedua tungkai, suspek gagal jantung</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Kardiomegali dengan tanda bendungan paru (edema interstisial) dan efusi pleura minimal bil      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 07:48</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 09:15</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
     <td>Farmasi</td><td><b>Ceftriaxone 1 g injeksi</b><div class="muted">6 vial · 1 g 2x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Intravena      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 07:48</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 09:15</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
     <td>Farmasi</td><td><b>Paracetamol 500 mg</b><div class="muted">10 tablet · 500 mg 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Bila demam      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 06:48</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 08:15</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
     <td>Laboratorium</td><td><b>Darah Lengkap (CBC)</b><div class="muted">Pneumonia, evaluasi leukosit</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Hb 13,4 g/dL; Leukosit 15.800/uL (tinggi); Trombosit 280.000/uL      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 06:48</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 08:15</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
     <td>Laboratorium</td><td><b>Darah Lengkap (CBC)</b><div class="muted">Skrining pra-program hamil</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Hb 12,8 g/dL; Leukosit 7.900/uL; Trombosit 256.000/uL      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 06:48</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 08:15</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
     <td>Tindakan</td><td><b>Pemasangan Infus</b><div class="muted">1x · RL 20 tpm, tangan kiri · Poli Penyakit Dalam</div></td><td>-</td>
     <td><span class="badge badge-green">Dikerjakan</span></td><td class="text-xs">Dikerjakan sesuai instruksi DPJP      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 06:48</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 08:15</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
     <td>Tindakan</td><td><b>Nebulisasi</b><div class="muted">1x · Salbutamol 2,5 mg + NaCl 0,9% 2 cc · Poli Penyakit Dalam</div></td><td>-</td>
     <td><span class="badge badge-amber">Order</span></td><td class="text-xs"><span class="muted">Belum final</span>      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
     <td class="num">      <button class="btn btn-primary btn-sm" data-open="tk2">Validasi &amp; Kerjakan</button>
-      <dialog class="modal" id="tk2"><form method="post"><input type="hidden" name="_csrf" value="690059d04501eb86171a0f9d5a545782"><input type="hidden" name="id" value="2"><div class="modal-head"><h3>Nebulisasi · Ahmad Fauzan</h3></div>
+      <dialog class="modal" id="tk2"><form method="post"><input type="hidden" name="_csrf" value="7e3331091d4a0d8b5d30a94d7d6dce0b"><input type="hidden" name="id" value="2"><div class="modal-head"><h3>Nebulisasi · Ahmad Fauzan</h3></div>
         <div class="modal-body text-left"><label class="flex gap-2 items-center text-sm mb-2"><input type="checkbox" name="cek_identitas" value="1"> Identitas pasien sudah dicek (nama + tanggal lahir / No. RM) dan instruksi dokter jelas</label>
         <input name="catatan" class="input" placeholder="Catatan pelaksanaan, contoh: infus RL 20 tpm terpasang di tangan kiri"></div>
         <div class="modal-foot"><button name="aksi" value="tolak" class="btn btn-secondary">Kembalikan ke Dokter</button><button name="aksi" value="kerjakan" class="btn btn-success">Selesai Dikerjakan</button></div></form></dialog>
-    </td></tr><tr><td class="muted">27 Okt 2026 05:48</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
+    </td></tr><tr><td class="muted">27 Okt 2026 07:15</td><td><b class="pname">Ahmad Fauzan</b><div class="muted">RM-2026-000001</div></td>
     <td>Radiologi</td><td><b>X-Ray Thorax</b><div class="muted">Pneumonia, evaluasi infiltrat</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Pneumonia lobus inferior kanan      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 05:48</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
+    <td class="num"></td></tr><tr><td class="muted">27 Okt 2026 07:15</td><td><b class="pname">Maya Putri</b><div class="muted">RM-2026-000002</div><span class="badge badge-red">Alergi Ibuprofen</span></td>
     <td>Radiologi</td><td><b>USG Ginekologi (Uterus &amp; Ovarium)</b><div class="muted">Haid tidak teratur, suspek PCOS</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Gambaran ovarium polikistik bilateral, sesuai kriteria Rotterdam untuk PCOS. Mohon korelas      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">26 Okt 2026 07:48</td><td><b class="pname">Kevin Pratama</b><div class="muted">RM-2026-000014</div></td>
+    <td class="num"></td></tr><tr><td class="muted">26 Okt 2026 09:15</td><td><b class="pname">Kevin Pratama</b><div class="muted">RM-2026-000014</div></td>
     <td>Farmasi</td><td><b>Paracetamol Sirup 120 mg/5 mL</b><div class="muted">1 botol · 5 mL 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Sesudah makan      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">26 Okt 2026 07:48</td><td><b class="pname">Rina Kurniawati</b><div class="muted">RM-2026-000011</div></td>
+    <td class="num"></td></tr><tr><td class="muted">26 Okt 2026 09:15</td><td><b class="pname">Rina Kurniawati</b><div class="muted">RM-2026-000011</div></td>
     <td>Farmasi</td><td><b>Amlodipine 5 mg</b><div class="muted">30 tablet · 5 mg 1x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Pagi hari      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">26 Okt 2026 05:48</td><td><b class="pname">Rina Kurniawati</b><div class="muted">RM-2026-000011</div></td>
+    <td class="num"></td></tr><tr><td class="muted">26 Okt 2026 07:15</td><td><b class="pname">Rina Kurniawati</b><div class="muted">RM-2026-000011</div></td>
     <td>Radiologi</td><td><b>X-Ray Thorax</b><div class="muted">Hipertensi, evaluasi ukuran jantung</div></td><td>Rutin</td>
     <td><span class="badge badge-green">Diterbitkan</span></td><td class="text-xs">Cor dan pulmo dalam batas normal.      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
-    <td class="num"></td></tr><tr><td class="muted">25 Okt 2026 07:48</td><td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007</div></td>
+    <td class="num"></td></tr><tr><td class="muted">25 Okt 2026 09:15</td><td><b class="pname">Aulia Rahma</b><div class="muted">RM-2026-000007</div></td>
     <td>Farmasi</td><td><b>Paracetamol 500 mg</b><div class="muted">10 tablet · 500 mg 3x sehari</div></td><td>-</td>
     <td><span class="badge badge-green">Selesai</span></td><td class="text-xs">Sesudah makan      <div><a class="underline text-[#0b7896]" href="#" data-demo-off>EMR</a></div></td>
     <td class="num"></td></tr>  </tbody></table></div></div>
@@ -221,11 +230,12 @@
 <script src="../assets/app.js"></script>
 <script>window.DEMO_ROOT="../"</script><script>
 (function(){
-  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
-  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
-  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
-  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+  var css=document.createElement('style');css.textContent='.demo-badge{display:inline-flex;align-items:center;margin-left:8px;padding:2px 8px;border-radius:999px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font:700 10.5px/1.5 Inter,system-ui,sans-serif;letter-spacing:.06em;vertical-align:middle}.demo-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#003b55;color:#fff;padding:11px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(520px,92vw);text-align:center}';document.head.appendChild(css);
+  function badge(el){if(!el||el.querySelector('.demo-badge'))return;var b=document.createElement('span');b.className='demo-badge';b.textContent='DEMO';b.title='Versi demo: bisa dicoba, tetapi data tidak disimpan ke database';el.appendChild(b)}
+  document.addEventListener('DOMContentLoaded',function(){badge(document.querySelector('.top-title'));var h=document.querySelector('header a[href$="index.html"] b');if(h)badge(h)});
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
+  window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute('data-demo-login'))return;if(e.defaultPrevented)return;e.preventDefault();var btn=e.submitter;if(btn){btn.classList.remove('is-loading');btn.removeAttribute('aria-busy')}delete f.dataset.terkonfirmasi;document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast((f.method||'').toLowerCase()==='post'?'Mode demo: isian sudah valid, tetapi tidak disimpan ke database.':'Mode demo: pencarian dan filter hanya berfungsi di versi lengkap.')});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Mode demo: fitur ini hanya ada di versi lengkap.')}},true);
 })();
 </script></body>
 </html>

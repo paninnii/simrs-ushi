@@ -10,7 +10,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
 <link rel="stylesheet" href="../assets/app.css">
-</head>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var asli=window.fetch, muat=null;
+  function data(){ if(!muat) muat=new Promise(function(ok){var s=document.createElement('script');s.src=(window.DEMO_ROOT||'')+'assets/slot-demo.js';s.onload=ok;s.onerror=ok;document.head.appendChild(s)}); return muat; }
+  window.fetch=function(u){var s=String(u); if(s.indexOf('slot.php')<0) return asli.apply(this,arguments);
+    return data().then(function(){var q=new URLSearchParams(s.split('?')[1]||''), k=q.get('dokter')+'|'+q.get('tanggal');
+      var d=(window.__SLOT||{})[k]||{slot:[],info:'',pesan:'Mode demo: contoh jam praktik hanya tersedia untuk 30 hari sejak versi demo dibuat. Pilih tanggal lain.',tanggal_lain:[]};
+      return new Response(JSON.stringify(d),{headers:{'Content-Type':'application/json'}});});};
+})();
+</script></head>
 <body class="app-body">
 <aside id="sidebar" class="sidebar">
     <a href="inventori-inventori.html" class="side-brand">
@@ -67,14 +76,14 @@
       <td class="num ">260</td><td class="num">80</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">003O25A</span> · <b>86</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op4">Opname</button>
-          <dialog class="modal" id="op4"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="4">
+          <dialog class="modal" id="op4"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="4">
             <div class="modal-head"><h3>Stock opname Amlodipine 10 mg · 003O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="86" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="86"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">003O26B</span> · <b>174</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op5">Opname</button>
-          <dialog class="modal" id="op5"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="5">
+          <dialog class="modal" id="op5"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="5">
             <div class="modal-head"><h3>Stock opname Amlodipine 10 mg · 003O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="174" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="174"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -84,14 +93,14 @@
       <td class="num ">150</td><td class="num">50</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">004O25A</span> · <b>50</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op6">Opname</button>
-          <dialog class="modal" id="op6"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="6">
+          <dialog class="modal" id="op6"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="6">
             <div class="modal-head"><h3>Stock opname Amlodipine 5 mg · 004O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="50" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="50"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">004O26B</span> · <b>100</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op7">Opname</button>
-          <dialog class="modal" id="op7"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="7">
+          <dialog class="modal" id="op7"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="7">
             <div class="modal-head"><h3>Stock opname Amlodipine 5 mg · 004O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="100" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="100"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -101,7 +110,7 @@
       <td class="num text-red-600 font-bold">8<div><span class="badge badge-amber">Menipis</span></div></td><td class="num">30</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">002O26A</span> · <b>8</b> · <span class="">ED 14 Mar 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op3">Opname</button>
-          <dialog class="modal" id="op3"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="3">
+          <dialog class="modal" id="op3"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="3">
             <div class="modal-head"><h3>Stock opname Amoxicillin 500 mg · 002O26A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="8" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="8"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -111,14 +120,14 @@
       <td class="num ">200</td><td class="num">50</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">011O25A</span> · <b>66</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op19">Opname</button>
-          <dialog class="modal" id="op19"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="19">
+          <dialog class="modal" id="op19"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="19">
             <div class="modal-head"><h3>Stock opname Antasida DOEN · 011O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="66" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="66"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">011O26B</span> · <b>134</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op20">Opname</button>
-          <dialog class="modal" id="op20"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="20">
+          <dialog class="modal" id="op20"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="20">
             <div class="modal-head"><h3>Stock opname Antasida DOEN · 011O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="134" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="134"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -128,14 +137,14 @@
       <td class="num ">80</td><td class="num">20</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">015O25A</span> · <b>26</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op25">Opname</button>
-          <dialog class="modal" id="op25"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="25">
+          <dialog class="modal" id="op25"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="25">
             <div class="modal-head"><h3>Stock opname Asam Mefenamat 500 mg · 015O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="26" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="26"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">015O26B</span> · <b>54</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op26">Opname</button>
-          <dialog class="modal" id="op26"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="26">
+          <dialog class="modal" id="op26"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="26">
             <div class="modal-head"><h3>Stock opname Asam Mefenamat 500 mg · 015O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="54" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="54"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -145,7 +154,7 @@
       <td class="num text-red-600 font-bold">9<div><span class="badge badge-amber">Menipis</span></div></td><td class="num">20</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">014O26A</span> · <b>9</b> · <span class="">ED 14 Mar 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op24">Opname</button>
-          <dialog class="modal" id="op24"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="24">
+          <dialog class="modal" id="op24"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="24">
             <div class="modal-head"><h3>Stock opname Captopril 25 mg · 014O26A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="9" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="9"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -158,14 +167,14 @@
       <td class="num ">120</td><td class="num">40</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">009O25A</span> · <b>40</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op15">Opname</button>
-          <dialog class="modal" id="op15"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="15">
+          <dialog class="modal" id="op15"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="15">
             <div class="modal-head"><h3>Stock opname Ceftriaxone 1 g injeksi · 009O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="40" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="40"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">009O26B</span> · <b>80</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op16">Opname</button>
-          <dialog class="modal" id="op16"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="16">
+          <dialog class="modal" id="op16"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="16">
             <div class="modal-head"><h3>Stock opname Ceftriaxone 1 g injeksi · 009O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="80" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="80"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -175,7 +184,7 @@
       <td class="num text-red-600 font-bold">6<div><span class="badge badge-amber">Menipis</span></div></td><td class="num">20</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">008O26A</span> · <b>6</b> · <span class="">ED 14 Mar 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op14">Opname</button>
-          <dialog class="modal" id="op14"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="14">
+          <dialog class="modal" id="op14"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="14">
             <div class="modal-head"><h3>Stock opname Cetirizine 10 mg · 008O26A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="6" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="6"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -185,14 +194,14 @@
       <td class="num ">100</td><td class="num">30</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">019O25A</span> · <b>33</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op31">Opname</button>
-          <dialog class="modal" id="op31"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="31">
+          <dialog class="modal" id="op31"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="31">
             <div class="modal-head"><h3>Stock opname Cotrimoxazole 480 mg · 019O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="33" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="33"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">019O26B</span> · <b>67</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op32">Opname</button>
-          <dialog class="modal" id="op32"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="32">
+          <dialog class="modal" id="op32"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="32">
             <div class="modal-head"><h3>Stock opname Cotrimoxazole 480 mg · 019O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="67" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="67"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -202,14 +211,14 @@
       <td class="num ">60</td><td class="num">20</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">016O25A</span> · <b>20</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op27">Opname</button>
-          <dialog class="modal" id="op27"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="27">
+          <dialog class="modal" id="op27"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="27">
             <div class="modal-head"><h3>Stock opname Furosemide 40 mg · 016O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="20" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="20"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">016O26B</span> · <b>40</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op28">Opname</button>
-          <dialog class="modal" id="op28"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="28">
+          <dialog class="modal" id="op28"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="28">
             <div class="modal-head"><h3>Stock opname Furosemide 40 mg · 016O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="40" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="40"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -219,14 +228,14 @@
       <td class="num ">90</td><td class="num">30</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">007O25A</span> · <b>30</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op12">Opname</button>
-          <dialog class="modal" id="op12"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="12">
+          <dialog class="modal" id="op12"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="12">
             <div class="modal-head"><h3>Stock opname Ibuprofen 400 mg · 007O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="30" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="30"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">007O26B</span> · <b>60</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op13">Opname</button>
-          <dialog class="modal" id="op13"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="13">
+          <dialog class="modal" id="op13"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="13">
             <div class="modal-head"><h3>Stock opname Ibuprofen 400 mg · 007O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="60" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="60"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -236,14 +245,14 @@
       <td class="num ">84</td><td class="num">50</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">012O25A</span> · <b>28</b> · <span class="text-amber-700 font-semibold">ED 15 Des 2026 (≤90 hari)</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op21">Opname</button>
-          <dialog class="modal" id="op21"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="21">
+          <dialog class="modal" id="op21"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="21">
             <div class="modal-head"><h3>Stock opname Infus NaCl 0,9% 500 mL · 012O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="28" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="28"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">012O26B</span> · <b>56</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op22">Opname</button>
-          <dialog class="modal" id="op22"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="22">
+          <dialog class="modal" id="op22"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="22">
             <div class="modal-head"><h3>Stock opname Infus NaCl 0,9% 500 mL · 012O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="56" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="56"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -253,7 +262,7 @@
       <td class="num ">12</td><td class="num">5</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">017O26A</span> · <b>12</b> · <span class="">ED 14 Mar 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op29">Opname</button>
-          <dialog class="modal" id="op29"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="29">
+          <dialog class="modal" id="op29"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="29">
             <div class="modal-head"><h3>Stock opname Insulin Glargine 100 IU/mL pen · 017O26A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="12" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="12"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -263,7 +272,7 @@
       <td class="num ">20</td><td class="num">10</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">018O26A</span> · <b>20</b> · <span class="">ED 14 Mar 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op30">Opname</button>
-          <dialog class="modal" id="op30"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="30">
+          <dialog class="modal" id="op30"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="30">
             <div class="modal-head"><h3>Stock opname Kalium Klorida (KCl) 7,46% 25 mL · 018O26A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="20" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="20"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -273,14 +282,14 @@
       <td class="num ">150</td><td class="num">50</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">003A25A</span> · <b>50</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Umum</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op37">Opname</button>
-          <dialog class="modal" id="op37"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="37">
+          <dialog class="modal" id="op37"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="37">
             <div class="modal-head"><h3>Stock opname Kasa Steril 16x16 cm · 003A25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="50" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="50"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">003A26B</span> · <b>100</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Umum</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op38">Opname</button>
-          <dialog class="modal" id="op38"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="38">
+          <dialog class="modal" id="op38"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="38">
             <div class="modal-head"><h3>Stock opname Kasa Steril 16x16 cm · 003A26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="100" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="100"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -290,14 +299,14 @@
       <td class="num ">300</td><td class="num">80</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">005O25A</span> · <b>100</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op8">Opname</button>
-          <dialog class="modal" id="op8"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="8">
+          <dialog class="modal" id="op8"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="8">
             <div class="modal-head"><h3>Stock opname Metformin 500 mg · 005O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="100" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="100"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">005O26B</span> · <b>200</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op9">Opname</button>
-          <dialog class="modal" id="op9"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="9">
+          <dialog class="modal" id="op9"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="9">
             <div class="modal-head"><h3>Stock opname Metformin 500 mg · 005O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="200" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="200"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -307,14 +316,14 @@
       <td class="num ">120</td><td class="num">40</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">006O25A</span> · <b>40</b> · <span class="text-amber-700 font-semibold">ED 19 Jan 2027 (≤90 hari)</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op10">Opname</button>
-          <dialog class="modal" id="op10"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="10">
+          <dialog class="modal" id="op10"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="10">
             <div class="modal-head"><h3>Stock opname Omeprazole 20 mg · 006O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="40" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="40"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">006O26B</span> · <b>80</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op11">Opname</button>
-          <dialog class="modal" id="op11"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="11">
+          <dialog class="modal" id="op11"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="11">
             <div class="modal-head"><h3>Stock opname Omeprazole 20 mg · 006O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="80" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="80"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -324,14 +333,14 @@
       <td class="num ">100</td><td class="num">30</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">010O25A</span> · <b>33</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op17">Opname</button>
-          <dialog class="modal" id="op17"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="17">
+          <dialog class="modal" id="op17"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="17">
             <div class="modal-head"><h3>Stock opname Oralit · 010O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="33" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="33"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">010O26B</span> · <b>67</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op18">Opname</button>
-          <dialog class="modal" id="op18"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="18">
+          <dialog class="modal" id="op18"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="18">
             <div class="modal-head"><h3>Stock opname Oralit · 010O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="67" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="67"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -341,14 +350,14 @@
       <td class="num ">420</td><td class="num">100</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">001O25A</span> · <b>140</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op1">Opname</button>
-          <dialog class="modal" id="op1"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="1">
+          <dialog class="modal" id="op1"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="1">
             <div class="modal-head"><h3>Stock opname Paracetamol 500 mg · 001O25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="140" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="140"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">001O26B</span> · <b>280</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op2">Opname</button>
-          <dialog class="modal" id="op2"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="2">
+          <dialog class="modal" id="op2"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="2">
             <div class="modal-head"><h3>Stock opname Paracetamol 500 mg · 001O26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="280" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="280"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -358,7 +367,7 @@
       <td class="num ">25</td><td class="num">10</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">013O26A</span> · <b>25</b> · <span class="text-amber-700 font-semibold">ED 30 Des 2026 (≤90 hari)</span> · <span class="muted">Gudang Farmasi</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op23">Opname</button>
-          <dialog class="modal" id="op23"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="23">
+          <dialog class="modal" id="op23"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="23">
             <div class="modal-head"><h3>Stock opname Paracetamol Sirup 120 mg/5 mL · 013O26A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="25" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="25"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -371,14 +380,14 @@
       <td class="num text-red-600 font-bold">65<div><span class="badge badge-amber">Menipis</span></div></td><td class="num">100</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">002A25A</span> · <b>21</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Umum</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op35">Opname</button>
-          <dialog class="modal" id="op35"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="35">
+          <dialog class="modal" id="op35"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="35">
             <div class="modal-head"><h3>Stock opname Sarung Tangan Medis Ukuran M · 002A25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="21" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="21"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">002A26B</span> · <b>44</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Umum</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op36">Opname</button>
-          <dialog class="modal" id="op36"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="36">
+          <dialog class="modal" id="op36"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="36">
             <div class="modal-head"><h3>Stock opname Sarung Tangan Medis Ukuran M · 002A26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="44" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="44"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -388,14 +397,14 @@
       <td class="num ">300</td><td class="num">100</td>
       <td>        <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">001A25A</span> · <b>100</b> · <span class="">ED 27 Agu 2027</span> · <span class="muted">Gudang Umum</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op33">Opname</button>
-          <dialog class="modal" id="op33"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="33">
+          <dialog class="modal" id="op33"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="33">
             <div class="modal-head"><h3>Stock opname Spuit 5 mL · 001A25A</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="100" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="100"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
             <div class="modal-foot"><button type="button" class="btn btn-secondary" data-close>Batal</button><button class="btn btn-primary">Simpan Penyesuaian</button></div></form></dialog></div>
               <div class="flex items-center gap-2 text-xs py-0.5"><span class="mono">001A26B</span> · <b>200</b> · <span class="">ED 30 Sep 2028</span> · <span class="muted">Gudang Umum</span>
           <button class="btn btn-secondary btn-sm ml-auto" data-open="op34">Opname</button>
-          <dialog class="modal" id="op34"><form method="post"><input type="hidden" name="_csrf" value="53de7f846c74f366f4eab06fa2c4ac22"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="34">
+          <dialog class="modal" id="op34"><form method="post"><input type="hidden" name="_csrf" value="673608c331c5784f9809a829a04c9d6f"><input type="hidden" name="aksi" value="opname"><input type="hidden" name="id_batch" value="34">
             <div class="modal-head"><h3>Stock opname Spuit 5 mL · 001A26B</h3></div><div class="modal-body form-grid text-left text-sm">
             <div class="field"><label>Jumlah di sistem</label><input value="200" readonly></div><div class="field"><label>Jumlah fisik</label><input name="fisik" type="number" min="0" required value="200"></div>
             <div class="field md:col-span-2"><label>Alasan</label><input name="alasan" required placeholder="contoh: 5 strip rusak / pemusnahan kedaluwarsa"></div></div>
@@ -408,11 +417,12 @@
 <script src="../assets/app.js"></script>
 <script>window.DEMO_ROOT="../"</script><script>
 (function(){
-  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
-  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
-  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
-  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+  var css=document.createElement('style');css.textContent='.demo-badge{display:inline-flex;align-items:center;margin-left:8px;padding:2px 8px;border-radius:999px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font:700 10.5px/1.5 Inter,system-ui,sans-serif;letter-spacing:.06em;vertical-align:middle}.demo-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#003b55;color:#fff;padding:11px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(520px,92vw);text-align:center}';document.head.appendChild(css);
+  function badge(el){if(!el||el.querySelector('.demo-badge'))return;var b=document.createElement('span');b.className='demo-badge';b.textContent='DEMO';b.title='Versi demo: bisa dicoba, tetapi data tidak disimpan ke database';el.appendChild(b)}
+  document.addEventListener('DOMContentLoaded',function(){badge(document.querySelector('.top-title'));var h=document.querySelector('header a[href$="index.html"] b');if(h)badge(h)});
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
+  window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute('data-demo-login'))return;if(e.defaultPrevented)return;e.preventDefault();var btn=e.submitter;if(btn){btn.classList.remove('is-loading');btn.removeAttribute('aria-busy')}delete f.dataset.terkonfirmasi;document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast((f.method||'').toLowerCase()==='post'?'Mode demo: isian sudah valid, tetapi tidak disimpan ke database.':'Mode demo: pencarian dan filter hanya berfungsi di versi lengkap.')});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Mode demo: fitur ini hanya ada di versi lengkap.')}},true);
 })();
 </script></body>
 </html>

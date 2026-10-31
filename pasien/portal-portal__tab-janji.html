@@ -10,7 +10,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
 <link rel="stylesheet" href="../assets/app.css">
-</head>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var asli=window.fetch, muat=null;
+  function data(){ if(!muat) muat=new Promise(function(ok){var s=document.createElement('script');s.src=(window.DEMO_ROOT||'')+'assets/slot-demo.js';s.onload=ok;s.onerror=ok;document.head.appendChild(s)}); return muat; }
+  window.fetch=function(u){var s=String(u); if(s.indexOf('slot.php')<0) return asli.apply(this,arguments);
+    return data().then(function(){var q=new URLSearchParams(s.split('?')[1]||''), k=q.get('dokter')+'|'+q.get('tanggal');
+      var d=(window.__SLOT||{})[k]||{slot:[],info:'',pesan:'Mode demo: contoh jam praktik hanya tersedia untuk 30 hari sejak versi demo dibuat. Pilih tanggal lain.',tanggal_lain:[]};
+      return new Response(JSON.stringify(d),{headers:{'Content-Type':'application/json'}});});};
+})();
+</script></head>
 <body class="app-body">
 <aside id="sidebar" class="sidebar">
     <a href="portal-portal.html" class="side-brand">
@@ -62,7 +71,7 @@
 
   <div class="grid lg:grid-cols-5 gap-4">
     <div class="card lg:col-span-2"><div class="card-head"><h3>Buat Janji Temu</h3></div><div class="card-body">
-      <form method="post"><input type="hidden" name="_csrf" value="d5af188461a764724e554ee6806d6610"><input type="hidden" name="aksi" value="janji">
+      <form method="post"><input type="hidden" name="_csrf" value="69700ebed6ca4896d52cad3d0b8afb07"><input type="hidden" name="aksi" value="janji">
         <div class="field"><label for="pjDokter">1. Poliklinik &amp; dokter <span class="req">*</span></label><select id="pjDokter" name="dokter" required><option value="">- pilih dokter -</option><option value="2-3">Poli Anak · dr. Clarissa Wijaya, Sp.A</option><option value="3-4">Poli Bedah · dr. Bagus Santoso, Sp.B</option><option value="4-5">Poli Kandungan · dr. Maria Ulfa, Sp.OG</option><option value="1-2">Poli Penyakit Dalam · dr. Aditya Pranata, Sp.PD</option><option value="5-1">Poli Umum · dr. Rendi Saputra</option></select></div>
         <div class="field"><label for="pjTanggal">2. Tanggal kunjungan <span class="req">*</span></label><input id="pjTanggal" type="date" name="tanggal" value="2026-11-01" min="2026-10-31" max="2026-11-30" required></div>
         <div class="field"><span class="lbl">3. Pilih jam <span class="req">*</span></span>
@@ -72,7 +81,7 @@
       </form></div></div>
     <div class="card lg:col-span-3"><div class="card-head"><b>Janji temu saya</b></div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Kode</th><th>Jadwal</th><th>Poli / Dokter</th><th>Status</th><th></th></tr></thead><tbody>
             <tr><td class="mono">APT-2026-000002</td><td>Sabtu, 7 Nov 2026<div class="muted">08:15</div></td><td>Poli Umum<div class="muted">dr. Rendi Saputra</div></td><td><span class="badge badge-blue">Terkonfirmasi</span></td>
-        <td class="num"><form method="post" data-confirm="Batalkan janji temu ini?"><input type="hidden" name="_csrf" value="d5af188461a764724e554ee6806d6610"><input type="hidden" name="aksi" value="batal"><input type="hidden" name="id" value="2"><button class="btn btn-outline-danger btn-sm">Batalkan</button></form></td></tr></tbody></table></div>
+        <td class="num"><form method="post" data-confirm="Batalkan janji temu ini?"><input type="hidden" name="_csrf" value="69700ebed6ca4896d52cad3d0b8afb07"><input type="hidden" name="aksi" value="batal"><input type="hidden" name="id" value="2"><button class="btn btn-outline-danger btn-sm">Batalkan</button></form></td></tr></tbody></table></div>
       <div class="card-body border-t"><div class="section-label mt-0">Jadwal praktik dokter</div><div class="grid md:grid-cols-2 gap-x-6 text-sm">
         <div class="py-1.5 border-b border-slate-100"><b>dr. Clarissa Wijaya, Sp.A</b> <span class="muted">· Poli Anak</span><div class="text-xs text-slate-600">Sen 08:30–12:30 · Sel 08:30–12:30 · Rab 08:30–12:30 · Kam 08:30–12:30 · Jum 08:30–12:30 · Sab 08:30–12:30</div></div><div class="py-1.5 border-b border-slate-100"><b>dr. Bagus Santoso, Sp.B</b> <span class="muted">· Poli Bedah</span><div class="text-xs text-slate-600">Sen 10:00–14:00 · Rab 10:00–14:00 · Kam 10:00–14:00 · Jum 10:00–14:00</div></div><div class="py-1.5 border-b border-slate-100"><b>dr. Maria Ulfa, Sp.OG</b> <span class="muted">· Poli Kandungan</span><div class="text-xs text-slate-600">Sel 09:00–13:00 · Kam 09:00–13:00 · Sab 09:00–13:00</div></div><div class="py-1.5 border-b border-slate-100"><b>dr. Aditya Pranata, Sp.PD</b> <span class="muted">· Poli Penyakit Dalam</span><div class="text-xs text-slate-600">Sen 08:00–16:00 · Sel 08:00–16:00 · Rab 08:00–16:00 · Kam 08:00–16:00 · Jum 08:00–16:00 · Sab 08:00–12:00</div></div><div class="py-1.5 border-b border-slate-100"><b>dr. Rendi Saputra</b> <span class="muted">· Poli Umum</span><div class="text-xs text-slate-600">Sen 08:00–20:00 · Sel 08:00–20:00 · Rab 08:00–20:00 · Kam 08:00–20:00 · Jum 08:00–20:00 · Sab 08:00–20:00 · Min 08:00–20:00</div></div></div></div></div>
   </div>
@@ -82,11 +91,12 @@
 <script src="../assets/app.js"></script>
 <script>window.DEMO_ROOT="../"</script><script>
 (function(){
-  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
-  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
-  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
-  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+  var css=document.createElement('style');css.textContent='.demo-badge{display:inline-flex;align-items:center;margin-left:8px;padding:2px 8px;border-radius:999px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font:700 10.5px/1.5 Inter,system-ui,sans-serif;letter-spacing:.06em;vertical-align:middle}.demo-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#003b55;color:#fff;padding:11px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(520px,92vw);text-align:center}';document.head.appendChild(css);
+  function badge(el){if(!el||el.querySelector('.demo-badge'))return;var b=document.createElement('span');b.className='demo-badge';b.textContent='DEMO';b.title='Versi demo: bisa dicoba, tetapi data tidak disimpan ke database';el.appendChild(b)}
+  document.addEventListener('DOMContentLoaded',function(){badge(document.querySelector('.top-title'));var h=document.querySelector('header a[href$="index.html"] b');if(h)badge(h)});
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
+  window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute('data-demo-login'))return;if(e.defaultPrevented)return;e.preventDefault();var btn=e.submitter;if(btn){btn.classList.remove('is-loading');btn.removeAttribute('aria-busy')}delete f.dataset.terkonfirmasi;document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast((f.method||'').toLowerCase()==='post'?'Mode demo: isian sudah valid, tetapi tidak disimpan ke database.':'Mode demo: pencarian dan filter hanya berfungsi di versi lengkap.')});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Mode demo: fitur ini hanya ada di versi lengkap.')}},true);
 })();
 </script></body>
 </html>

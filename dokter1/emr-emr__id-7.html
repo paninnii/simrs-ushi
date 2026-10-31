@@ -10,7 +10,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
 <link rel="stylesheet" href="../assets/app.css">
-</head>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var asli=window.fetch, muat=null;
+  function data(){ if(!muat) muat=new Promise(function(ok){var s=document.createElement('script');s.src=(window.DEMO_ROOT||'')+'assets/slot-demo.js';s.onload=ok;s.onerror=ok;document.head.appendChild(s)}); return muat; }
+  window.fetch=function(u){var s=String(u); if(s.indexOf('slot.php')<0) return asli.apply(this,arguments);
+    return data().then(function(){var q=new URLSearchParams(s.split('?')[1]||''), k=q.get('dokter')+'|'+q.get('tanggal');
+      var d=(window.__SLOT||{})[k]||{slot:[],info:'',pesan:'Mode demo: contoh jam praktik hanya tersedia untuk 30 hari sejak versi demo dibuat. Pilih tanggal lain.',tanggal_lain:[]};
+      return new Response(JSON.stringify(d),{headers:{'Content-Type':'application/json'}});});};
+})();
+</script></head>
 <body class="app-body">
 <aside id="sidebar" class="sidebar">
     <a href="rawat_jalan-antrian.html" class="side-brand">
@@ -88,11 +97,11 @@
     <div class="patient-banner"><div class="avatar avatar-lg">LM</div><div class="min-w-0"><div class="text-lg font-bold text-slate-900">Lina Marlina</div><div class="text-sm text-slate-600">RM-2026-000009 · Perempuan · 52 th · Lahir 6 Sep 1974</div><div class="text-sm text-slate-600 mt-0.5">NIK 3173094601740009 · Prudential · Kunjungan B-003</div></div><div class="ml-auto text-right"><span class="badge badge-red">Alergi: Sulfonamid</span></div></div>    <div class="flex flex-wrap gap-2 mb-3 no-print"><span class="badge badge-green">FINAL</span> <span class="badge badge-green">Verifikasi: Lengkap</span> <span class="badge badge-gray">Belum dikirim SATUSEHAT</span></div>
     <div class="grid lg:grid-cols-3 gap-4">
     <div class="lg:col-span-2 space-y-4">
-            <div class="card print-area"><div class="card-head"><h3>Catatan SOAP</h3><span class="muted">dr. Aditya Pranata, Sp.PD · 31 Okt 2026 07:48 · final 31 Okt 2026 08:48</span></div><div class="card-body">
+            <div class="card print-area"><div class="card-head"><h3>Catatan SOAP</h3><span class="muted">dr. Aditya Pranata, Sp.PD · 31 Okt 2026 09:15 · final 31 Okt 2026 10:15</span></div><div class="card-body">
         <dl class="kv"><dt>Subjective</dt><dd>Kontrol hipertensi, kadang pusing sore hari, obat kadang terlupa.</dd><dt>Objective</dt><dd>TD 148/92, N 80. Jantung reguler, edema tungkai (-).</dd>
           <dt>Assessment</dt><dd>Hipertensi esensial belum terkontrol<br><span class="mono text-[#004c6d]">ICD-10 I10</span> · Hipertensi esensial (primer)</dd>
           <dt>Plan</dt><dd>Amlodipine 1x10 mg malam. Cek fungsi ginjal. Kontrol 1 bulan.</dd><dt>Tindak lanjut</dt><dd>Kontrol</dd></dl>
-        <div class="section-label">Addendum</div><div class="readonly-box mb-2"><b>31 Okt 2026 08:48 · dr. Aditya Pranata, Sp.PD:</b> Edukasi tambahan: kurangi garam &lt; 5 g/hari dan cek tekanan darah mandiri di rumah.</div>      </div></div>
+        <div class="section-label">Addendum</div><div class="readonly-box mb-2"><b>31 Okt 2026 10:15 · dr. Aditya Pranata, Sp.PD:</b> Edukasi tambahan: kurangi garam &lt; 5 g/hari dan cek tekanan darah mandiri di rumah.</div>      </div></div>
             <div class="card"><div class="card-head"><h3>Hasil Penunjang</h3></div><div class="card-body text-sm space-y-2">
                 <div class="readonly-box"><b>Lab · Fungsi Ginjal (Ureum, Kreatinin)</b> <span class="badge badge-green">Diterbitkan</span> <br>
           Hasil: Ureum 32 mg/dL; Kreatinin 0,9 mg/dL<br><span class="muted">Rujukan: Ureum 15-40 mg/dL; Kreatinin L 0,7-1,3 / P 0,6-1,1 mg/dL · Validasi dr. Helena Wijaya, Sp.PK</span></div>              </div></div>
@@ -101,7 +110,7 @@
       <div class="card"><div class="card-head"><h3>Tanda Vital</h3></div><div class="card-body text-sm">TD 148/92 mmHg, Nadi 80x/mnt, RR 18x/mnt, Suhu 36.5 °C, SpO2 99%, BB 70 kg, TB 158 cm (BMI 28), Nyeri 0/10<div class="muted">Pengkajian perawat</div></div></div>
       <div class="card"><div class="card-head"><h3>Terapi</h3></div><div class="card-body text-sm">
         <div class="mb-1"><span class="muted">Obat:</span> Amlodipine 10 mg · 30 tablet · 10 mg 1x sehari <span class="badge badge-green">Selesai</span></div>                </div></div>
-            <div class="card"><div class="card-head"><h3>Dokumen Klinis</h3></div><div class="card-body text-sm"><div class="readonly-box mb-2"><b>Surat Kontrol</b> · 30 Nov 2026 · Poli Penyakit Dalam<br>Kontrol hipertensi dengan membawa hasil cek tensi harian.</div></div></div>              <form method="post" class="card no-print"><input type="hidden" name="_csrf" value="e1c70e15bf26bf4ed6446575c2eeb9ea"><input type="hidden" name="aksi" value="addendum"><input type="hidden" name="id" value="7"><div class="card-head"><h3>Tambah Addendum</h3></div>
+            <div class="card"><div class="card-head"><h3>Dokumen Klinis</h3></div><div class="card-body text-sm"><div class="readonly-box mb-2"><b>Surat Kontrol</b> · 30 Nov 2026 · Poli Penyakit Dalam<br>Kontrol hipertensi dengan membawa hasil cek tensi harian.</div></div></div>              <form method="post" class="card no-print"><input type="hidden" name="_csrf" value="05646fa527c1b65984af18148391942b"><input type="hidden" name="aksi" value="addendum"><input type="hidden" name="id" value="7"><div class="card-head"><h3>Tambah Addendum</h3></div>
           <div class="card-body"><p class="muted mb-2">Dokumen FINAL tidak bisa diubah. Catatan tambahan disimpan sebagai addendum.</p><textarea name="isi" class="input" rows="3" placeholder="contoh: Edukasi diet tambahan..."></textarea></div><div class="modal-foot"><button class="btn btn-primary">Simpan Addendum</button></div></form>
                 </div></div>
     </main>
@@ -109,11 +118,12 @@
 <script src="../assets/app.js"></script>
 <script>window.DEMO_ROOT="../"</script><script>
 (function(){
-  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
-  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
-  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
-  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+  var css=document.createElement('style');css.textContent='.demo-badge{display:inline-flex;align-items:center;margin-left:8px;padding:2px 8px;border-radius:999px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font:700 10.5px/1.5 Inter,system-ui,sans-serif;letter-spacing:.06em;vertical-align:middle}.demo-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#003b55;color:#fff;padding:11px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(520px,92vw);text-align:center}';document.head.appendChild(css);
+  function badge(el){if(!el||el.querySelector('.demo-badge'))return;var b=document.createElement('span');b.className='demo-badge';b.textContent='DEMO';b.title='Versi demo: bisa dicoba, tetapi data tidak disimpan ke database';el.appendChild(b)}
+  document.addEventListener('DOMContentLoaded',function(){badge(document.querySelector('.top-title'));var h=document.querySelector('header a[href$="index.html"] b');if(h)badge(h)});
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
+  window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute('data-demo-login'))return;if(e.defaultPrevented)return;e.preventDefault();var btn=e.submitter;if(btn){btn.classList.remove('is-loading');btn.removeAttribute('aria-busy')}delete f.dataset.terkonfirmasi;document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast((f.method||'').toLowerCase()==='post'?'Mode demo: isian sudah valid, tetapi tidak disimpan ke database.':'Mode demo: pencarian dan filter hanya berfungsi di versi lengkap.')});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Mode demo: fitur ini hanya ada di versi lengkap.')}},true);
 })();
 </script></body>
 </html>

@@ -10,7 +10,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
 <link rel="stylesheet" href="../assets/app.css">
-</head>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var asli=window.fetch, muat=null;
+  function data(){ if(!muat) muat=new Promise(function(ok){var s=document.createElement('script');s.src=(window.DEMO_ROOT||'')+'assets/slot-demo.js';s.onload=ok;s.onerror=ok;document.head.appendChild(s)}); return muat; }
+  window.fetch=function(u){var s=String(u); if(s.indexOf('slot.php')<0) return asli.apply(this,arguments);
+    return data().then(function(){var q=new URLSearchParams(s.split('?')[1]||''), k=q.get('dokter')+'|'+q.get('tanggal');
+      var d=(window.__SLOT||{})[k]||{slot:[],info:'',pesan:'Mode demo: contoh jam praktik hanya tersedia untuk 30 hari sejak versi demo dibuat. Pilih tanggal lain.',tanggal_lain:[]};
+      return new Response(JSON.stringify(d),{headers:{'Content-Type':'application/json'}});});};
+})();
+</script></head>
 <body class="app-body">
 <aside id="sidebar" class="sidebar">
     <a href="registrasi-pendaftaran.html" class="side-brand">
@@ -75,7 +84,7 @@
 
     <div class="card" id="form"><div class="card-head"><h3>2. Kunjungan Pasien Lama</h3><a href="registrasi-pendaftaran.html" class="btn btn-secondary btn-sm">Pasien baru</a></div>
   <form method="post" class="card-body" autocomplete="off">
-    <input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="daftar"><input type="hidden" name="mode" value="lama">
+    <input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="aksi" value="daftar"><input type="hidden" name="mode" value="lama">
             
           <div class="patient-banner"><div class="avatar avatar-lg">KP</div><div class="min-w-0"><div class="text-lg font-bold text-slate-900">Kevin Pratama</div><div class="text-sm text-slate-600">RM-2026-000014 · Laki-laki · 10 th · Lahir 3 Mei 2016</div><div class="text-sm text-slate-600 mt-0.5">NIK 3173140305160014 · HP 081234560014 · BPJS 0008899001122</div></div><div class="ml-auto text-right"><span class="badge badge-green">Tidak ada alergi tercatat</span></div></div>    
     <div class="section-label">Tujuan pelayanan</div>
@@ -108,7 +117,7 @@
       <td><b>Siti Aminah</b><div class="muted">RM-2026-000005 · Instalasi Gawat Darurat</div><div class="muted">dr. Rendi Saputra · BPJS Kesehatan</div></td>
       <td><span class="badge badge-amber">Menunggu</span></td>
       <td class="num"><a class="btn btn-secondary btn-sm" href="registrasi-pendaftaran__bukti-10.html">Bukti</a>
-        <form method="post" class="inline" data-confirm="Batalkan kunjungan Siti Aminah?"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="10"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
+        <form method="post" class="inline" data-confirm="Batalkan kunjungan Siti Aminah?"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="10"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
       <tr><td class="mono font-bold text-[#004c6d]">G-001</td>
       <td><b>Yusuf Maulana</b><div class="muted">RM-2026-000012 · Instalasi Gawat Darurat</div><div class="muted">dr. Rendi Saputra · BPJS Kesehatan</div></td>
       <td><span class="badge badge-gray">Dalam Pelayanan</span></td>
@@ -143,7 +152,7 @@
       <td><b>Kevin Pratama</b><div class="muted">RM-2026-000014 · Poli Anak</div><div class="muted">dr. Clarissa Wijaya, Sp.A · BPJS Kesehatan</div></td>
       <td><span class="badge badge-amber">Menunggu</span></td>
       <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
-        <form method="post" class="inline" data-confirm="Batalkan kunjungan Kevin Pratama?"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="3"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
+        <form method="post" class="inline" data-confirm="Batalkan kunjungan Kevin Pratama?"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="3"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
       <tr><td class="mono font-bold text-[#004c6d]">B-002</td>
       <td><b>Rina Kurniawati</b><div class="muted">RM-2026-000011 · Poli Penyakit Dalam</div><div class="muted">dr. Aditya Pranata, Sp.PD · BPJS Kesehatan</div></td>
       <td><span class="badge badge-gray">Dalam Pelayanan</span></td>
@@ -153,7 +162,7 @@
       <td><b>Rizal Hidayat</b><div class="muted">RM-2026-000006 · Poli Penyakit Dalam</div><div class="muted">dr. Aditya Pranata, Sp.PD · Mandiri Inhealth</div></td>
       <td><span class="badge badge-amber">Menunggu</span></td>
       <td class="num"><a class="btn btn-secondary btn-sm" href="#" data-demo-off>Bukti</a>
-        <form method="post" class="inline" data-confirm="Batalkan kunjungan Rizal Hidayat?"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="1"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
+        <form method="post" class="inline" data-confirm="Batalkan kunjungan Rizal Hidayat?"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="aksi" value="batal_kunjungan"><input type="hidden" name="id" value="1"><button class="btn btn-danger btn-sm">Batal</button></form></td></tr>
     </tbody></table></div></div></div>
 </div>
 <script>
@@ -189,11 +198,12 @@ isiDokter(); aturTujuan(); aturPenjamin(); aturJam();
 <script src="../assets/app.js"></script>
 <script>window.DEMO_ROOT="../"</script><script>
 (function(){
-  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
-  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
-  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
-  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+  var css=document.createElement('style');css.textContent='.demo-badge{display:inline-flex;align-items:center;margin-left:8px;padding:2px 8px;border-radius:999px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font:700 10.5px/1.5 Inter,system-ui,sans-serif;letter-spacing:.06em;vertical-align:middle}.demo-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#003b55;color:#fff;padding:11px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(520px,92vw);text-align:center}';document.head.appendChild(css);
+  function badge(el){if(!el||el.querySelector('.demo-badge'))return;var b=document.createElement('span');b.className='demo-badge';b.textContent='DEMO';b.title='Versi demo: bisa dicoba, tetapi data tidak disimpan ke database';el.appendChild(b)}
+  document.addEventListener('DOMContentLoaded',function(){badge(document.querySelector('.top-title'));var h=document.querySelector('header a[href$="index.html"] b');if(h)badge(h)});
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
+  window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute('data-demo-login'))return;if(e.defaultPrevented)return;e.preventDefault();var btn=e.submitter;if(btn){btn.classList.remove('is-loading');btn.removeAttribute('aria-busy')}delete f.dataset.terkonfirmasi;document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast((f.method||'').toLowerCase()==='post'?'Mode demo: isian sudah valid, tetapi tidak disimpan ke database.':'Mode demo: pencarian dan filter hanya berfungsi di versi lengkap.')});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Mode demo: fitur ini hanya ada di versi lengkap.')}},true);
 })();
 </script></body>
 </html>

@@ -10,7 +10,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','Arial','sans-serif'],mono:['"JetBrains Mono"','"Roboto Mono"','"Courier New"','monospace']},colors:{ushi:{50:'#EAF3F7',100:'#D9EBF2',500:'#0B7896',600:'#075F7D',700:'#004C6D',800:'#003A54',900:'#002B3F'},leaf:'#5B9B3C'}}}}</script>
 <link rel="stylesheet" href="../assets/app.css">
-</head>
+<script>window.DEMO_ROOT="../"</script><script>
+(function(){
+  var asli=window.fetch, muat=null;
+  function data(){ if(!muat) muat=new Promise(function(ok){var s=document.createElement('script');s.src=(window.DEMO_ROOT||'')+'assets/slot-demo.js';s.onload=ok;s.onerror=ok;document.head.appendChild(s)}); return muat; }
+  window.fetch=function(u){var s=String(u); if(s.indexOf('slot.php')<0) return asli.apply(this,arguments);
+    return data().then(function(){var q=new URLSearchParams(s.split('?')[1]||''), k=q.get('dokter')+'|'+q.get('tanggal');
+      var d=(window.__SLOT||{})[k]||{slot:[],info:'',pesan:'Mode demo: contoh jam praktik hanya tersedia untuk 30 hari sejak versi demo dibuat. Pilih tanggal lain.',tanggal_lain:[]};
+      return new Response(JSON.stringify(d),{headers:{'Content-Type':'application/json'}});});};
+})();
+</script></head>
 <body class="app-body">
 <aside id="sidebar" class="sidebar">
     <a href="registrasi-pendaftaran.html" class="side-brand">
@@ -72,7 +81,7 @@
   <tr><td><b>dr. Aditya Pranata, Sp.PD</b><div class="muted">Penyakit Dalam</div></td><td>Poli Penyakit Dalam</td><td>Senin</td>
     <td class="mono">08:00–16:00</td><td class="num">32</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j1">Ubah</button>
-      <dialog class="modal" id="j1"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="1">
+      <dialog class="modal" id="j1"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="1">
         <div class="modal-head"><h3>dr. Aditya Pranata, Sp.PD · Poli Penyakit Dalam · Senin</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -85,7 +94,7 @@
   <tr><td><b>dr. Aditya Pranata, Sp.PD</b><div class="muted">Penyakit Dalam</div></td><td>Poli Penyakit Dalam</td><td>Selasa</td>
     <td class="mono">08:00–16:00</td><td class="num">32</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j2">Ubah</button>
-      <dialog class="modal" id="j2"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="2">
+      <dialog class="modal" id="j2"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="2">
         <div class="modal-head"><h3>dr. Aditya Pranata, Sp.PD · Poli Penyakit Dalam · Selasa</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -98,7 +107,7 @@
   <tr><td><b>dr. Aditya Pranata, Sp.PD</b><div class="muted">Penyakit Dalam</div></td><td>Poli Penyakit Dalam</td><td>Rabu</td>
     <td class="mono">08:00–16:00</td><td class="num">32</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j3">Ubah</button>
-      <dialog class="modal" id="j3"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="3">
+      <dialog class="modal" id="j3"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="3">
         <div class="modal-head"><h3>dr. Aditya Pranata, Sp.PD · Poli Penyakit Dalam · Rabu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -111,7 +120,7 @@
   <tr><td><b>dr. Aditya Pranata, Sp.PD</b><div class="muted">Penyakit Dalam</div></td><td>Poli Penyakit Dalam</td><td>Kamis</td>
     <td class="mono">08:00–16:00</td><td class="num">32</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j4">Ubah</button>
-      <dialog class="modal" id="j4"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="4">
+      <dialog class="modal" id="j4"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="4">
         <div class="modal-head"><h3>dr. Aditya Pranata, Sp.PD · Poli Penyakit Dalam · Kamis</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -124,7 +133,7 @@
   <tr><td><b>dr. Aditya Pranata, Sp.PD</b><div class="muted">Penyakit Dalam</div></td><td>Poli Penyakit Dalam</td><td>Jumat</td>
     <td class="mono">08:00–16:00</td><td class="num">32</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j5">Ubah</button>
-      <dialog class="modal" id="j5"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="5">
+      <dialog class="modal" id="j5"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="5">
         <div class="modal-head"><h3>dr. Aditya Pranata, Sp.PD · Poli Penyakit Dalam · Jumat</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -137,7 +146,7 @@
   <tr><td><b>dr. Aditya Pranata, Sp.PD</b><div class="muted">Penyakit Dalam</div></td><td>Poli Penyakit Dalam</td><td><b>Sabtu</b></td>
     <td class="mono">08:00–12:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j35">Ubah</button>
-      <dialog class="modal" id="j35"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="35">
+      <dialog class="modal" id="j35"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="35">
         <div class="modal-head"><h3>dr. Aditya Pranata, Sp.PD · Poli Penyakit Dalam · Sabtu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -150,7 +159,7 @@
   <tr><td><b>dr. Bagus Santoso, Sp.B</b><div class="muted">Bedah</div></td><td>Instalasi Gawat Darurat</td><td><b>Sabtu</b></td>
     <td class="mono">08:00–20:00</td><td class="num">30</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j33">Ubah</button>
-      <dialog class="modal" id="j33"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="33">
+      <dialog class="modal" id="j33"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="33">
         <div class="modal-head"><h3>dr. Bagus Santoso, Sp.B · Instalasi Gawat Darurat · Sabtu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -163,7 +172,7 @@
   <tr><td><b>dr. Bagus Santoso, Sp.B</b><div class="muted">Bedah</div></td><td>Instalasi Gawat Darurat</td><td>Minggu</td>
     <td class="mono">08:00–20:00</td><td class="num">30</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j34">Ubah</button>
-      <dialog class="modal" id="j34"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="34">
+      <dialog class="modal" id="j34"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="34">
         <div class="modal-head"><h3>dr. Bagus Santoso, Sp.B · Instalasi Gawat Darurat · Minggu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -176,7 +185,7 @@
   <tr><td><b>dr. Bagus Santoso, Sp.B</b><div class="muted">Bedah</div></td><td>Poli Bedah</td><td>Senin</td>
     <td class="mono">10:00–14:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j12">Ubah</button>
-      <dialog class="modal" id="j12"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="12">
+      <dialog class="modal" id="j12"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="12">
         <div class="modal-head"><h3>dr. Bagus Santoso, Sp.B · Poli Bedah · Senin</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="10:00" required></div>
@@ -189,7 +198,7 @@
   <tr><td><b>dr. Bagus Santoso, Sp.B</b><div class="muted">Bedah</div></td><td>Poli Bedah</td><td>Rabu</td>
     <td class="mono">10:00–14:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j13">Ubah</button>
-      <dialog class="modal" id="j13"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="13">
+      <dialog class="modal" id="j13"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="13">
         <div class="modal-head"><h3>dr. Bagus Santoso, Sp.B · Poli Bedah · Rabu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="10:00" required></div>
@@ -202,7 +211,7 @@
   <tr><td><b>dr. Bagus Santoso, Sp.B</b><div class="muted">Bedah</div></td><td>Poli Bedah</td><td>Kamis</td>
     <td class="mono">10:00–14:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j14">Ubah</button>
-      <dialog class="modal" id="j14"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="14">
+      <dialog class="modal" id="j14"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="14">
         <div class="modal-head"><h3>dr. Bagus Santoso, Sp.B · Poli Bedah · Kamis</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="10:00" required></div>
@@ -215,7 +224,7 @@
   <tr><td><b>dr. Bagus Santoso, Sp.B</b><div class="muted">Bedah</div></td><td>Poli Bedah</td><td>Jumat</td>
     <td class="mono">10:00–14:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j15">Ubah</button>
-      <dialog class="modal" id="j15"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="15">
+      <dialog class="modal" id="j15"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="15">
         <div class="modal-head"><h3>dr. Bagus Santoso, Sp.B · Poli Bedah · Jumat</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="10:00" required></div>
@@ -228,7 +237,7 @@
   <tr><td><b>dr. Clarissa Wijaya, Sp.A</b><div class="muted">Anak</div></td><td>Poli Anak</td><td>Senin</td>
     <td class="mono">08:30–12:30</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j6">Ubah</button>
-      <dialog class="modal" id="j6"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="6">
+      <dialog class="modal" id="j6"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="6">
         <div class="modal-head"><h3>dr. Clarissa Wijaya, Sp.A · Poli Anak · Senin</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:30" required></div>
@@ -241,7 +250,7 @@
   <tr><td><b>dr. Clarissa Wijaya, Sp.A</b><div class="muted">Anak</div></td><td>Poli Anak</td><td>Selasa</td>
     <td class="mono">08:30–12:30</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j7">Ubah</button>
-      <dialog class="modal" id="j7"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="7">
+      <dialog class="modal" id="j7"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="7">
         <div class="modal-head"><h3>dr. Clarissa Wijaya, Sp.A · Poli Anak · Selasa</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:30" required></div>
@@ -254,7 +263,7 @@
   <tr><td><b>dr. Clarissa Wijaya, Sp.A</b><div class="muted">Anak</div></td><td>Poli Anak</td><td>Rabu</td>
     <td class="mono">08:30–12:30</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j8">Ubah</button>
-      <dialog class="modal" id="j8"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="8">
+      <dialog class="modal" id="j8"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="8">
         <div class="modal-head"><h3>dr. Clarissa Wijaya, Sp.A · Poli Anak · Rabu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:30" required></div>
@@ -267,7 +276,7 @@
   <tr><td><b>dr. Clarissa Wijaya, Sp.A</b><div class="muted">Anak</div></td><td>Poli Anak</td><td>Kamis</td>
     <td class="mono">08:30–12:30</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j9">Ubah</button>
-      <dialog class="modal" id="j9"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="9">
+      <dialog class="modal" id="j9"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="9">
         <div class="modal-head"><h3>dr. Clarissa Wijaya, Sp.A · Poli Anak · Kamis</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:30" required></div>
@@ -280,7 +289,7 @@
   <tr><td><b>dr. Clarissa Wijaya, Sp.A</b><div class="muted">Anak</div></td><td>Poli Anak</td><td>Jumat</td>
     <td class="mono">08:30–12:30</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j10">Ubah</button>
-      <dialog class="modal" id="j10"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="10">
+      <dialog class="modal" id="j10"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="10">
         <div class="modal-head"><h3>dr. Clarissa Wijaya, Sp.A · Poli Anak · Jumat</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:30" required></div>
@@ -293,7 +302,7 @@
   <tr><td><b>dr. Clarissa Wijaya, Sp.A</b><div class="muted">Anak</div></td><td>Poli Anak</td><td><b>Sabtu</b></td>
     <td class="mono">08:30–12:30</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j11">Ubah</button>
-      <dialog class="modal" id="j11"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="11">
+      <dialog class="modal" id="j11"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="11">
         <div class="modal-head"><h3>dr. Clarissa Wijaya, Sp.A · Poli Anak · Sabtu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:30" required></div>
@@ -306,7 +315,7 @@
   <tr><td><b>dr. Maria Ulfa, Sp.OG</b><div class="muted">Obstetri &amp; Ginekologi</div></td><td>Poli Kandungan</td><td>Selasa</td>
     <td class="mono">09:00–13:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j16">Ubah</button>
-      <dialog class="modal" id="j16"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="16">
+      <dialog class="modal" id="j16"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="16">
         <div class="modal-head"><h3>dr. Maria Ulfa, Sp.OG · Poli Kandungan · Selasa</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="09:00" required></div>
@@ -319,7 +328,7 @@
   <tr><td><b>dr. Maria Ulfa, Sp.OG</b><div class="muted">Obstetri &amp; Ginekologi</div></td><td>Poli Kandungan</td><td>Kamis</td>
     <td class="mono">09:00–13:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j17">Ubah</button>
-      <dialog class="modal" id="j17"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="17">
+      <dialog class="modal" id="j17"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="17">
         <div class="modal-head"><h3>dr. Maria Ulfa, Sp.OG · Poli Kandungan · Kamis</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="09:00" required></div>
@@ -332,7 +341,7 @@
   <tr><td><b>dr. Maria Ulfa, Sp.OG</b><div class="muted">Obstetri &amp; Ginekologi</div></td><td>Poli Kandungan</td><td><b>Sabtu</b></td>
     <td class="mono">09:00–13:00</td><td class="num">16</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j18">Ubah</button>
-      <dialog class="modal" id="j18"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="18">
+      <dialog class="modal" id="j18"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="18">
         <div class="modal-head"><h3>dr. Maria Ulfa, Sp.OG · Poli Kandungan · Sabtu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="09:00" required></div>
@@ -345,7 +354,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td>Senin</td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j26">Ubah</button>
-      <dialog class="modal" id="j26"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="26">
+      <dialog class="modal" id="j26"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="26">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Senin</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -358,7 +367,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td>Selasa</td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j27">Ubah</button>
-      <dialog class="modal" id="j27"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="27">
+      <dialog class="modal" id="j27"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="27">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Selasa</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -371,7 +380,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td>Rabu</td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j28">Ubah</button>
-      <dialog class="modal" id="j28"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="28">
+      <dialog class="modal" id="j28"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="28">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Rabu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -384,7 +393,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td>Kamis</td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j29">Ubah</button>
-      <dialog class="modal" id="j29"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="29">
+      <dialog class="modal" id="j29"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="29">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Kamis</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -397,7 +406,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td>Jumat</td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j30">Ubah</button>
-      <dialog class="modal" id="j30"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="30">
+      <dialog class="modal" id="j30"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="30">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Jumat</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -410,7 +419,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td><b>Sabtu</b></td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j31">Ubah</button>
-      <dialog class="modal" id="j31"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="31">
+      <dialog class="modal" id="j31"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="31">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Sabtu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -423,7 +432,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Instalasi Gawat Darurat</td><td>Minggu</td>
     <td class="mono">00:00–23:59</td><td class="num">60</td><td class="num">30</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j32">Ubah</button>
-      <dialog class="modal" id="j32"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="32">
+      <dialog class="modal" id="j32"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="32">
         <div class="modal-head"><h3>dr. Rendi Saputra · Instalasi Gawat Darurat · Minggu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="00:00" required></div>
@@ -436,7 +445,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td>Senin</td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j19">Ubah</button>
-      <dialog class="modal" id="j19"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="19">
+      <dialog class="modal" id="j19"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="19">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Senin</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -449,7 +458,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td>Selasa</td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j20">Ubah</button>
-      <dialog class="modal" id="j20"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="20">
+      <dialog class="modal" id="j20"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="20">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Selasa</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -462,7 +471,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td>Rabu</td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j21">Ubah</button>
-      <dialog class="modal" id="j21"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="21">
+      <dialog class="modal" id="j21"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="21">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Rabu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -475,7 +484,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td>Kamis</td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j22">Ubah</button>
-      <dialog class="modal" id="j22"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="22">
+      <dialog class="modal" id="j22"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="22">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Kamis</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -488,7 +497,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td>Jumat</td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j23">Ubah</button>
-      <dialog class="modal" id="j23"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="23">
+      <dialog class="modal" id="j23"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="23">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Jumat</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -501,7 +510,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td><b>Sabtu</b></td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j24">Ubah</button>
-      <dialog class="modal" id="j24"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="24">
+      <dialog class="modal" id="j24"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="24">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Sabtu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -514,7 +523,7 @@
   <tr><td><b>dr. Rendi Saputra</b><div class="muted">Umum</div></td><td>Poli Umum</td><td>Minggu</td>
     <td class="mono">08:00–20:00</td><td class="num">40</td><td class="num">15</td><td><span class="badge badge-green">Aktif</span></td>
     <td class="num"><button class="btn btn-secondary btn-sm" data-open="j25">Ubah</button>
-      <dialog class="modal" id="j25"><form method="post"><input type="hidden" name="_csrf" value="e9345ee8d585432dc2360838a85904aa"><input type="hidden" name="id" value="25">
+      <dialog class="modal" id="j25"><form method="post"><input type="hidden" name="_csrf" value="019265864b84b3046e8295261eec5135"><input type="hidden" name="id" value="25">
         <div class="modal-head"><h3>dr. Rendi Saputra · Poli Umum · Minggu</h3></div>
         <div class="modal-body form-grid text-left">
           <div class="field"><label>Jam mulai</label><input type="time" name="jam_mulai" value="08:00" required></div>
@@ -530,11 +539,12 @@
 <script src="../assets/app.js"></script>
 <script>window.DEMO_ROOT="../"</script><script>
 (function(){
-  var css=document.createElement('style');css.textContent='.demo-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff7e6;color:#7a4b00;border-top:1px solid #f3d19c;font:600 12.5px/1.4 Inter,system-ui,sans-serif;padding:7px 14px;text-align:center}.demo-bar a{color:#004c6d;text-decoration:underline}.demo-toast{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);background:#003b55;color:#fff;padding:12px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(560px,92vw);text-align:center}';document.head.appendChild(css);
-  var bar=document.createElement('div');bar.className='demo-bar';bar.innerHTML='Versi DEMO STATIS (GitHub Pages): tampilan & data contoh saja, tombol simpan tidak menyimpan ke database. Versi lengkap = PHP + MySQL (XAMPP). <a href="'+(window.DEMO_ROOT||'')+'login.html">Ganti peran</a>';document.body.appendChild(bar);document.body.style.paddingBottom='34px';
-  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3800)}
-  document.addEventListener('submit',function(e){if(e.target.hasAttribute('data-demo-login'))return;e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast('Demo statis: data tidak disimpan. Jalankan versi PHP + MySQL agar data benar-benar masuk database.')},true);
-  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Halaman ini hanya tersedia di versi PHP + MySQL.')}},true);
+  var css=document.createElement('style');css.textContent='.demo-badge{display:inline-flex;align-items:center;margin-left:8px;padding:2px 8px;border-radius:999px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font:700 10.5px/1.5 Inter,system-ui,sans-serif;letter-spacing:.06em;vertical-align:middle}.demo-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#003b55;color:#fff;padding:11px 18px;border-radius:12px;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;max-width:min(520px,92vw);text-align:center}';document.head.appendChild(css);
+  function badge(el){if(!el||el.querySelector('.demo-badge'))return;var b=document.createElement('span');b.className='demo-badge';b.textContent='DEMO';b.title='Versi demo: bisa dicoba, tetapi data tidak disimpan ke database';el.appendChild(b)}
+  document.addEventListener('DOMContentLoaded',function(){badge(document.querySelector('.top-title'));var h=document.querySelector('header a[href$="index.html"] b');if(h)badge(h)});
+  function toast(m){var t=document.createElement('div');t.className='demo-toast';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
+  window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute('data-demo-login'))return;if(e.defaultPrevented)return;e.preventDefault();var btn=e.submitter;if(btn){btn.classList.remove('is-loading');btn.removeAttribute('aria-busy')}delete f.dataset.terkonfirmasi;document.querySelectorAll('dialog[open]').forEach(function(d){d.close()});toast((f.method||'').toLowerCase()==='post'?'Mode demo: isian sudah valid, tetapi tidak disimpan ke database.':'Mode demo: pencarian dan filter hanya berfungsi di versi lengkap.')});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast('Mode demo: fitur ini hanya ada di versi lengkap.')}},true);
 })();
 </script></body>
 </html>
